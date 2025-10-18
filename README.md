@@ -1,0 +1,1 @@
+# ssg-kiosk-photo-player
