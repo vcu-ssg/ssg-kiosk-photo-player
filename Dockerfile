@@ -1,13 +1,17 @@
-# Use lightweight Node image
+# Use official Node 22 LTS slim image
 FROM node:22-slim
 
+# Create working directory
 WORKDIR /app
 
-# Copy package files and install
+# Copy package files first
 COPY package*.json ./
-RUN npm ci --only=production
 
-# Copy the rest of the app
+# Install production dependencies
+RUN npm ci --only=production
+#RUN npm install --omit=dev
+
+# Copy remaining app source
 COPY . .
 
 # Expose port

@@ -1,8 +1,9 @@
-version: "3.9"
-
 services:
   photo-kiosk:
-    image: your-dockerhub-username/ssg-kiosk-photo-player:latest
+    image: ssg-kiosk-photo-player:latest   # 👈 add this line
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: photo-kiosk
     restart: unless-stopped
     ports:
@@ -12,16 +13,15 @@ services:
     volumes:
       - ./photos:/app/photos
       - ./public:/app/public
-    labels:
-      - "com.centurylinklabs.watchtower.enable=true"
-      
+
   watchtower:
     image: containrrr/watchtower
     container_name: watchtower
     restart: unless-stopped
+    profiles: [production]
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
-      - WATCHTOWER_CLEANUP=true         # remove old images
-      - WATCHTOWER_POLL_INTERVAL=3600   # check every hour
-      - WATCHTOWER_LABEL_ENABLE=true    # optional fine-grained control
+      - WATCHTOWER_CLEANUP=true
+      - WATCHTOWER_POLL_INTERVAL=3600
+      - WATCHTOWER_LABEL_ENABLE=true

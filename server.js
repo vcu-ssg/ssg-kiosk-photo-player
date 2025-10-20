@@ -1,20 +1,15 @@
 import express from "express";
 import path from "path";
-import { fileURLToPath } from "url";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// serve everything in /public
-app.use(express.static(path.join(__dirname, "public")));
+// Serve static files from public (HTML/JS/CSS)
+app.use(express.static(path.join(process.cwd(), "public")));
 
-app.get("/api/health", (req, res) => {
-  res.json({ status: "ok", message: "Photo kiosk backend is running." });
-});
+// Serve photos from /photos
+app.use("/photos", express.static(path.join(process.cwd(), "photos")));
 
 app.listen(PORT, () => {
-  console.log(`✅ Server running on http://localhost:${PORT}`);
+  console.log(`✅ Photo kiosk running at http://localhost:${PORT}`);
 });

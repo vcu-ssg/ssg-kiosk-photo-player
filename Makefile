@@ -18,6 +18,7 @@ IMAGE := $(APP_NAME):latest
 
 # Detect if docker compose v2 (modern syntax)
 DOCKER_COMPOSE := docker compose
+DOCKER_USER := jleonard99
 
 # -----------------------------
 # Primary Targets
@@ -90,7 +91,7 @@ prune:
 # Kiosk target (launch Chromium)
 # -----------------------------
 
-kiosk:
+kiosk: up
 	@echo "🚀 Launching Chromium in kiosk mode at http://localhost:$(PORT)"
 	@chromium-browser --kiosk --noerrdialogs --disable-infobars \
 		--check-for-update-interval=31536000 \
@@ -120,3 +121,16 @@ uninstall-autostart:
 	else \
 		echo "⚠️  No autostart file found at $(AUTOSTART_FILE)."; \
 	fi
+
+# -------------------------------------------
+# Push image to Docker Hub
+# -------------------------------------------
+
+push:
+	@if [ -z "$(DOCKER_USER)" ]; then \
+		echo "❌ Please set DOCKER_USER, e.g. make push DOCKER_USER=johnleonard"; \
+		exit 1; \
+	fi
+	@echo "🚀 Pushing $(IMAGE) to Docker Hub as $(DOCKER_USER)/$(IMAGE)"
+	docker tag $(IMAGE) $(DOCKER_USER)/$(IMAGE)
+	docker push $(DOCKER_USER)/$(IMAGE)
