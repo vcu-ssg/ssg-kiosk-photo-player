@@ -25,6 +25,19 @@ slides:
     effect: kenburns-pan-right
     duration: 5
 
+  - id: pause_2
+    file: ""
+    title: ""
+    effect: none
+    duration: 2    
+
+  - id: pause_10
+    file: ""
+    title: ""
+    effect: none
+    duration: 10   
+
+
 # --- Default playlist shared by all kiosks ---
 default:
   include: [kitchen_before, kitchen_during, bath_during, bath_after ]
@@ -33,7 +46,7 @@ default:
 
 clients:
   Scrollsaw:
-    include: [kitchen_before, kitchen_during, bath_during, bath_after ]
+    include: [kitchen_before, kitchen_during, pause_2, bath_during, bath_after, pause_10 ]
 
   kiosk1.local:
     include: [kitchen_before, kitchen_during, bath_during, bath_after ]

@@ -66,7 +66,8 @@ function buildShow(clientId) {
       file: s.file,
       effect: s.effect || "fade",
       duration: s.duration || 5,
-      url: `/photos/${s.file}`,
+      url: s.file ? `/photos/${s.file}` : null,
+
     }));
 
   return playlist;

@@ -17,6 +17,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      background: black;
     }
     .slide {
       position: absolute;
@@ -28,6 +29,7 @@
       justify-content: center;
       opacity: 0;
       transition: opacity 1s ease-in-out;
+      background: black;
     }
     .slide img {
       max-width: 100%;
@@ -51,83 +53,50 @@
   <div id="slideshow"></div>
 
   <script>
-    // --- Fetch slideshow metadata from server ---
     async function loadShow() {
       const res = await fetch("/api/slideshow");
       const data = await res.json();
       return data.slides || [];
     }
 
-    // --- Apply animation based on YAML "effect" and "duration" ---
     function applyEffect(el, effect, duration) {
       const durMs = (duration || 5) * 1000;
       switch (effect) {
         case "kenburns-zoom-in":
-          el.animate(
-            [{ transform: "scale(1.0)" }, { transform: "scale(1.15)" }],
-            { duration: durMs, fill: "forwards", easing: "ease-in-out" }
-          );
+          el.animate([{ transform: "scale(1.0)" }, { transform: "scale(1.15)" }],
+            { duration: durMs, fill: "forwards", easing: "ease-in-out" });
           break;
-
         case "kenburns-zoom-out":
-          el.animate(
-            [{ transform: "scale(1.15)" }, { transform: "scale(1.0)" }],
-            { duration: durMs, fill: "forwards", easing: "ease-in-out" }
-          );
+          el.animate([{ transform: "scale(1.15)" }, { transform: "scale(1.0)" }],
+            { duration: durMs, fill: "forwards", easing: "ease-in-out" });
           break;
-
         case "kenburns-pan-left":
-          el.animate(
-            [
-              { transform: "scale(1.1) translateX(5%)" },
-              { transform: "scale(1.1) translateX(-5%)" }
-            ],
-            { duration: durMs, fill: "forwards", easing: "ease-in-out" }
-          );
+          el.animate([{ transform: "scale(1.1) translateX(5%)" },
+                      { transform: "scale(1.1) translateX(-5%)" }],
+            { duration: durMs, fill: "forwards", easing: "ease-in-out" });
           break;
-
         case "kenburns-pan-right":
-          el.animate(
-            [
-              { transform: "scale(1.1) translateX(-5%)" },
-              { transform: "scale(1.1) translateX(5%)" }
-            ],
-            { duration: durMs, fill: "forwards", easing: "ease-in-out" }
-          );
+          el.animate([{ transform: "scale(1.1) translateX(-5%)" },
+                      { transform: "scale(1.1) translateX(5%)" }],
+            { duration: durMs, fill: "forwards", easing: "ease-in-out" });
           break;
-
         case "slide-left":
-          el.animate(
-            [
-              { transform: "translateX(100%)", opacity: 0 },
-              { transform: "translateX(0)", opacity: 1 }
-            ],
-            { duration: 1000, fill: "forwards", easing: "ease-out" }
-          );
+          el.animate([{ transform: "translateX(100%)", opacity: 0 },
+                      { transform: "translateX(0)", opacity: 1 }],
+            { duration: 1000, fill: "forwards", easing: "ease-out" });
           break;
-
         case "slide-right":
-          el.animate(
-            [
-              { transform: "translateX(-100%)", opacity: 0 },
-              { transform: "translateX(0)", opacity: 1 }
-            ],
-            { duration: 1000, fill: "forwards", easing: "ease-out" }
-          );
+          el.animate([{ transform: "translateX(-100%)", opacity: 0 },
+                      { transform: "translateX(0)", opacity: 1 }],
+            { duration: 1000, fill: "forwards", easing: "ease-out" });
           break;
-
         case "fade":
-          // handled automatically by CSS opacity transitions
-          break;
-
         case "none":
         default:
-          // no animation at all
-          break;
+          break; // handled by CSS opacity
       }
     }
 
-    // --- Main slideshow logic ---
     async function start() {
       const slides = await loadShow();
       const box = document.getElementById("slideshow");
@@ -145,12 +114,25 @@
       box.appendChild(slideA);
       box.appendChild(slideB);
 
-      // initialize first slide
-      slideA.innerHTML = `
-        <img src="${slides[0].url}">
-        <div class="title">${slides[0].title || ""}</div>`;
-      slideA.style.opacity = 1;
-      slideB.style.opacity = 0;
+      function renderSlide(target, slide) {
+        // Clear old content
+        target.innerHTML = "";
+        target.style.background = "black";
+
+        if (slide.url) {
+          const img = document.createElement("img");
+          img.src = slide.url;
+          target.appendChild(img);
+          if (slide.title) {
+            const title = document.createElement("div");
+            title.className = "title";
+            title.textContent = slide.title;
+            target.appendChild(title);
+          }
+          applyEffect(img, slide.effect, slide.duration);
+        }
+        // blank slide: no image, just black background
+      }
 
       function showNext() {
         const s = slides[idx];
@@ -159,22 +141,18 @@
         const currentSlide = idx % 2 === 0 ? slideA : slideB;
 
         const next = slides[nextIdx];
-        nextSlide.innerHTML = `
-          <img src="${next.url}">
-          <div class="title">${next.title || ""}</div>`;
+        renderSlide(nextSlide, next);
+
         nextSlide.style.opacity = 1;
         currentSlide.style.opacity = 0;
-
-        const img = nextSlide.querySelector("img");
-        applyEffect(img, next.effect, next.duration);
 
         idx = nextIdx;
         setTimeout(showNext, (next.duration || 5) * 1000);
       }
 
-      // trigger first effect
-      const firstImg = slideA.querySelector("img");
-      applyEffect(firstImg, slides[0].effect, slides[0].duration);
+      // Show first slide
+      renderSlide(slideA, slides[0]);
+      slideA.style.opacity = 1;
       setTimeout(showNext, (slides[0].duration || 5) * 1000);
     }
 
