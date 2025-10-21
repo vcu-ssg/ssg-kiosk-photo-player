@@ -80,3 +80,6 @@ clients:
 
   kiosk1.local:
     include: [kitchen_before, kitchen_during, bath_during, bath_after ]
+
+  pi4office:
+    include: [kitchen_before, kitchen_during, kitchen_after, pause_2, powder_before, powder_during, powder_after, pause_2, bath_before, bath_during, bath_after, pause_2 ]
