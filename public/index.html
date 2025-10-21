@@ -1,25 +1,68 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Photo Kiosk</title>
-    <style>
-      body {
-        margin: 0;
-        background-color: black;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-      }
-      img {
-        max-width: 100%;
-        max-height: 100%;
-        object-fit: contain;
-      }
-    </style>
-  </head>
-  <body>
-    <img src="/photos/055A2836.JPG" alt="First photo" />
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Photo Kiosk</title>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      background-color: black;
+      overflow: hidden;
+    }
+    #slideshow {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: opacity 1s ease-in-out;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+  <div id="slideshow"></div>
+
+  <script>
+    async function loadPhotos() {
+      const response = await fetch("/api/photos");
+      const photos = await response.json();
+      return photos.map(p => `/photos/${p}`);
+    }
+
+    async function startSlideshow() {
+      const photoUrls = await loadPhotos();
+      const slideshow = document.getElementById("slideshow");
+
+      let index = 0;
+      const img1 = document.createElement("img");
+      const img2 = document.createElement("img");
+      slideshow.appendChild(img1);
+      slideshow.appendChild(img2);
+
+      img1.src = photoUrls[index];
+      img1.style.opacity = 1;
+      img2.style.opacity = 0;
+
+      setInterval(() => {
+        const nextIndex = (index + 1) % photoUrls.length;
+        const nextImg = index % 2 === 0 ? img2 : img1;
+        const currentImg = index % 2 === 0 ? img1 : img2;
+
+        nextImg.src = photoUrls[nextIndex];
+        nextImg.style.opacity = 1;
+        currentImg.style.opacity = 0;
+        index = nextIndex;
+      }, 5000); // 5 seconds per photo
+    }
+
+    startSlideshow();
+  </script>
+</body>
 </html>
