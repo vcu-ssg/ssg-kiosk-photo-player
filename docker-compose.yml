@@ -5,15 +5,18 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: photo-kiosk
+    hostname: ${HOSTNAME:-${HOST:-${COMPUTERNAME:-default-client}}}
     restart: unless-stopped
     ports:
       - "3000:3000"
-    environment:
-      - NODE_ENV=production
     volumes:
       - ./photos:/app/photos
       - ./public:/app/public
-
+      - ./logs:/app/logs   # ✅ persist logs to host
+    environment:
+      - NODE_ENV=production
+      # 🔹 portable fallback chain
+      - CLIENT_ID=${HOSTNAME:-${HOST:-${COMPUTERNAME:-default-client}}}
   watchtower:
     image: containrrr/watchtower
     container_name: watchtower
@@ -25,3 +28,4 @@ services:
       - WATCHTOWER_CLEANUP=true
       - WATCHTOWER_POLL_INTERVAL=3600
       - WATCHTOWER_LABEL_ENABLE=true
+      

@@ -1,12 +1,12 @@
 {
   "name": "ssg-kiosk-photo-player",
   "version": "1.0.0",
-  "type" : "module",
+  "type": "module",
   "description": "Simple kiosk player",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start" : "node server.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/vcu-ssg/ssg-kiosk-photo-player#readme",
   "dependencies": {
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "js-yaml": "^4.1.0",
+    "minimatch": "^10.0.3"
   }
 }

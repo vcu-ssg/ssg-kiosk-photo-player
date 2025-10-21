@@ -1,0 +1,20 @@
+default:
+  include:
+    - "*.JPG"
+    - "*.jpg"
+    - "*.png"
+
+clients:
+  kiosk1.local:
+    include:
+      - "2025-06-*.JPG"
+      - "055A28*.JPG"
+
+  kiosk2.local:
+    include:
+      - "20250819_*.jpg"
+      - "20251011_*.jpg"
+
+  Scrollsaw:
+    include:
+      - "20251011_084925.jpg"
