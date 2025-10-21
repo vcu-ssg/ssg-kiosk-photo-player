@@ -1,20 +1,39 @@
+# config.yaml
+slides:
+  # --- Master library of reusable slides ---
+  - id: kitchen_before
+    file: "055A2853.JPG"
+    title: "Kitchen before"
+    effect: kenburns-zoom-in
+    duration: 6
+
+  - id: kitchen_during
+    file: "2025-06-02_20-21-21EOS R3_4464.JPG"
+    title: "Kitchen during ..."
+    effect: kenburns-zoom-out
+    duration: 5
+
+  - id: bath_during
+    file: "055A2876.JPG"
+    title: "Bath during ..."
+    effect: kenburns-pan-left
+    duration: 7
+
+  - id: bath_after
+    file: "2025-08-15_17-12-05EOS R3_4754.JPG"
+    title: "Bath after ..."
+    effect: kenburns-pan-right
+    duration: 5
+
+# --- Default playlist shared by all kiosks ---
 default:
-  include:
-    - "*.JPG"
-    - "*.jpg"
-    - "*.png"
+  include: [kitchen_before, kitchen_during, bath_during, bath_after ]
+
+# --- Client-specific playlists (subsets or overrides) ---
 
 clients:
-  kiosk1.local:
-    include:
-      - "2025-06-*.JPG"
-      - "055A28*.JPG"
-
-  kiosk2.local:
-    include:
-      - "20250819_*.jpg"
-      - "20251011_*.jpg"
-
   Scrollsaw:
-    include:
-      - "20251011_084925.jpg"
+    include: [kitchen_before, kitchen_during, bath_during, bath_after ]
+
+  kiosk1.local:
+    include: [kitchen_before, kitchen_during, bath_during, bath_after ]

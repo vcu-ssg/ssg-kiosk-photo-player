@@ -13,16 +13,37 @@
     #slideshow {
       width: 100%;
       height: 100%;
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
     }
-    img {
+    .slide {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .slide img {
       max-width: 100%;
       max-height: 100%;
       object-fit: contain;
-      transition: opacity 1s ease-in-out;
+      transform-origin: center center;
+    }
+    .title {
       position: absolute;
+      bottom: 1.5rem;
+      left: 0; right: 0;
+      text-align: center;
+      color: white;
+      font-size: 2rem;
+      text-shadow: 0 0 10px black;
+      pointer-events: none;
     }
   </style>
 </head>
@@ -30,39 +51,134 @@
   <div id="slideshow"></div>
 
   <script>
-    async function loadPhotos() {
-      const response = await fetch("/api/photos");
-      const photos = await response.json();
-      return photos.map(p => `/photos/${p}`);
+    // --- Fetch slideshow metadata from server ---
+    async function loadShow() {
+      const res = await fetch("/api/slideshow");
+      const data = await res.json();
+      return data.slides || [];
     }
 
-    async function startSlideshow() {
-      const photoUrls = await loadPhotos();
-      const slideshow = document.getElementById("slideshow");
+    // --- Apply animation based on YAML "effect" and "duration" ---
+    function applyEffect(el, effect, duration) {
+      const durMs = (duration || 5) * 1000;
+      switch (effect) {
+        case "kenburns-zoom-in":
+          el.animate(
+            [{ transform: "scale(1.0)" }, { transform: "scale(1.15)" }],
+            { duration: durMs, fill: "forwards", easing: "ease-in-out" }
+          );
+          break;
 
-      let index = 0;
-      const img1 = document.createElement("img");
-      const img2 = document.createElement("img");
-      slideshow.appendChild(img1);
-      slideshow.appendChild(img2);
+        case "kenburns-zoom-out":
+          el.animate(
+            [{ transform: "scale(1.15)" }, { transform: "scale(1.0)" }],
+            { duration: durMs, fill: "forwards", easing: "ease-in-out" }
+          );
+          break;
 
-      img1.src = photoUrls[index];
-      img1.style.opacity = 1;
-      img2.style.opacity = 0;
+        case "kenburns-pan-left":
+          el.animate(
+            [
+              { transform: "scale(1.1) translateX(5%)" },
+              { transform: "scale(1.1) translateX(-5%)" }
+            ],
+            { duration: durMs, fill: "forwards", easing: "ease-in-out" }
+          );
+          break;
 
-      setInterval(() => {
-        const nextIndex = (index + 1) % photoUrls.length;
-        const nextImg = index % 2 === 0 ? img2 : img1;
-        const currentImg = index % 2 === 0 ? img1 : img2;
+        case "kenburns-pan-right":
+          el.animate(
+            [
+              { transform: "scale(1.1) translateX(-5%)" },
+              { transform: "scale(1.1) translateX(5%)" }
+            ],
+            { duration: durMs, fill: "forwards", easing: "ease-in-out" }
+          );
+          break;
 
-        nextImg.src = photoUrls[nextIndex];
-        nextImg.style.opacity = 1;
-        currentImg.style.opacity = 0;
-        index = nextIndex;
-      }, 5000); // 5 seconds per photo
+        case "slide-left":
+          el.animate(
+            [
+              { transform: "translateX(100%)", opacity: 0 },
+              { transform: "translateX(0)", opacity: 1 }
+            ],
+            { duration: 1000, fill: "forwards", easing: "ease-out" }
+          );
+          break;
+
+        case "slide-right":
+          el.animate(
+            [
+              { transform: "translateX(-100%)", opacity: 0 },
+              { transform: "translateX(0)", opacity: 1 }
+            ],
+            { duration: 1000, fill: "forwards", easing: "ease-out" }
+          );
+          break;
+
+        case "fade":
+          // handled automatically by CSS opacity transitions
+          break;
+
+        case "none":
+        default:
+          // no animation at all
+          break;
+      }
     }
 
-    startSlideshow();
+    // --- Main slideshow logic ---
+    async function start() {
+      const slides = await loadShow();
+      const box = document.getElementById("slideshow");
+
+      if (!slides.length) {
+        box.innerHTML = "<h1 style='color:white;'>No slides found</h1>";
+        return;
+      }
+
+      let idx = 0;
+      const slideA = document.createElement("div");
+      const slideB = document.createElement("div");
+      slideA.className = "slide";
+      slideB.className = "slide";
+      box.appendChild(slideA);
+      box.appendChild(slideB);
+
+      // initialize first slide
+      slideA.innerHTML = `
+        <img src="${slides[0].url}">
+        <div class="title">${slides[0].title || ""}</div>`;
+      slideA.style.opacity = 1;
+      slideB.style.opacity = 0;
+
+      function showNext() {
+        const s = slides[idx];
+        const nextIdx = (idx + 1) % slides.length;
+        const nextSlide = idx % 2 === 0 ? slideB : slideA;
+        const currentSlide = idx % 2 === 0 ? slideA : slideB;
+
+        const next = slides[nextIdx];
+        nextSlide.innerHTML = `
+          <img src="${next.url}">
+          <div class="title">${next.title || ""}</div>`;
+        nextSlide.style.opacity = 1;
+        currentSlide.style.opacity = 0;
+
+        const img = nextSlide.querySelector("img");
+        applyEffect(img, next.effect, next.duration);
+
+        idx = nextIdx;
+        setTimeout(showNext, (next.duration || 5) * 1000);
+      }
+
+      // trigger first effect
+      const firstImg = slideA.querySelector("img");
+      applyEffect(firstImg, slides[0].effect, slides[0].duration);
+      setTimeout(showNext, (slides[0].duration || 5) * 1000);
+    }
+
+    start();
   </script>
 </body>
 </html>
