@@ -11,7 +11,7 @@ slides:
     file: "kitchen_during/*.JPG"
     #title: "Kitchen during ..."
     effect: fade
-    duration: 2
+    duration: 3
 
   - id: kitchen_after
     file: "kitchen_after.JPG"
@@ -29,7 +29,7 @@ slides:
     file: "bath_during/*.JPG"
     #title: "Bath during ..."
     effect: fade
-    duration: 2
+    duration: 3
 
   - id: bath_after
     file: "bath_after.JPG"
@@ -47,7 +47,7 @@ slides:
     file: "powder_during/*.JPG"
     #title: "Powder room during ..."
     effect: fade
-    duration: 2
+    duration: 3
 
   - id: powder_after
     file: "powder_after.JPG"

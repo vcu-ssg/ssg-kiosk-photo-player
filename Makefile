@@ -166,3 +166,25 @@ run-production:
 	@echo "🚀 Running $(APP_NAME) in production mode with Watchtower profile..."
 	$(DOCKER_COMPOSE) --profile production up -d
 	@echo "✅ $(APP_NAME) running under 'production' profile (Watchtower enabled)"
+
+
+# -------------------------------------------
+# Multi-arch Build and Push (Buildx)
+# -------------------------------------------
+
+buildx-create:
+	@echo "🐳 Ensuring Docker Buildx builder exists..."
+	@docker buildx inspect multiarch >/dev/null 2>&1 || docker buildx create --use --name multiarch
+	@docker buildx use multiarch
+
+buildx-push: buildx-create
+	@if [ -z "$(DOCKER_USER)" ]; then \
+		echo "⚠️  Please set DOCKER_USER, e.g. make buildx-push DOCKER_USER=jleonard99"; \
+		exit 1; \
+	fi
+	@echo "🚀 Building and pushing multi-architecture image for amd64 + arm64..."
+	docker buildx build \
+		--platform linux/amd64,linux/arm64/v8 \
+		-t $(DOCKER_USER)/$(APP_NAME):latest \
+		--push .
+	@echo "✅ Multi-arch image pushed to Docker Hub: $(DOCKER_USER)/$(APP_NAME):latest"
