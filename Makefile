@@ -102,14 +102,14 @@ kiosk: up
 # -----------------------------
 
 autostart:
-	@echo "🛠️  Configuring Raspberry Pi autostart..."
+	@echo "🧩 Configuring Raspberry Pi autostart (production mode)..."
 	@mkdir -p $(dir $(AUTOSTART_FILE))
-	@if ! grep -q "ssg-kiosk-photo-player" $(AUTOSTART_FILE) 2>/dev/null; then \
-		echo "@bash -c 'cd $(HOME)/projects/$(APP_NAME) && make up'" >> $(AUTOSTART_FILE); \
+	@if ! grep -q "$(APP_NAME)" $(AUTOSTART_FILE) 2>/dev/null; then \
+		echo "@bash -c 'cd $(HOME)/projects/$(APP_NAME) && make pull && make run-production'" >> $(AUTOSTART_FILE); \
 		echo "@chromium-browser --kiosk --noerrdialogs --disable-infobars --check-for-update-interval=31536000 --incognito --no-first-run http://localhost:$(PORT)" >> $(AUTOSTART_FILE); \
-		echo "✅ Added kiosk autostart to LXDE."; \
+		echo "✅ Added kiosk autostart entry for production mode."; \
 	else \
-		echo "ℹ️  Autostart already configured."; \
+		echo "⚠️  Autostart already configured."; \
 	fi
 
 uninstall-autostart:
@@ -134,3 +134,35 @@ push:
 	@echo "🚀 Pushing $(IMAGE) to Docker Hub as $(DOCKER_USER)/$(IMAGE)"
 	docker tag $(IMAGE) $(DOCKER_USER)/$(IMAGE)
 	docker push $(DOCKER_USER)/$(IMAGE)
+
+
+# -------------------------------------------
+# Deploy from Docker Hub on Raspberry Pi
+# -------------------------------------------
+
+IMAGE_REMOTE := $(DOCKER_USER)/$(APP_NAME):latest
+
+pull:
+	@echo "🐋 Pulling image from Docker Hub: $(IMAGE_REMOTE)"
+	docker pull $(IMAGE_REMOTE)
+
+run:
+	@echo "🚀 Running $(APP_NAME) on Raspberry Pi (local mode)..."
+	docker stop $(CONTAINER) 2>/dev/null || true
+	docker rm $(CONTAINER) 2>/dev/null || true
+	docker run -d \
+		--name $(CONTAINER) \
+		--restart unless-stopped \
+		-p $(PORT):3000 \
+		-v $(PWD)/photos:/app/photos \
+		-v $(PWD)/public:/app/public \
+		-v $(PWD)/logs:/app/logs \
+		-e NODE_ENV=production \
+		-e CLIENT_ID=$$(hostname) \
+		$(IMAGE_REMOTE)
+	@echo "✅ $(APP_NAME) running locally at http://localhost:$(PORT)"
+
+run-production:
+	@echo "🚀 Running $(APP_NAME) in production mode with Watchtower profile..."
+	$(DOCKER_COMPOSE) --profile production up -d
+	@echo "✅ $(APP_NAME) running under 'production' profile (Watchtower enabled)"
