@@ -3,55 +3,55 @@ slides:
   # --- Master library of reusable slides ---
   - id: kitchen_before
     file: "kitchen_before.JPG"
-    title: "Kitchen before"
+    #title: "Kitchen before"
     effect: kenburns-zoom-in
     duration: 10
 
   - id: kitchen_during
     file: "kitchen_during/*.JPG"
-    title: "Kitchen during ..."
+    #title: "Kitchen during ..."
     effect: fade
-    duration: 3
+    duration: 2
 
   - id: kitchen_after
     file: "kitchen_after.JPG"
-    title: "Kitchen after"
+    #title: "Kitchen after"
     effect: kenburns-zoom-out
     duration: 10
 
   - id: bath_before
     file: "bath_before.JPG"
-    title: "Bath before "
+    #title: "Bath before "
     effect: kenburns-zoom-in
     duration: 10
 
   - id: bath_during
     file: "bath_during/*.JPG"
-    title: "Bath during ..."
+    #title: "Bath during ..."
     effect: fade
-    duration: 3
+    duration: 2
 
   - id: bath_after
     file: "bath_after.JPG"
-    title: "Bath after ..."
+    #title: "Bath after ..."
     effect: kenburns-zoom-out
     duration: 10
 
   - id: powder_before
     file: "powder_before.JPG"
-    title: "Powder room before "
+    #title: "Powder room before "
     effect: kenburns-zoom-in
     duration: 10
 
   - id: powder_during
     file: "powder_during/*.JPG"
-    title: "Powder room during ..."
+    #title: "Powder room during ..."
     effect: fade
-    duration: 3
+    duration: 2
 
-  - id: poweder_after
+  - id: powder_after
     file: "powder_after.JPG"
-    title: "Powder room after ..."
+    #title: "Powder room after ..."
     effect: kenburns-zoom-out
     duration: 10
 
