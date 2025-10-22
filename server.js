@@ -74,12 +74,14 @@ async function ensureCached(filePath, maxWidth = 1920, maxHeight = 1080) {
       const metadata = await image.metadata();
       if (metadata.width > maxWidth || metadata.height > maxHeight) {
         await image
+          .rotate(0) // disable EXIF rotation
           .resize({
             width: Math.min(metadata.width, maxWidth),
             height: Math.min(metadata.height, maxHeight),
             fit: "inside",
             withoutEnlargement: true,
           })
+          .withMetadata({ orientation: 1 }) // normalize metadata
           .toFile(cachedPath);
         log(`🖼️ Cached resized ${relPath}`);
       } else {

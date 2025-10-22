@@ -186,3 +186,63 @@
 2025-10-22T12:39:12.206Z | 🖼️ Still [bath_after]: duration=10s
 2025-10-22T12:39:12.206Z | 🟦 Blank [pause_2]: duration=2s
 2025-10-22T12:39:12.206Z | ✅ Built slideshow for Scrollsaw: 12 slides total
+2025-10-22T12:44:27.584Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-22T12:44:31.087Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-22T12:44:31.198Z | 🖼️ Cached resized kitchen_before.JPG
+2025-10-22T12:44:31.198Z | 🖼️ Still [kitchen_before]: duration=10s
+2025-10-22T12:44:31.303Z | 🖼️ Cached resized kitchen_during/055A2804.JPG
+2025-10-22T12:44:31.400Z | 🖼️ Cached resized kitchen_during/055A2806.JPG
+2025-10-22T12:44:31.505Z | 🖼️ Cached resized kitchen_during/055A2869.JPG
+2025-10-22T12:44:31.611Z | 🖼️ Cached resized kitchen_during/055A2924.JPG
+2025-10-22T12:44:31.711Z | 🖼️ Cached resized kitchen_during/055A2929.JPG
+2025-10-22T12:44:31.807Z | 🖼️ Cached resized kitchen_during/055A2967.JPG
+2025-10-22T12:44:31.911Z | 🖼️ Cached resized kitchen_during/2025-06-02_20-14-22EOS R3_4438.JPG
+2025-10-22T12:44:32.011Z | 🖼️ Cached resized kitchen_during/2025-06-02_20-21-21EOS R3_4464.JPG
+2025-10-22T12:44:32.107Z | 🖼️ Cached resized kitchen_during/2025-06-02_20-21-45EOS R3_4474.JPG
+2025-10-22T12:44:32.107Z | 🎞️ Slide [kitchen_during]: 9 frames @ 10fps, repeat=1, duration=3.0s
+2025-10-22T12:44:32.199Z | 🖼️ Cached resized kitchen_after.JPG
+2025-10-22T12:44:32.200Z | 🖼️ Still [kitchen_after]: duration=10s
+2025-10-22T12:44:32.200Z | 🟦 Blank [pause_2]: duration=2s
+2025-10-22T12:44:32.287Z | 🖼️ Cached resized powder_before.JPG
+2025-10-22T12:44:32.287Z | 🖼️ Still [powder_before]: duration=10s
+2025-10-22T12:44:32.385Z | 🖼️ Cached resized powder_during/055A2884.JPG
+2025-10-22T12:44:32.486Z | 🖼️ Cached resized powder_during/055A2980.JPG
+2025-10-22T12:44:32.589Z | 🖼️ Cached resized powder_during/055A2986.JPG
+2025-10-22T12:44:32.690Z | 🖼️ Cached resized powder_during/2025-06-25_19-39-58EOS R3_4672.JPG
+2025-10-22T12:44:32.784Z | 🖼️ Cached resized powder_during/2025-06-25_19-40-05EOS R3_4673.JPG
+2025-10-22T12:44:32.883Z | 🖼️ Cached resized powder_during/2025-07-30_17-06-01EOS R3_4727.JPG
+2025-10-22T12:44:32.883Z | 🎞️ Slide [powder_during]: 6 frames @ 10fps, repeat=1, duration=3.0s
+2025-10-22T12:44:33.025Z | 🖼️ Cached resized powder_after.JPG
+2025-10-22T12:44:33.025Z | 🖼️ Still [powder_after]: duration=10s
+2025-10-22T12:44:33.025Z | 🟦 Blank [pause_2]: duration=2s
+2025-10-22T12:44:33.128Z | 🖼️ Cached resized bath_before.JPG
+2025-10-22T12:44:33.128Z | 🖼️ Still [bath_before]: duration=10s
+2025-10-22T12:44:33.233Z | 🖼️ Cached resized bath_during/055A2876.JPG
+2025-10-22T12:44:33.337Z | 🖼️ Cached resized bath_during/055A2878.JPG
+2025-10-22T12:44:33.442Z | 🖼️ Cached resized bath_during/055A2899.JPG
+2025-10-22T12:44:33.544Z | 🖼️ Cached resized bath_during/055A2902.JPG
+2025-10-22T12:44:33.639Z | 🖼️ Cached resized bath_during/055A2947.JPG
+2025-10-22T12:44:33.734Z | 🖼️ Cached resized bath_during/055A3013.JPG
+2025-10-22T12:44:33.832Z | 🖼️ Cached resized bath_during/055A3076.JPG
+2025-10-22T12:44:33.921Z | 🖼️ Cached resized bath_during/055A3082.JPG
+2025-10-22T12:44:34.016Z | 🖼️ Cached resized bath_during/2025-06-02_20-15-55EOS R3_4447.JPG
+2025-10-22T12:44:34.110Z | 🖼️ Cached resized bath_during/2025-06-25_19-35-18EOS R3_4664.JPG
+2025-10-22T12:44:34.110Z | 🎞️ Slide [bath_during]: 10 frames @ 10fps, repeat=1, duration=3.0s
+2025-10-22T12:44:34.200Z | 🖼️ Cached resized bath_after.JPG
+2025-10-22T12:44:34.200Z | 🖼️ Still [bath_after]: duration=10s
+2025-10-22T12:44:34.200Z | 🟦 Blank [pause_2]: duration=2s
+2025-10-22T12:44:34.200Z | ✅ Built slideshow for Scrollsaw: 12 slides total
+2025-10-22T12:45:14.171Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-22T12:45:14.171Z | 🖼️ Still [kitchen_before]: duration=10s
+2025-10-22T12:45:14.173Z | 🎞️ Slide [kitchen_during]: 9 frames @ 10fps, repeat=1, duration=3.0s
+2025-10-22T12:45:14.173Z | 🖼️ Still [kitchen_after]: duration=10s
+2025-10-22T12:45:14.173Z | 🟦 Blank [pause_2]: duration=2s
+2025-10-22T12:45:14.173Z | 🖼️ Still [powder_before]: duration=10s
+2025-10-22T12:45:14.174Z | 🎞️ Slide [powder_during]: 6 frames @ 10fps, repeat=1, duration=3.0s
+2025-10-22T12:45:14.174Z | 🖼️ Still [powder_after]: duration=10s
+2025-10-22T12:45:14.174Z | 🟦 Blank [pause_2]: duration=2s
+2025-10-22T12:45:14.174Z | 🖼️ Still [bath_before]: duration=10s
+2025-10-22T12:45:14.175Z | 🎞️ Slide [bath_during]: 10 frames @ 10fps, repeat=1, duration=3.0s
+2025-10-22T12:45:14.175Z | 🖼️ Still [bath_after]: duration=10s
+2025-10-22T12:45:14.175Z | 🟦 Blank [pause_2]: duration=2s
+2025-10-22T12:45:14.175Z | ✅ Built slideshow for Scrollsaw: 12 slides total
