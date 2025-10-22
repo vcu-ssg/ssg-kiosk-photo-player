@@ -35,14 +35,14 @@ async function ensureCached(filePath) {
 
     if (meta.width > MAX_WIDTH || meta.height > MAX_HEIGHT) {
       await img
-        .rotate(0) // prevent EXIF auto-rotation
+        .rotate() // prevent EXIF auto-rotation
         .resize({
           width: Math.min(meta.width, MAX_WIDTH),
           height: Math.min(meta.height, MAX_HEIGHT),
           fit: "inside",
           withoutEnlargement: true,
         })
-        .withMetadata({ orientation: 1 }) // clear EXIF orientation tag
+        .withMetadata() // clear EXIF orientation tag
         .toFile(dest);
       log(`Resized ${rel}`);
     } else {

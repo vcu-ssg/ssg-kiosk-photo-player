@@ -246,3 +246,76 @@
 2025-10-22T12:45:14.175Z | 🖼️ Still [bath_after]: duration=10s
 2025-10-22T12:45:14.175Z | 🟦 Blank [pause_2]: duration=2s
 2025-10-22T12:45:14.175Z | ✅ Built slideshow for Scrollsaw: 12 slides total
+2025-10-22T13:42:32.244Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-22T13:43:03.240Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-22T13:43:25.264Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-22T13:44:37.273Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-22T13:45:43.408Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-22T14:37:30.385Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-22T14:42:28.137Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-22T14:47:12.125Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-22T14:49:00.557Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-22T14:50:55.783Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-22T14:51:51.536Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-22T14:53:46.911Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-22T14:55:56.250Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-22T14:56:01.786Z | client=EGR-JL-DSK0-SRV | reqHost=localhost | ip=::1
+2025-10-22T14:56:01.897Z | 🖼️ Cached resized kitchen_before.JPG
+2025-10-22T14:56:01.897Z | 🖼️ Still [kitchen_before]: duration=10s
+2025-10-22T14:56:01.996Z | 🖼️ Cached resized kitchen_during/055A2804.JPG
+2025-10-22T14:56:02.092Z | 🖼️ Cached resized kitchen_during/055A2806.JPG
+2025-10-22T14:56:02.193Z | 🖼️ Cached resized kitchen_during/055A2869.JPG
+2025-10-22T14:56:02.288Z | 🖼️ Cached resized kitchen_during/055A2924.JPG
+2025-10-22T14:56:02.382Z | 🖼️ Cached resized kitchen_during/055A2929.JPG
+2025-10-22T14:56:02.473Z | 🖼️ Cached resized kitchen_during/055A2967.JPG
+2025-10-22T14:56:02.568Z | 🖼️ Cached resized kitchen_during/2025-06-02_20-14-22EOS R3_4438.JPG
+2025-10-22T14:56:02.656Z | 🖼️ Cached resized kitchen_during/2025-06-02_20-21-21EOS R3_4464.JPG
+2025-10-22T14:56:02.750Z | 🖼️ Cached resized kitchen_during/2025-06-02_20-21-45EOS R3_4474.JPG
+2025-10-22T14:56:02.750Z | 🎞️ Slide [kitchen_during]: 9 frames @ 10fps, repeat=1, duration=3.0s
+2025-10-22T14:56:02.842Z | 🖼️ Cached resized kitchen_after.JPG
+2025-10-22T14:56:02.842Z | 🖼️ Still [kitchen_after]: duration=10s
+2025-10-22T14:56:02.842Z | 🟦 Blank [pause_2]: duration=2s
+2025-10-22T14:56:02.926Z | 🖼️ Cached resized powder_before.JPG
+2025-10-22T14:56:02.926Z | 🖼️ Still [powder_before]: duration=10s
+2025-10-22T14:56:03.018Z | 🖼️ Cached resized powder_during/055A2884.JPG
+2025-10-22T14:56:03.113Z | 🖼️ Cached resized powder_during/055A2980.JPG
+2025-10-22T14:56:03.207Z | 🖼️ Cached resized powder_during/055A2986.JPG
+2025-10-22T14:56:03.297Z | 🖼️ Cached resized powder_during/2025-06-25_19-39-58EOS R3_4672.JPG
+2025-10-22T14:56:03.388Z | 🖼️ Cached resized powder_during/2025-06-25_19-40-05EOS R3_4673.JPG
+2025-10-22T14:56:03.481Z | 🖼️ Cached resized powder_during/2025-07-30_17-06-01EOS R3_4727.JPG
+2025-10-22T14:56:03.482Z | 🎞️ Slide [powder_during]: 6 frames @ 10fps, repeat=1, duration=3.0s
+2025-10-22T14:56:03.618Z | 🖼️ Cached resized powder_after.JPG
+2025-10-22T14:56:03.618Z | 🖼️ Still [powder_after]: duration=10s
+2025-10-22T14:56:03.618Z | 🟦 Blank [pause_2]: duration=2s
+2025-10-22T14:56:03.712Z | 🖼️ Cached resized bath_before.JPG
+2025-10-22T14:56:03.712Z | 🖼️ Still [bath_before]: duration=10s
+2025-10-22T14:56:03.810Z | 🖼️ Cached resized bath_during/055A2876.JPG
+2025-10-22T14:56:03.906Z | 🖼️ Cached resized bath_during/055A2878.JPG
+2025-10-22T14:56:04.000Z | 🖼️ Cached resized bath_during/055A2899.JPG
+2025-10-22T14:56:04.099Z | 🖼️ Cached resized bath_during/055A2902.JPG
+2025-10-22T14:56:04.189Z | 🖼️ Cached resized bath_during/055A2947.JPG
+2025-10-22T14:56:04.288Z | 🖼️ Cached resized bath_during/055A3013.JPG
+2025-10-22T14:56:04.376Z | 🖼️ Cached resized bath_during/055A3076.JPG
+2025-10-22T14:56:04.465Z | 🖼️ Cached resized bath_during/055A3082.JPG
+2025-10-22T14:56:04.553Z | 🖼️ Cached resized bath_during/2025-06-02_20-15-55EOS R3_4447.JPG
+2025-10-22T14:56:04.639Z | 🖼️ Cached resized bath_during/2025-06-25_19-35-18EOS R3_4664.JPG
+2025-10-22T14:56:04.639Z | 🎞️ Slide [bath_during]: 10 frames @ 10fps, repeat=1, duration=3.0s
+2025-10-22T14:56:04.728Z | 🖼️ Cached resized bath_after.JPG
+2025-10-22T14:56:04.728Z | 🖼️ Still [bath_after]: duration=10s
+2025-10-22T14:56:04.728Z | 🟦 Blank [pause_2]: duration=2s
+2025-10-22T14:56:04.728Z | ✅ Built slideshow for EGR-JL-DSK0-SRV: 12 slides total
+2025-10-22T15:02:53.520Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-22T15:02:58.283Z | client=EGR-JL-DSK0-SRV | reqHost=localhost | ip=::1
+2025-10-22T15:02:58.350Z | 🖼️ Cached resized powder_before.JPG
+2025-10-22T15:02:58.350Z | 🖼️ Still [powder_before]: duration=10s
+2025-10-22T15:02:58.446Z | 🖼️ Cached resized powder_during/055A2884.JPG
+2025-10-22T15:02:58.525Z | 🖼️ Cached resized powder_during/055A2980.JPG
+2025-10-22T15:02:58.602Z | 🖼️ Cached resized powder_during/055A2986.JPG
+2025-10-22T15:02:58.697Z | 🖼️ Cached resized powder_during/2025-06-25_19-39-58EOS R3_4672.JPG
+2025-10-22T15:02:58.789Z | 🖼️ Cached resized powder_during/2025-06-25_19-40-05EOS R3_4673.JPG
+2025-10-22T15:02:58.863Z | 🖼️ Cached resized powder_during/2025-07-30_17-06-01EOS R3_4727.JPG
+2025-10-22T15:02:58.863Z | 🎞️ Slide [powder_during]: 6 frames @ 10fps, repeat=1, duration=3.0s
+2025-10-22T15:02:58.914Z | 🖼️ Cached resized powder_after.JPG
+2025-10-22T15:02:58.914Z | 🖼️ Still [powder_after]: duration=10s
+2025-10-22T15:02:58.914Z | 🟦 Blank [pause_2]: duration=2s
+2025-10-22T15:02:58.914Z | ✅ Built slideshow for EGR-JL-DSK0-SRV: 4 slides total

@@ -74,14 +74,14 @@ async function ensureCached(filePath, maxWidth = 1920, maxHeight = 1080) {
       const metadata = await image.metadata();
       if (metadata.width > maxWidth || metadata.height > maxHeight) {
         await image
-          .rotate(0) // disable EXIF rotation
+          .rotate() // disable EXIF rotation
           .resize({
             width: Math.min(metadata.width, maxWidth),
             height: Math.min(metadata.height, maxHeight),
             fit: "inside",
             withoutEnlargement: true,
           })
-          .withMetadata({ orientation: 1 }) // normalize metadata
+          .withMetadata() // normalize metadata
           .toFile(cachedPath);
         log(`🖼️ Cached resized ${relPath}`);
       } else {
@@ -239,10 +239,24 @@ app.get("/api/slideshow", async (req, res) => {
   }
 });
 
-// --- Start server ---
-app.listen(PORT, () => {
+
+// --- Start server (Express 5 ESM compatible) ---
+try {
+  const server = await app.listen(PORT);
   console.log(`📸 Photo kiosk running at http://localhost:${PORT}`);
   console.log(`🧭 Client ID: ${CLIENT_ID}`);
   console.log(`🪵 Logging to: ${LOG_FILE}`);
   console.log(`💾 Cache directory: ${CACHE_DIR}`);
-});
+  console.log("✅ Express server started successfully and is now listening.");
+
+  // Optional graceful shutdown on Ctrl-C
+  process.on("SIGINT", async () => {
+    console.log("\n🧹 Shutting down gracefully...");
+    await server.close();
+    console.log("👋 Server closed. Goodbye!");
+    process.exit(0);
+  });
+} catch (err) {
+  console.error("❌ Failed to start server:", err);
+  process.exit(1);
+}
