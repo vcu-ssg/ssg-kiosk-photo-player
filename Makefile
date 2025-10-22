@@ -20,6 +20,9 @@ IMAGE := $(APP_NAME):latest
 DOCKER_COMPOSE := docker compose
 DOCKER_USER := jleonard99
 
+
+LOGO = @echo "📸"
+
 # -----------------------------
 # Primary Targets
 # -----------------------------
@@ -188,3 +191,18 @@ buildx-push: buildx-create
 		-t $(DOCKER_USER)/$(APP_NAME):latest \
 		--push .
 	@echo "✅ Multi-arch image pushed to Docker Hub: $(DOCKER_USER)/$(APP_NAME):latest"
+
+
+# -----------------------------
+# Cache Management
+# -----------------------------
+
+pre-cache:
+	@$(LOGO) "Generating pre-scaled image cache..."
+	@node scripts/precache.js
+	@$(LOGO) "✅ Pre-caching complete!"
+
+cache-clean:
+	@$(LOGO) "Removing cached images..."
+	@rm -rf cache/*
+	@$(LOGO) "🧹 Cache cleared."

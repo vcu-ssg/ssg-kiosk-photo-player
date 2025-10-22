@@ -5,47 +5,32 @@
   <title>Photo Kiosk</title>
   <style>
     html, body {
-      margin: 0;
-      height: 100%;
-      background-color: black;
-      overflow: hidden;
+      margin: 0; height: 100%;
+      background: black; overflow: hidden;
     }
     #slideshow {
-      width: 100%;
-      height: 100%;
+      width: 100%; height: 100%;
       position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: black;
+      display: flex; align-items: center; justify-content: center;
     }
     .slide {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-      background: black;
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; background: black;
+      transition: opacity 0.7s ease-in-out;
+      backface-visibility: hidden;
     }
     .slide img {
-      max-width: 100%;
-      max-height: 100%;
+      max-width: 100%; max-height: 100%;
       object-fit: contain;
       transform-origin: center center;
+      backface-visibility: hidden;
     }
     .title {
-      position: absolute;
-      bottom: 1.5rem;
-      left: 0; right: 0;
-      text-align: center;
-      color: white;
-      font-size: 2rem;
-      text-shadow: 0 0 10px black;
-      pointer-events: none;
+      position: absolute; bottom: 1.5rem; left: 0; right: 0;
+      text-align: center; color: white;
+      font-size: 2rem; text-shadow: 0 0 10px black;
     }
   </style>
 </head>
@@ -59,67 +44,163 @@
       return data.slides || [];
     }
 
+    const fadeMs = navigator.hardwareConcurrency <= 4 ? 400 : 800;
+
     function applyEffect(el, effect, duration) {
       const durMs = (duration || 5) * 1000;
+
       switch (effect) {
-        case "kenburns-zoom-in":
-          el.animate([{ transform: "scale(1.0)" }, { transform: "scale(1.15)" }],
-            { duration: durMs, fill: "forwards", easing: "ease-in-out" });
+        // ---- Frame-based animations ----
+        case "animate":
+        case "animate-smooth":
+          // handled separately by playFrames()
           break;
-        case "kenburns-zoom-out":
-          el.animate([{ transform: "scale(1.15)" }, { transform: "scale(1.0)" }],
-            { duration: durMs, fill: "forwards", easing: "ease-in-out" });
+
+        // ---- Simple transitions ----
+        case "cut":
+          el.style.transition = "opacity 120ms linear";
           break;
-        case "kenburns-pan-left":
-          el.animate([{ transform: "scale(1.1) translateX(5%)" },
-                      { transform: "scale(1.1) translateX(-5%)" }],
-            { duration: durMs, fill: "forwards", easing: "ease-in-out" });
-          break;
-        case "kenburns-pan-right":
-          el.animate([{ transform: "scale(1.1) translateX(-5%)" },
-                      { transform: "scale(1.1) translateX(5%)" }],
-            { duration: durMs, fill: "forwards", easing: "ease-in-out" });
-          break;
-        case "slide-left":
-          el.animate([{ transform: "translateX(100%)", opacity: 0 },
-                      { transform: "translateX(0)", opacity: 1 }],
-            { duration: 1000, fill: "forwards", easing: "ease-out" });
-          break;
-        case "slide-right":
-          el.animate([{ transform: "translateX(-100%)", opacity: 0 },
-                      { transform: "translateX(0)", opacity: 1 }],
-            { duration: 1000, fill: "forwards", easing: "ease-out" });
-          break;
+
         case "fade":
+          el.style.transition = `opacity ${fadeMs}ms ease-in-out`;
+          break;
+
+        // ---- Ken Burns effects ----
+        case "kenburns-zoom-in":
+          el.animate(
+            [{ transform: "scale(1.0)" }, { transform: "scale(1.15)" }],
+            { duration: durMs, fill: "forwards", easing: "ease-in-out" }
+          );
+          break;
+
+        case "kenburns-zoom-out":
+          el.animate(
+            [{ transform: "scale(1.15)" }, { transform: "scale(1.0)" }],
+            { duration: durMs, fill: "forwards", easing: "ease-in-out" }
+          );
+          break;
+
+        case "kenburns-pan-left":
+          el.animate(
+            [{ transform: "scale(1.1) translateX(5%)" },
+             { transform: "scale(1.1) translateX(-5%)" }],
+            { duration: durMs, fill: "forwards", easing: "ease-in-out" }
+          );
+          break;
+
+        case "kenburns-pan-right":
+          el.animate(
+            [{ transform: "scale(1.1) translateX(-5%)" },
+             { transform: "scale(1.1) translateX(5%)" }],
+            { duration: durMs, fill: "forwards", easing: "ease-in-out" }
+          );
+          break;
+
+        // ---- Optional extra transitions ----
+        case "flip":
+          el.animate(
+            [{ transform: "rotateY(0deg)" }, { transform: "rotateY(180deg)" }],
+            { duration: 1000, fill: "forwards", easing: "ease-in-out" }
+          );
+          break;
+
         case "none":
         default:
-          break; // handled by CSS opacity
+          break;
       }
     }
 
     async function start() {
       const slides = await loadShow();
       const box = document.getElementById("slideshow");
-
       if (!slides.length) {
         box.innerHTML = "<h1 style='color:white;'>No slides found</h1>";
         return;
       }
 
-      let idx = 0;
-      const slideA = document.createElement("div");
-      const slideB = document.createElement("div");
-      slideA.className = "slide";
-      slideB.className = "slide";
-      box.appendChild(slideA);
-      box.appendChild(slideB);
+      let idx = 0, paused = false, autoTimer = null;
+      const slideA = document.createElement("div"), slideB = document.createElement("div");
+      slideA.className = "slide"; slideB.className = "slide";
+      box.appendChild(slideA); box.appendChild(slideB);
 
-      function renderSlide(target, slide) {
-        // Clear old content
+      // --- play sequential frames ---
+      async function playFrames(img, frames, fps, repeat, duration, effect, onDone) {
+        const loops = repeat === undefined ? 1 : repeat;
+        const perFrameTime =
+          effect === "cut" || effect === "fade"
+            ? (duration || 1) * 1000 // duration = time per frame
+            : 1000 / (fps || 10);   // duration ignored, use fps for animate effects
+
+        let frameIdx = 0;
+        let loopCount = 0;
+        let nextImg = null;
+
+        function nextFrame() {
+          if (paused) {
+            setTimeout(nextFrame, perFrameTime);
+            return;
+          }
+
+          if (effect === "cut" || !effect) {
+            img.style.transition = "none";
+            img.src = frames[frameIdx];
+          } else if (effect === "fade") {
+            if (!nextImg) {
+              nextImg = img.cloneNode(true);
+              img.parentElement.appendChild(nextImg);
+              nextImg.style.position = "absolute";
+              nextImg.style.top = "0";
+              nextImg.style.left = "0";
+              nextImg.style.width = "100%";
+              nextImg.style.height = "100%";
+              nextImg.style.transition = "opacity 0.5s ease-in-out";
+            }
+
+            nextImg.src = frames[frameIdx];
+            nextImg.style.opacity = "1";
+            img.style.opacity = "0";
+
+            // swap references after fade
+            setTimeout(() => {
+              const temp = img;
+              img = nextImg;
+              nextImg = temp;
+            }, 500);
+          } else {
+            img.src = frames[frameIdx];
+          }
+
+          frameIdx++;
+          if (frameIdx >= frames.length) {
+            frameIdx = 0;
+            loopCount++;
+            if (loopCount >= loops) {
+              if (onDone) onDone();
+              return;
+            }
+          }
+
+          setTimeout(nextFrame, perFrameTime);
+        }
+
+        nextFrame();
+      }
+
+      function renderSlide(target, slide, onDone) {
         target.innerHTML = "";
-        target.style.background = "black";
-
-        if (slide.url) {
+        target.style.transition = "";
+        if (slide.frames && slide.frames.length) {
+          const img = document.createElement("img");
+          img.src = slide.frames[0];
+          target.appendChild(img);
+          if (slide.title) {
+            const title = document.createElement("div");
+            title.className = "title";
+            title.textContent = slide.title;
+            target.appendChild(title);
+          }
+          playFrames(img, slide.frames, slide.fps, slide.repeat, slide.duration, slide.effect, onDone);
+        } else if (slide.url) {
           const img = document.createElement("img");
           img.src = slide.url;
           target.appendChild(img);
@@ -130,30 +211,50 @@
             target.appendChild(title);
           }
           applyEffect(img, slide.effect, slide.duration);
+          if (onDone) setTimeout(onDone, (slide.duration || 5) * 1000);
+        } else {
+          // blank slide
+          if (onDone) setTimeout(onDone, (slide.duration || 5) * 1000);
         }
-        // blank slide: no image, just black background
       }
 
-      function showNext() {
-        const s = slides[idx];
-        const nextIdx = (idx + 1) % slides.length;
-        const nextSlide = idx % 2 === 0 ? slideB : slideA;
-        const currentSlide = idx % 2 === 0 ? slideA : slideB;
+      function showSlide(newIdx) {
+        if (newIdx < 0) newIdx = slides.length - 1;
+        if (newIdx >= slides.length) newIdx = 0;
+        idx = newIdx;
 
-        const next = slides[nextIdx];
-        renderSlide(nextSlide, next);
+        const next = slides[idx];
+        const nextSlide = idx % 2 === 0 ? slideA : slideB;
+        const currentSlide = idx % 2 === 0 ? slideB : slideA;
 
-        nextSlide.style.opacity = 1;
-        currentSlide.style.opacity = 0;
+        renderSlide(nextSlide, next, () => {
+          if (!paused) showSlide(idx + 1);
+        });
 
-        idx = nextIdx;
-        setTimeout(showNext, (next.duration || 5) * 1000);
+        nextSlide.style.visibility = "visible";
+        nextSlide.style.opacity = "1";
+        currentSlide.style.opacity = "0";
       }
 
-      // Show first slide
-      renderSlide(slideA, slides[0]);
+      // start first slide
+      renderSlide(slideA, slides[0], () => showSlide(1));
       slideA.style.opacity = 1;
-      setTimeout(showNext, (slides[0].duration || 5) * 1000);
+
+      // --- keyboard controls ---
+      window.addEventListener("keydown", (e) => {
+        switch (e.key) {
+          case " ":
+            e.preventDefault();
+            paused = !paused;
+            if (paused) clearTimeout(autoTimer);
+            else showSlide(idx + 1);
+            break;
+          case "ArrowRight": clearTimeout(autoTimer); showSlide(idx + 1); break;
+          case "ArrowLeft":  clearTimeout(autoTimer); showSlide(idx - 1); break;
+          case "Home":       clearTimeout(autoTimer); showSlide(0); break;
+          case "End":        clearTimeout(autoTimer); showSlide(slides.length - 1); break;
+        }
+      });
     }
 
     start();

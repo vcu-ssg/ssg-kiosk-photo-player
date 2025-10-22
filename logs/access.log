@@ -29,3 +29,160 @@
 2025-10-21T19:44:33.529Z | client=Scrollsaw | ip=::ffff:172.23.0.1
 2025-10-21T19:53:20.663Z | client=Scrollsaw | ip=::ffff:172.23.0.1
 2025-10-22T11:29:12.904Z | client=Scrollsaw | ip=::1
+2025-10-22T11:34:18.831Z | client=Scrollsaw | ip=::1
+2025-10-22T11:38:22.613Z | client=Scrollsaw | ip=::1
+2025-10-22T11:41:18.936Z | client=Scrollsaw | ip=::1
+2025-10-22T11:42:50.724Z | client=Scrollsaw | ip=::1
+2025-10-22T11:42:54.008Z | client=Scrollsaw | ip=::1
+2025-10-22T11:45:56.861Z | client=Scrollsaw | ip=::1
+2025-10-22T12:11:59.420Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-22T12:12:05.772Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-22T12:12:12.051Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-22T12:12:13.502Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-22T12:12:14.406Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-22T12:19:42.712Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-22T12:19:46.661Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-22T12:19:46.664Z | ⚠️ No slides defined for Scrollsaw. Using default include patterns.
+2025-10-22T12:19:48.159Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-22T12:19:48.160Z | ⚠️ No slides defined for Scrollsaw. Using default include patterns.
+2025-10-22T12:24:00.502Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-22T12:24:07.139Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-22T12:24:07.238Z | 🖼️ Cached resized kitchen_before.JPG
+2025-10-22T12:24:07.239Z | 🖼️ Still [kitchen_before]: duration=10s
+2025-10-22T12:24:07.332Z | 🖼️ Cached resized kitchen_during/055A2804.JPG
+2025-10-22T12:24:07.421Z | 🖼️ Cached resized kitchen_during/055A2806.JPG
+2025-10-22T12:24:07.518Z | 🖼️ Cached resized kitchen_during/055A2869.JPG
+2025-10-22T12:24:07.608Z | 🖼️ Cached resized kitchen_during/055A2924.JPG
+2025-10-22T12:24:07.698Z | 🖼️ Cached resized kitchen_during/055A2929.JPG
+2025-10-22T12:24:07.786Z | 🖼️ Cached resized kitchen_during/055A2967.JPG
+2025-10-22T12:24:07.876Z | 🖼️ Cached resized kitchen_during/2025-06-02_20-14-22EOS R3_4438.JPG
+2025-10-22T12:24:07.963Z | 🖼️ Cached resized kitchen_during/2025-06-02_20-21-21EOS R3_4464.JPG
+2025-10-22T12:24:08.053Z | 🖼️ Cached resized kitchen_during/2025-06-02_20-21-45EOS R3_4474.JPG
+2025-10-22T12:24:08.053Z | 🎞️ Slide [kitchen_during]: 9 frames @ 10fps, repeat=1, duration=3.0s
+2025-10-22T12:24:08.135Z | 🖼️ Cached resized kitchen_after.JPG
+2025-10-22T12:24:08.135Z | 🖼️ Still [kitchen_after]: duration=10s
+2025-10-22T12:24:08.135Z | 🟦 Blank [pause_2]: duration=2s
+2025-10-22T12:24:08.136Z | 🎞️ Slide [kitchen_animation]: 9 frames @ 12fps, repeat=3, duration=2.3s
+2025-10-22T12:24:08.136Z | 🟦 Blank [pause_2]: duration=2s
+2025-10-22T12:24:08.215Z | 🖼️ Cached resized powder_before.JPG
+2025-10-22T12:24:08.215Z | 🖼️ Still [powder_before]: duration=10s
+2025-10-22T12:24:08.303Z | 🖼️ Cached resized powder_during/055A2884.JPG
+2025-10-22T12:24:08.400Z | 🖼️ Cached resized powder_during/055A2980.JPG
+2025-10-22T12:24:08.493Z | 🖼️ Cached resized powder_during/055A2986.JPG
+2025-10-22T12:24:08.581Z | 🖼️ Cached resized powder_during/2025-06-25_19-39-58EOS R3_4672.JPG
+2025-10-22T12:24:08.670Z | 🖼️ Cached resized powder_during/2025-06-25_19-40-05EOS R3_4673.JPG
+2025-10-22T12:24:08.760Z | 🖼️ Cached resized powder_during/2025-07-30_17-06-01EOS R3_4727.JPG
+2025-10-22T12:24:08.760Z | 🎞️ Slide [powder_during]: 6 frames @ 10fps, repeat=1, duration=3.0s
+2025-10-22T12:24:08.895Z | 🖼️ Cached resized powder_after.JPG
+2025-10-22T12:24:08.895Z | 🖼️ Still [powder_after]: duration=10s
+2025-10-22T12:24:08.895Z | 🟦 Blank [pause_2]: duration=2s
+2025-10-22T12:24:08.987Z | 🖼️ Cached resized bath_before.JPG
+2025-10-22T12:24:08.987Z | 🖼️ Still [bath_before]: duration=10s
+2025-10-22T12:24:09.078Z | 🖼️ Cached resized bath_during/055A2876.JPG
+2025-10-22T12:24:09.173Z | 🖼️ Cached resized bath_during/055A2878.JPG
+2025-10-22T12:24:09.270Z | 🖼️ Cached resized bath_during/055A2899.JPG
+2025-10-22T12:24:09.370Z | 🖼️ Cached resized bath_during/055A2902.JPG
+2025-10-22T12:24:09.456Z | 🖼️ Cached resized bath_during/055A2947.JPG
+2025-10-22T12:24:09.551Z | 🖼️ Cached resized bath_during/055A3013.JPG
+2025-10-22T12:24:09.637Z | 🖼️ Cached resized bath_during/055A3076.JPG
+2025-10-22T12:24:09.720Z | 🖼️ Cached resized bath_during/055A3082.JPG
+2025-10-22T12:24:09.806Z | 🖼️ Cached resized bath_during/2025-06-02_20-15-55EOS R3_4447.JPG
+2025-10-22T12:24:09.892Z | 🖼️ Cached resized bath_during/2025-06-25_19-35-18EOS R3_4664.JPG
+2025-10-22T12:24:09.892Z | 🎞️ Slide [bath_during]: 10 frames @ 10fps, repeat=1, duration=3.0s
+2025-10-22T12:24:09.978Z | 🖼️ Cached resized bath_after.JPG
+2025-10-22T12:24:09.978Z | 🖼️ Still [bath_after]: duration=10s
+2025-10-22T12:24:09.978Z | 🟦 Blank [pause_2]: duration=2s
+2025-10-22T12:24:09.978Z | ✅ Built slideshow for Scrollsaw: 14 slides total
+2025-10-22T12:25:45.813Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-22T12:25:45.813Z | 🖼️ Still [kitchen_before]: duration=10s
+2025-10-22T12:25:45.814Z | 🎞️ Slide [kitchen_during]: 9 frames @ 10fps, repeat=1, duration=3.0s
+2025-10-22T12:25:45.815Z | 🖼️ Still [kitchen_after]: duration=10s
+2025-10-22T12:25:45.815Z | 🟦 Blank [pause_2]: duration=2s
+2025-10-22T12:25:45.817Z | 🎞️ Slide [kitchen_animation]: 9 frames @ 12fps, repeat=3, duration=2.3s
+2025-10-22T12:25:45.817Z | 🟦 Blank [pause_2]: duration=2s
+2025-10-22T12:25:45.817Z | 🖼️ Still [powder_before]: duration=10s
+2025-10-22T12:25:45.818Z | 🎞️ Slide [powder_during]: 6 frames @ 10fps, repeat=1, duration=3.0s
+2025-10-22T12:25:45.818Z | 🖼️ Still [powder_after]: duration=10s
+2025-10-22T12:25:45.818Z | 🟦 Blank [pause_2]: duration=2s
+2025-10-22T12:25:45.818Z | 🖼️ Still [bath_before]: duration=10s
+2025-10-22T12:25:45.819Z | 🎞️ Slide [bath_during]: 10 frames @ 10fps, repeat=1, duration=3.0s
+2025-10-22T12:25:45.819Z | 🖼️ Still [bath_after]: duration=10s
+2025-10-22T12:25:45.819Z | 🟦 Blank [pause_2]: duration=2s
+2025-10-22T12:25:45.819Z | ✅ Built slideshow for Scrollsaw: 14 slides total
+2025-10-22T12:25:48.327Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-22T12:25:48.327Z | 🖼️ Still [kitchen_before]: duration=10s
+2025-10-22T12:25:48.328Z | 🎞️ Slide [kitchen_during]: 9 frames @ 10fps, repeat=1, duration=3.0s
+2025-10-22T12:25:48.328Z | 🖼️ Still [kitchen_after]: duration=10s
+2025-10-22T12:25:48.328Z | 🟦 Blank [pause_2]: duration=2s
+2025-10-22T12:25:48.329Z | 🎞️ Slide [kitchen_animation]: 9 frames @ 12fps, repeat=3, duration=2.3s
+2025-10-22T12:25:48.329Z | 🟦 Blank [pause_2]: duration=2s
+2025-10-22T12:25:48.329Z | 🖼️ Still [powder_before]: duration=10s
+2025-10-22T12:25:48.330Z | 🎞️ Slide [powder_during]: 6 frames @ 10fps, repeat=1, duration=3.0s
+2025-10-22T12:25:48.330Z | 🖼️ Still [powder_after]: duration=10s
+2025-10-22T12:25:48.330Z | 🟦 Blank [pause_2]: duration=2s
+2025-10-22T12:25:48.330Z | 🖼️ Still [bath_before]: duration=10s
+2025-10-22T12:25:48.330Z | 🎞️ Slide [bath_during]: 10 frames @ 10fps, repeat=1, duration=3.0s
+2025-10-22T12:25:48.330Z | 🖼️ Still [bath_after]: duration=10s
+2025-10-22T12:25:48.330Z | 🟦 Blank [pause_2]: duration=2s
+2025-10-22T12:25:48.330Z | ✅ Built slideshow for Scrollsaw: 14 slides total
+2025-10-22T12:30:53.725Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-22T12:30:59.656Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-22T12:30:59.753Z | 🖼️ Cached resized kitchen_before.JPG
+2025-10-22T12:30:59.753Z | 🖼️ Still [kitchen_before]: duration=10s
+2025-10-22T12:30:59.844Z | 🖼️ Cached resized kitchen_during/055A2804.JPG
+2025-10-22T12:30:59.935Z | 🖼️ Cached resized kitchen_during/055A2806.JPG
+2025-10-22T12:31:00.033Z | 🖼️ Cached resized kitchen_during/055A2869.JPG
+2025-10-22T12:31:00.123Z | 🖼️ Cached resized kitchen_during/055A2924.JPG
+2025-10-22T12:31:00.214Z | 🖼️ Cached resized kitchen_during/055A2929.JPG
+2025-10-22T12:31:00.307Z | 🖼️ Cached resized kitchen_during/055A2967.JPG
+2025-10-22T12:31:00.399Z | 🖼️ Cached resized kitchen_during/2025-06-02_20-14-22EOS R3_4438.JPG
+2025-10-22T12:31:00.484Z | 🖼️ Cached resized kitchen_during/2025-06-02_20-21-21EOS R3_4464.JPG
+2025-10-22T12:31:00.581Z | 🖼️ Cached resized kitchen_during/2025-06-02_20-21-45EOS R3_4474.JPG
+2025-10-22T12:31:00.581Z | 🎞️ Slide [kitchen_during]: 9 frames @ 10fps, repeat=1, duration=3.0s
+2025-10-22T12:31:00.665Z | 🖼️ Cached resized kitchen_after.JPG
+2025-10-22T12:31:00.665Z | 🖼️ Still [kitchen_after]: duration=10s
+2025-10-22T12:31:00.665Z | 🟦 Blank [pause_2]: duration=2s
+2025-10-22T12:31:00.745Z | 🖼️ Cached resized powder_before.JPG
+2025-10-22T12:31:00.745Z | 🖼️ Still [powder_before]: duration=10s
+2025-10-22T12:31:00.834Z | 🖼️ Cached resized powder_during/055A2884.JPG
+2025-10-22T12:31:00.936Z | 🖼️ Cached resized powder_during/055A2980.JPG
+2025-10-22T12:31:01.033Z | 🖼️ Cached resized powder_during/055A2986.JPG
+2025-10-22T12:31:01.130Z | 🖼️ Cached resized powder_during/2025-06-25_19-39-58EOS R3_4672.JPG
+2025-10-22T12:31:01.218Z | 🖼️ Cached resized powder_during/2025-06-25_19-40-05EOS R3_4673.JPG
+2025-10-22T12:31:01.306Z | 🖼️ Cached resized powder_during/2025-07-30_17-06-01EOS R3_4727.JPG
+2025-10-22T12:31:01.306Z | 🎞️ Slide [powder_during]: 6 frames @ 10fps, repeat=1, duration=3.0s
+2025-10-22T12:31:01.441Z | 🖼️ Cached resized powder_after.JPG
+2025-10-22T12:31:01.441Z | 🖼️ Still [powder_after]: duration=10s
+2025-10-22T12:31:01.441Z | 🟦 Blank [pause_2]: duration=2s
+2025-10-22T12:31:01.538Z | 🖼️ Cached resized bath_before.JPG
+2025-10-22T12:31:01.538Z | 🖼️ Still [bath_before]: duration=10s
+2025-10-22T12:31:01.636Z | 🖼️ Cached resized bath_during/055A2876.JPG
+2025-10-22T12:31:01.737Z | 🖼️ Cached resized bath_during/055A2878.JPG
+2025-10-22T12:31:01.848Z | 🖼️ Cached resized bath_during/055A2899.JPG
+2025-10-22T12:31:01.950Z | 🖼️ Cached resized bath_during/055A2902.JPG
+2025-10-22T12:31:02.040Z | 🖼️ Cached resized bath_during/055A2947.JPG
+2025-10-22T12:31:02.130Z | 🖼️ Cached resized bath_during/055A3013.JPG
+2025-10-22T12:31:02.214Z | 🖼️ Cached resized bath_during/055A3076.JPG
+2025-10-22T12:31:02.301Z | 🖼️ Cached resized bath_during/055A3082.JPG
+2025-10-22T12:31:02.387Z | 🖼️ Cached resized bath_during/2025-06-02_20-15-55EOS R3_4447.JPG
+2025-10-22T12:31:02.472Z | 🖼️ Cached resized bath_during/2025-06-25_19-35-18EOS R3_4664.JPG
+2025-10-22T12:31:02.472Z | 🎞️ Slide [bath_during]: 10 frames @ 10fps, repeat=1, duration=3.0s
+2025-10-22T12:31:02.558Z | 🖼️ Cached resized bath_after.JPG
+2025-10-22T12:31:02.558Z | 🖼️ Still [bath_after]: duration=10s
+2025-10-22T12:31:02.558Z | 🟦 Blank [pause_2]: duration=2s
+2025-10-22T12:31:02.558Z | ✅ Built slideshow for Scrollsaw: 12 slides total
+2025-10-22T12:39:07.293Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-22T12:39:12.198Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-22T12:39:12.198Z | 🖼️ Still [kitchen_before]: duration=10s
+2025-10-22T12:39:12.204Z | 🎞️ Slide [kitchen_during]: 9 frames @ 10fps, repeat=1, duration=3.0s
+2025-10-22T12:39:12.204Z | 🖼️ Still [kitchen_after]: duration=10s
+2025-10-22T12:39:12.204Z | 🟦 Blank [pause_2]: duration=2s
+2025-10-22T12:39:12.204Z | 🖼️ Still [powder_before]: duration=10s
+2025-10-22T12:39:12.205Z | 🎞️ Slide [powder_during]: 6 frames @ 10fps, repeat=1, duration=3.0s
+2025-10-22T12:39:12.205Z | 🖼️ Still [powder_after]: duration=10s
+2025-10-22T12:39:12.205Z | 🟦 Blank [pause_2]: duration=2s
+2025-10-22T12:39:12.205Z | 🖼️ Still [bath_before]: duration=10s
+2025-10-22T12:39:12.206Z | 🎞️ Slide [bath_during]: 10 frames @ 10fps, repeat=1, duration=3.0s
+2025-10-22T12:39:12.206Z | 🖼️ Still [bath_after]: duration=10s
+2025-10-22T12:39:12.206Z | 🟦 Blank [pause_2]: duration=2s
+2025-10-22T12:39:12.206Z | ✅ Built slideshow for Scrollsaw: 12 slides total

@@ -21,7 +21,9 @@
   "homepage": "https://github.com/vcu-ssg/ssg-kiosk-photo-player#readme",
   "dependencies": {
     "express": "^5.1.0",
+    "glob": "^11.0.3",
     "js-yaml": "^4.1.0",
-    "minimatch": "^10.0.3"
+    "minimatch": "^10.0.3",
+    "sharp": "^0.34.4"
   }
 }

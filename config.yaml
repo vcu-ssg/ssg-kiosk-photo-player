@@ -10,7 +10,7 @@ slides:
   - id: kitchen_during
     file: "kitchen_during/*.JPG"
     #title: "Kitchen during ..."
-    effect: fade
+    effect: cut
     duration: 3
 
   - id: kitchen_after
@@ -30,6 +30,14 @@ slides:
     #title: "Bath during ..."
     effect: fade
     duration: 3
+
+  - id: kitchen_animation
+    file: "kitchen_during/*.JPG"     # glob pattern expands to multiple frames
+    title: "Kitchen Time-Lapse"
+    effect: animate-smooth           # smooth transition between frames
+    #duration: 8                      # total time (seconds)
+    fps: 12                          # frame rate (frames per second)    
+    repeat: 3
 
   - id: bath_after
     file: "bath_after.JPG"
@@ -76,6 +84,7 @@ default:
 
 clients:
   Scrollsaw:
+    #include: [kitchen_before, kitchen_during, kitchen_after, pause_2, kitchen_animation, pause_2, powder_before, powder_during, powder_after, pause_2, bath_before, bath_during, bath_after, pause_2 ]
     include: [kitchen_before, kitchen_during, kitchen_after, pause_2, powder_before, powder_during, powder_after, pause_2, bath_before, bath_during, bath_after, pause_2 ]
 
   kiosk1.local:
