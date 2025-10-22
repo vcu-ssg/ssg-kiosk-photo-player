@@ -38,3 +38,13 @@
 2025-10-22T16:17:01.332Z | 🖼️ Still [kitchen_after]: duration=10s
 2025-10-22T16:17:01.332Z | 🟦 Blank [pause_2]: duration=2s
 2025-10-22T16:17:01.332Z | ✅ Built slideshow for EGR-JL-DSK0-SRV: 7 slides total
+2025-10-22T16:42:06.594Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-22T16:42:10.449Z | client=EGR-JL-DSK0-SRV | reqHost=localhost | ip=::1
+2025-10-22T16:42:10.449Z | 🎬 YouTube [river_center_video]: video=erBoOFKTH4E, duration=10s
+2025-10-22T16:42:10.449Z | 🖼️ Still [kitchen_before]: duration=10s
+2025-10-22T16:42:10.449Z | 🌐 HTML [james_river_water_level]: https://water.noaa.gov/gauges/rmdv2, duration=10s
+2025-10-22T16:42:10.449Z | 🌐 HTML [weather_widget]: /pages/weather.html, duration=10s
+2025-10-22T16:42:10.454Z | 🎞️ Slide [kitchen_animation]: 9 frames @ 3fps, repeat=3, duration=9.0s
+2025-10-22T16:42:10.454Z | 🖼️ Still [kitchen_after]: duration=10s
+2025-10-22T16:42:10.454Z | 🟦 Blank [pause_2]: duration=2s
+2025-10-22T16:42:10.454Z | ✅ Built slideshow for EGR-JL-DSK0-SRV: 7 slides total
