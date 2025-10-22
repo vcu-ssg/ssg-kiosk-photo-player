@@ -87,6 +87,14 @@ slides:
     title: 
     duration: 10
 
+  - id: river_center_video
+    type: youtube
+    video_id: "erBoOFKTH4E"
+    duration: 10
+    title: "JRA’s Jim Buzzard River Education Center"
+
+
+#https://youtu.be/erBoOFKTH4E
 
 
 # --- Default playlist shared by all kiosks ---
@@ -107,4 +115,4 @@ clients:
     include: [kitchen_before, kitchen_during, kitchen_after, pause_2, powder_before, powder_during, powder_after, pause_2, bath_before, bath_during, bath_after, pause_2 ]
 
   EGR-JL-DSK0-SRV:
-    include: [kitchen_before, james_river_water_level, weather_widget, kitchen_animation, kitchen_after, pause_2]
+    include: [river_center_video, kitchen_before, james_river_water_level, weather_widget, kitchen_animation, kitchen_after, pause_2]

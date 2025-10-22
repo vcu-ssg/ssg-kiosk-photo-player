@@ -198,6 +198,8 @@
       function renderSlide(target, slide, onDone) {
         target.innerHTML = "";
         target.style.transition = "";
+
+        // --- Multi-frame image sequence ---
         if (slide.frames && slide.frames.length) {
           const img = document.createElement("img");
           img.src = slide.frames[0];
@@ -209,7 +211,11 @@
             target.appendChild(title);
           }
           playFrames(img, slide.frames, slide.fps, slide.repeat, slide.duration, slide.effect, onDone);
-        } else if (slide.url) {
+          return;
+        }
+
+        // --- Regular still image ---
+        if (slide.url && !slide.type) {
           const img = document.createElement("img");
           img.src = slide.url;
           target.appendChild(img);
@@ -221,13 +227,18 @@
           }
           applyEffect(img, slide.effect, slide.duration);
           if (onDone) setTimeout(onDone, (slide.duration || 5) * 1000);
-        } else if (slide.html) {
-          // ✅ new HTML slide logic
+          return;
+        }
+
+        // --- HTML slide ---
+        if (slide.type === "html" && slide.url) {
           const iframe = document.createElement("iframe");
-          iframe.src = slide.html;
+          iframe.src = slide.url;
           iframe.style.width = "100%";
           iframe.style.height = "100%";
           iframe.style.border = "none";
+          iframe.style.opacity = "0";
+          iframe.onload = () => (iframe.style.opacity = "1");
           iframe.allow = "fullscreen";
           target.appendChild(iframe);
 
@@ -238,11 +249,52 @@
             target.appendChild(title);
           }
 
+          // fade-in for kiosk smoothness
+          iframe.animate([{ opacity: 0 }, { opacity: 1 }], {
+            duration: 600,
+            fill: "forwards",
+            easing: "ease-in-out",
+          });
+
           if (onDone) setTimeout(onDone, (slide.duration || 10) * 1000);
-        } else {
-          // blank slide
-          if (onDone) setTimeout(onDone, (slide.duration || 5) * 1000);
+          return;
         }
+
+        // --- YouTube slide ---
+        if (slide.type === "youtube" && slide.video_id) {
+          const iframe = document.createElement("iframe");
+          iframe.src = `https://www.youtube.com/embed/${slide.video_id}?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0`;
+          iframe.style.width = "100%";
+          iframe.style.height = "100%";
+          iframe.style.border = "none";
+          iframe.style.opacity = "0";
+          iframe.allow =
+            "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+          iframe.allowFullscreen = true;
+          target.appendChild(iframe);
+
+          if (slide.title) {
+            const title = document.createElement("div");
+            title.className = "title";
+            title.textContent = slide.title;
+            target.appendChild(title);
+          }
+
+          iframe.onload = () => {
+            iframe.animate([{ opacity: 0 }, { opacity: 1 }], {
+              duration: 600,
+              fill: "forwards",
+              easing: "ease-in-out",
+            });
+          };
+
+          // auto-advance after duration
+          if (onDone) setTimeout(onDone, (slide.duration || 30) * 1000);
+          return;
+        }
+
+        // --- Blank slide (pause) ---
+        if (onDone) setTimeout(onDone, (slide.duration || 5) * 1000);
       }
 
       function showSlide(newIdx) {

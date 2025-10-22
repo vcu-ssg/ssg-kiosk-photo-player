@@ -131,6 +131,7 @@ async function buildSlideshow(clientId) {
   const expanded = [];
 
   // Build playlist by mapping IDs to master slide definitions
+
   for (const id of includeIds.length ? includeIds : masterSlides.map(s => s.id)) {
     const slide = masterSlides.find(s => s.id === id);
     if (!slide) {
@@ -138,16 +139,39 @@ async function buildSlideshow(clientId) {
       continue;
     }
 
-    // --- HTML page slide ---
+    // --- YouTube slide ---
+    if (slide.type === "youtube" && (slide.video_id || slide.url)) {
+      const videoId = slide.video_id
+        ? slide.video_id
+        : slide.url.split("/embed/")[1]?.split(/[?&]/)[0];
+      if (!videoId) {
+        log(`⚠️ Invalid YouTube slide: missing video_id or url for ${slide.id}`);
+        continue;
+      }
+
+      expanded.push({
+        id: slide.id,
+        type: "youtube",
+        video_id: videoId,
+        effect: "none",
+        duration: slide.duration || 30,
+        title: slide.title || "",
+      });
+      log(`🎬 YouTube [${slide.id}]: video=${videoId}, duration=${slide.duration || 30}s`);
+      continue;
+    }
+
+    // --- HTML slide ---
     if (slide.type === "html" && slide.url) {
       expanded.push({
         id: slide.id,
-        html: slide.url,
+        type: "html",
+        url: slide.url,
         effect: "none",
-        duration: slide.duration || 10,
+        duration: slide.duration || 15,
         title: slide.title || "",
       });
-      log(`🌐 HTML [${slide.id}]: ${slide.url}, duration=${slide.duration || 10}s`);
+      log(`🌐 HTML [${slide.id}]: ${slide.url}, duration=${slide.duration || 15}s`);
       continue;
     }
 
@@ -212,6 +236,7 @@ async function buildSlideshow(clientId) {
 
     log(`🖼️ Still [${slide.id}]: duration=${slide.duration || 5}s`);
   }
+
 
   // --- Final summary ---
   if (!expanded.length) {
