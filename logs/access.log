@@ -319,3 +319,10 @@
 2025-10-22T15:02:58.914Z | 🖼️ Still [powder_after]: duration=10s
 2025-10-22T15:02:58.914Z | 🟦 Blank [pause_2]: duration=2s
 2025-10-22T15:02:58.914Z | ✅ Built slideshow for EGR-JL-DSK0-SRV: 4 slides total
+2025-10-22T15:06:50.041Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-22T15:06:56.673Z | client=EGR-JL-DSK0-SRV | reqHost=localhost | ip=::1
+2025-10-22T15:06:56.673Z | 🖼️ Still [powder_before]: duration=10s
+2025-10-22T15:06:56.678Z | 🎞️ Slide [powder_during]: 6 frames @ 10fps, repeat=1, duration=3.0s
+2025-10-22T15:06:56.678Z | 🖼️ Still [powder_after]: duration=10s
+2025-10-22T15:06:56.678Z | 🟦 Blank [pause_2]: duration=2s
+2025-10-22T15:06:56.678Z | ✅ Built slideshow for EGR-JL-DSK0-SRV: 4 slides total

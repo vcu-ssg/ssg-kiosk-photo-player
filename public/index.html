@@ -126,18 +126,23 @@
       // --- play sequential frames ---
       async function playFrames(img, frames, fps, repeat, duration, effect, onDone) {
         const loops = repeat === undefined ? 1 : repeat;
+
+        // duration = time per frame for cut/fade; fps = rate for animate modes
         const perFrameTime =
           effect === "cut" || effect === "fade"
-            ? (duration || 1) * 1000 // duration = time per frame
-            : 1000 / (fps || 10);   // duration ignored, use fps for animate effects
+            ? (duration || 1) * 1000
+            : 1000 / (fps || 10);
 
         let frameIdx = 0;
         let loopCount = 0;
         let nextImg = null;
+        let running = true;
 
-        function nextFrame() {
+        function showFrame() {
+          if (!running) return;
+
           if (paused) {
-            setTimeout(nextFrame, perFrameTime);
+            setTimeout(showFrame, perFrameTime);
             return;
           }
 
@@ -160,7 +165,6 @@
             nextImg.style.opacity = "1";
             img.style.opacity = "0";
 
-            // swap references after fade
             setTimeout(() => {
               const temp = img;
               img = nextImg;
@@ -171,19 +175,24 @@
           }
 
           frameIdx++;
+
+          // when we’ve shown all frames once
           if (frameIdx >= frames.length) {
             frameIdx = 0;
             loopCount++;
+
+            // ✅ honor last frame duration before ending
             if (loopCount >= loops) {
-              if (onDone) onDone();
+              if (onDone) setTimeout(onDone, perFrameTime);
+              running = false;
               return;
             }
           }
 
-          setTimeout(nextFrame, perFrameTime);
+          setTimeout(showFrame, perFrameTime);
         }
 
-        nextFrame();
+        showFrame();
       }
 
       function renderSlide(target, slide, onDone) {
