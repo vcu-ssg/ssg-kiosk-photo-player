@@ -221,6 +221,24 @@
           }
           applyEffect(img, slide.effect, slide.duration);
           if (onDone) setTimeout(onDone, (slide.duration || 5) * 1000);
+        } else if (slide.html) {
+          // ✅ new HTML slide logic
+          const iframe = document.createElement("iframe");
+          iframe.src = slide.html;
+          iframe.style.width = "100%";
+          iframe.style.height = "100%";
+          iframe.style.border = "none";
+          iframe.allow = "fullscreen";
+          target.appendChild(iframe);
+
+          if (slide.title) {
+            const title = document.createElement("div");
+            title.className = "title";
+            title.textContent = slide.title;
+            target.appendChild(title);
+          }
+
+          if (onDone) setTimeout(onDone, (slide.duration || 10) * 1000);
         } else {
           // blank slide
           if (onDone) setTimeout(onDone, (slide.duration || 5) * 1000);

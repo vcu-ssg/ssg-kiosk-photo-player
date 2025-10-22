@@ -36,7 +36,7 @@ slides:
     title: "Kitchen Time-Lapse"
     effect: animate-smooth           # smooth transition between frames
     #duration: 8                      # total time (seconds)
-    fps: 12                          # frame rate (frames per second)    
+    fps: 3                          # frame rate (frames per second)    
     repeat: 3
 
   - id: bath_after
@@ -73,7 +73,20 @@ slides:
     file: ""
     title: ""
     effect: none
-    duration: 10   
+    duration: 10
+
+  - id: weather_widget
+    type: html
+    url: "/pages/weather.html"
+    title: "Richmond Weather"
+    duration: 10
+
+  - id: james_river_water_level
+    type: html
+    url: "https://water.noaa.gov/gauges/rmdv2"
+    title: 
+    duration: 10
+
 
 
 # --- Default playlist shared by all kiosks ---
@@ -94,4 +107,4 @@ clients:
     include: [kitchen_before, kitchen_during, kitchen_after, pause_2, powder_before, powder_during, powder_after, pause_2, bath_before, bath_during, bath_after, pause_2 ]
 
   EGR-JL-DSK0-SRV:
-    include: [powder_before, powder_during, powder_after, pause_2]
+    include: [kitchen_before, james_river_water_level, weather_widget, kitchen_animation, kitchen_after, pause_2]

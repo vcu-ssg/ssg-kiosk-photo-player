@@ -326,3 +326,62 @@
 2025-10-22T15:06:56.678Z | 🖼️ Still [powder_after]: duration=10s
 2025-10-22T15:06:56.678Z | 🟦 Blank [pause_2]: duration=2s
 2025-10-22T15:06:56.678Z | ✅ Built slideshow for EGR-JL-DSK0-SRV: 4 slides total
+2025-10-22T15:10:00.553Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-22T15:10:03.603Z | client=EGR-JL-DSK0-SRV | reqHost=localhost | ip=::1
+2025-10-22T15:10:03.706Z | 🖼️ Cached resized kitchen_before.JPG
+2025-10-22T15:10:03.706Z | 🖼️ Still [kitchen_before]: duration=10s
+2025-10-22T15:10:03.801Z | 🖼️ Cached resized kitchen_during/055A2804.JPG
+2025-10-22T15:10:03.895Z | 🖼️ Cached resized kitchen_during/055A2806.JPG
+2025-10-22T15:10:03.996Z | 🖼️ Cached resized kitchen_during/055A2869.JPG
+2025-10-22T15:10:04.091Z | 🖼️ Cached resized kitchen_during/055A2924.JPG
+2025-10-22T15:10:04.185Z | 🖼️ Cached resized kitchen_during/055A2929.JPG
+2025-10-22T15:10:04.277Z | 🖼️ Cached resized kitchen_during/055A2967.JPG
+2025-10-22T15:10:04.373Z | 🖼️ Cached resized kitchen_during/2025-06-02_20-14-22EOS R3_4438.JPG
+2025-10-22T15:10:04.464Z | 🖼️ Cached resized kitchen_during/2025-06-02_20-21-21EOS R3_4464.JPG
+2025-10-22T15:10:04.556Z | 🖼️ Cached resized kitchen_during/2025-06-02_20-21-45EOS R3_4474.JPG
+2025-10-22T15:10:04.556Z | 🎞️ Slide [kitchen_animation]: 9 frames @ 12fps, repeat=3, duration=2.3s
+2025-10-22T15:10:04.644Z | 🖼️ Cached resized kitchen_after.JPG
+2025-10-22T15:10:04.645Z | 🖼️ Still [kitchen_after]: duration=10s
+2025-10-22T15:10:04.645Z | ✅ Built slideshow for EGR-JL-DSK0-SRV: 3 slides total
+2025-10-22T15:10:49.188Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-22T15:10:51.286Z | client=EGR-JL-DSK0-SRV | reqHost=localhost | ip=::1
+2025-10-22T15:10:51.287Z | 🖼️ Still [kitchen_before]: duration=10s
+2025-10-22T15:10:51.291Z | 🎞️ Slide [kitchen_animation]: 9 frames @ 3fps, repeat=3, duration=9.0s
+2025-10-22T15:10:51.291Z | 🖼️ Still [kitchen_after]: duration=10s
+2025-10-22T15:10:51.291Z | ✅ Built slideshow for EGR-JL-DSK0-SRV: 3 slides total
+2025-10-22T15:22:20.900Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-22T15:22:26.529Z | client=EGR-JL-DSK0-SRV | reqHost=localhost | ip=::1
+2025-10-22T15:22:26.529Z | 🖼️ Still [kitchen_before]: duration=10s
+2025-10-22T15:22:26.529Z | 🌐 HTML [weather_widget]: https://forecast7.com/en/37d54n77d44/richmond/?unit=us, duration=20s
+2025-10-22T15:22:26.533Z | 🎞️ Slide [kitchen_animation]: 9 frames @ 3fps, repeat=3, duration=9.0s
+2025-10-22T15:22:26.533Z | 🖼️ Still [kitchen_after]: duration=10s
+2025-10-22T15:22:26.533Z | ✅ Built slideshow for EGR-JL-DSK0-SRV: 4 slides total
+2025-10-22T15:28:00.968Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-22T15:28:09.382Z | client=EGR-JL-DSK0-SRV | reqHost=localhost | ip=::1
+2025-10-22T15:28:09.382Z | 🖼️ Still [kitchen_before]: duration=10s
+2025-10-22T15:28:09.382Z | 🌐 HTML [weather_widget]: /pages/weather.html, duration=20s
+2025-10-22T15:28:09.386Z | 🎞️ Slide [kitchen_animation]: 9 frames @ 3fps, repeat=3, duration=9.0s
+2025-10-22T15:28:09.386Z | 🖼️ Still [kitchen_after]: duration=10s
+2025-10-22T15:28:09.386Z | ✅ Built slideshow for EGR-JL-DSK0-SRV: 4 slides total
+2025-10-22T15:31:23.205Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-22T15:31:33.195Z | client=EGR-JL-DSK0-SRV | reqHost=localhost | ip=::1
+2025-10-22T15:31:33.196Z | 🖼️ Still [kitchen_before]: duration=10s
+2025-10-22T15:31:33.196Z | 🌐 HTML [weather_widget]: /pages/weather.html, duration=20s
+2025-10-22T15:31:33.200Z | 🎞️ Slide [kitchen_animation]: 9 frames @ 3fps, repeat=3, duration=9.0s
+2025-10-22T15:31:33.200Z | 🖼️ Still [kitchen_after]: duration=10s
+2025-10-22T15:31:33.200Z | ✅ Built slideshow for EGR-JL-DSK0-SRV: 4 slides total
+2025-10-22T15:31:35.613Z | client=EGR-JL-DSK0-SRV | reqHost=localhost | ip=::1
+2025-10-22T15:31:35.613Z | 🖼️ Still [kitchen_before]: duration=10s
+2025-10-22T15:31:35.613Z | 🌐 HTML [weather_widget]: /pages/weather.html, duration=20s
+2025-10-22T15:31:35.614Z | 🎞️ Slide [kitchen_animation]: 9 frames @ 3fps, repeat=3, duration=9.0s
+2025-10-22T15:31:35.614Z | 🖼️ Still [kitchen_after]: duration=10s
+2025-10-22T15:31:35.614Z | ✅ Built slideshow for EGR-JL-DSK0-SRV: 4 slides total
+2025-10-22T15:38:28.647Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-22T15:38:55.902Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-22T15:38:58.824Z | client=EGR-JL-DSK0-SRV | reqHost=localhost | ip=::1
+2025-10-22T15:38:58.824Z | 🖼️ Still [kitchen_before]: duration=10s
+2025-10-22T15:38:58.824Z | 🌐 HTML [james_river_water_level]: https://water.noaa.gov/gauges/rmdv2, duration=10s
+2025-10-22T15:38:58.824Z | 🌐 HTML [weather_widget]: /pages/weather.html, duration=10s
+2025-10-22T15:38:58.828Z | 🎞️ Slide [kitchen_animation]: 9 frames @ 3fps, repeat=3, duration=9.0s
+2025-10-22T15:38:58.828Z | 🖼️ Still [kitchen_after]: duration=10s
+2025-10-22T15:38:58.828Z | ✅ Built slideshow for EGR-JL-DSK0-SRV: 5 slides total

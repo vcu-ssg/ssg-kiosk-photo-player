@@ -138,6 +138,19 @@ async function buildSlideshow(clientId) {
       continue;
     }
 
+    // --- HTML page slide ---
+    if (slide.type === "html" && slide.url) {
+      expanded.push({
+        id: slide.id,
+        html: slide.url,
+        effect: "none",
+        duration: slide.duration || 10,
+        title: slide.title || "",
+      });
+      log(`🌐 HTML [${slide.id}]: ${slide.url}, duration=${slide.duration || 10}s`);
+      continue;
+    }
+
     // --- Blank slide (pause) ---
     if (!slide.file) {
       expanded.push({
