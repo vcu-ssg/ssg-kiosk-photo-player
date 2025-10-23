@@ -1,6 +1,6 @@
 services:
   photo-kiosk:
-    image: ssg-kiosk-photo-player:latest   # 👈 add this line
+    image: ssg-kiosk-photo-player:latest
     build:
       context: .
       dockerfile: Dockerfile
@@ -8,15 +8,26 @@ services:
     hostname: ${HOSTNAME:-${HOST:-${COMPUTERNAME:-default-client}}}
     restart: unless-stopped
     ports:
-      - "3000:3000"
+      - "${KIOSK_PORT:-3000}:3000"
     volumes:
       - ./photos:/app/photos
       - ./public:/app/public
-      - ./logs:/app/logs   # ✅ persist logs to host
+      - ./pages:/app/pages
+      - ./config.yaml:/app/config.yaml:ro
+      - ./logs:/app/logs
+    env_file:
+      - /home/john/.env
     environment:
-      - NODE_ENV=production
-      # 🔹 portable fallback chain
-      - CLIENT_ID=${HOSTNAME:-${HOST:-${COMPUTERNAME:-default-client}}}
+      - NODE_ENV=${KIOSK_NODE_ENV:-production}
+      - PORT=${KIOSK_PORT:-3000}
+      - OPENWEATHER_KEY=${KIOSK_OPENWEATHER_KEY}
+      - ENV_PATH=/home/john/.env
+      - CLIENT_ID=${HOSTNAME:-default-client}
+
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
+
+
   watchtower:
     image: containrrr/watchtower
     container_name: watchtower
@@ -28,4 +39,3 @@ services:
       - WATCHTOWER_CLEANUP=true
       - WATCHTOWER_POLL_INTERVAL=3600
       - WATCHTOWER_LABEL_ENABLE=true
-      

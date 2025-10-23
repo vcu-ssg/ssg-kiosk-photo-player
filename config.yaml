@@ -79,11 +79,12 @@ slides:
     effect: none
     duration: 10
 
-  - id: weather_widget
+
+  - id: weather_dashboard
     type: html
     url: "/pages/weather.html"
-    title: "Richmond Weather"
-    duration: 10
+    duration: 15
+
 
   - id: james_river_water_level
     type: html
@@ -94,7 +95,7 @@ slides:
   - id: river_center_live_video
     type: youtube
     video_id: "erBoOFKTH4E"
-    duration: 10
+    duration: 15
     title: "JRA’s Jim Buzzard River Education Center"
 
 
@@ -118,8 +119,8 @@ slides:
         #panel_duration: 4
       - slides: [ kitchen_before, kitchen_during, kitchen_after, pause_1]
         #panel_duration: 6
-      - slides: [river_center_live_video]  # empty
-        panel_duration: infinite
+      - slides: [ weather_dashboard,river_center_live_video]  # empty
+        #panel_duration: infinite
 
   - id: house_mux_test
     type: mux
@@ -151,6 +152,7 @@ clients:
     include: [ house_mux_2x2 ]
     #include: [powder_before, powder_during, powder_after, pause_2]
     #include: [bath_before,bath_during,bath_after,pause_1]
+    #include: [weather_dashboard]
 
   kiosk1.local:
     include: [kitchen_before, kitchen_during, bath_during, bath_after ]

@@ -4,18 +4,69 @@
   <meta charset="UTF-8" />
   <title>Photo Kiosk</title>
   <style>
-    html, body { margin:0; height:100%; background:black; overflow:hidden; }
-    #slideshow { width:100%; height:100%; position:relative; }
-    .slide { position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
-             opacity:0; background:black; transition:opacity 0.7s ease-in-out; }
-    .title { position:absolute; bottom:1.2rem; left:0; right:0; text-align:center; color:white;
-             font-size:2rem; text-shadow:0 0 10px black; }
-    .mux-grid { display:grid; width:100%; height:100%; background:black; gap:2px; }
-    .mux-cell { position:relative; overflow:hidden; background:black; }
-    .mux-inner { position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
-                 will-change:transform; transition:transform 0.5s ease-in-out; }
-    .mux-inner img { max-width:100%; max-height:100%; object-fit:contain; display:block; }
-    iframe { width:100%; height:100%; border:none; }
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: black;
+      overflow: hidden;
+    }
+    #slideshow {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+    .slide {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      background: black;
+      transition: opacity 0.7s ease-in-out;
+    }
+    .title {
+      position: absolute;
+      bottom: 1.2rem;
+      left: 0;
+      right: 0;
+      text-align: center;
+      color: white;
+      font-size: 2rem;
+      text-shadow: 0 0 10px black;
+    }
+    .mux-grid {
+      display: grid;
+      width: 100%;
+      height: 100%;
+      background: black;
+      gap: 2px;
+    }
+    .mux-cell {
+      position: relative;
+      overflow: hidden;
+      background: black;
+    }
+    .mux-inner {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      will-change: transform;
+      transition: transform 0.5s ease-in-out;
+    }
+    .mux-inner img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
   </style>
 </head>
 <body>
@@ -28,206 +79,224 @@
     }
 
     function parseAlign(align) {
-      if (!align) return {x:"center",y:"center"};
+      if (!align) return { x: "center", y: "center" };
       const parts = align.trim().split(/\s+/);
-      return {x:parts[0]||"center",y:parts[1]||"center"};
+      return { x: parts[0] || "center", y: parts[1] || "center" };
     }
 
     function applyEffect(el, effect, duration) {
-      const durMs = (duration||5)*1000;
-      switch(effect){
-        case "fade": el.style.transition=`opacity 700ms ease-in-out`; break;
-        case "cut": el.style.transition="opacity 120ms linear"; break;
+      const durMs = (duration || 5) * 1000;
+      switch (effect) {
+        case "fade":
+          el.style.transition = `opacity 700ms ease-in-out`;
+          break;
+        case "cut":
+          el.style.transition = "opacity 120ms linear";
+          break;
         case "kenburns-zoom-in":
-          el.animate([{transform:"scale(1)"},{transform:"scale(1.15)"}],
-            {duration:durMs,fill:"forwards",easing:"ease-in-out"}); break;
+          el.animate([{ transform: "scale(1)" }, { transform: "scale(1.15)" }],
+                     { duration: durMs, fill: "forwards", easing: "ease-in-out" });
+          break;
         case "kenburns-zoom-out":
-          el.animate([{transform:"scale(1.15)"},{transform:"scale(1)"}],
-            {duration:durMs,fill:"forwards",easing:"ease-in-out"}); break;
+          el.animate([{ transform: "scale(1.15)" }, { transform: "scale(1)" }],
+                     { duration: durMs, fill: "forwards", easing: "ease-in-out" });
+          break;
       }
     }
 
-    function playFrames(img, frames, fps, repeat, duration, effect, onDone){
+    function playFrames(img, frames, fps, repeat, duration, effect, onDone) {
       const loops = repeat ?? 1;
-      const per = (effect==="cut"||effect==="fade")? (duration||1)*1000 : 1000/(fps||10);
-      let i=0, c=0;
-      (function tick(){
-        img.src=frames[i++];
-        if(i>=frames.length){i=0; c++; if(c>=loops) return onDone?.();}
-        setTimeout(tick,per);
+      const per =
+        effect === "cut" || effect === "fade"
+          ? (duration || 1) * 1000
+          : 1000 / (fps || 10);
+      let i = 0, c = 0;
+      (function tick() {
+        img.src = frames[i++];
+        if (i >= frames.length) {
+          i = 0; c++;
+          if (c >= loops) return onDone?.();
+        }
+        setTimeout(tick, per);
       })();
     }
 
-    async function start(){
-      const slides=await loadShow();
-      const box=document.getElementById("slideshow");
-      if(!slides.length){box.innerHTML="<h1 style='color:white'>No slides</h1>";return;}
-      let idx=0, paused=false;
-      const slideA=document.createElement("div"), slideB=document.createElement("div");
-      slideA.className="slide"; slideB.className="slide"; box.append(slideA,slideB);
+    async function start() {
+      const slides = await loadShow();
+      const box = document.getElementById("slideshow");
+      if (!slides.length) {
+        box.innerHTML = "<h1 style='color:white'>No slides</h1>";
+        return;
+      }
 
-      function renderSlide(target,slide,allSlides,onDone){
-        target.innerHTML=""; target.style.transition="";
+      let idx = 0, paused = false;
+      const slideA = document.createElement("div"),
+            slideB = document.createElement("div");
+      slideA.className = "slide";
+      slideB.className = "slide";
+      box.append(slideA, slideB);
+
+      async function renderSlide(target, slide, allSlides, onDone) {
+        target.innerHTML = "";
+        target.style.transition = "";
 
         // ---------- MUX ----------
-        if(slide.type==="mux"){
-          const grid=document.createElement("div");
-          grid.className="mux-grid";
-          const [rows,cols]=slide.layout.split("x").map(Number);
-          grid.style.gridTemplateRows=`repeat(${rows},1fr)`;
-          grid.style.gridTemplateColumns=`repeat(${cols},1fr)`;
+        if (slide.type === "mux") {
+          const grid = document.createElement("div");
+          grid.className = "mux-grid";
+          const [rows, cols] = slide.layout.split("x").map(Number);
+          grid.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
+          grid.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
           target.appendChild(grid);
 
-          if(slide.title && !slide.hide_panel_titles){
-            const title=document.createElement("div");
-            title.className="title"; title.textContent=slide.title;
+          if (slide.title && !slide.hide_panel_titles) {
+            const title = document.createElement("div");
+            title.className = "title";
+            title.textContent = slide.title;
             target.appendChild(title);
           }
 
-          slide.panels.forEach((panel,pi)=>{
-            const cell=document.createElement("div"); cell.className="mux-cell";
-            const inner=document.createElement("div"); inner.className="mux-inner";
-            cell.appendChild(inner); grid.appendChild(cell);
+          slide.panels.forEach((panel, pi) => {
+            const cell = document.createElement("div");
+            cell.className = "mux-cell";
+            const inner = document.createElement("div");
+            inner.className = "mux-inner";
+            cell.appendChild(inner);
+            grid.appendChild(cell);
 
-            const {x,y}=parseAlign(panel.align); inner.dataset.scale=panel.scale||1;
-            function positionInner(){
-              const rect=cell.getBoundingClientRect();
-              inner.style.justifyContent=x==="left"?"flex-start":x==="right"?"flex-end":"center";
-              inner.style.alignItems=y==="top"?"flex-start":y==="bottom"?"flex-end":"center";
-              let tx=0,ty=0;
-              if(x.endsWith("%")) tx=(parseFloat(x)-50)/100*rect.width;
-              if(y.endsWith("%")) ty=(parseFloat(y)-50)/100*rect.height;
-              inner.style.transform=`translate(${tx}px,${ty}px) scale(${inner.dataset.scale})`;
+            const { x, y } = parseAlign(panel.align);
+            inner.dataset.scale = panel.scale || 1;
+            function positionInner() {
+              const rect = cell.getBoundingClientRect();
+              inner.style.justifyContent =
+                x === "left" ? "flex-start" : x === "right" ? "flex-end" : "center";
+              inner.style.alignItems =
+                y === "top" ? "flex-start" : y === "bottom" ? "flex-end" : "center";
+              let tx = 0, ty = 0;
+              if (x.endsWith("%")) tx = ((parseFloat(x) - 50) / 100) * rect.width;
+              if (y.endsWith("%")) ty = ((parseFloat(y) - 50) / 100) * rect.height;
+              inner.style.transform = `translate(${tx}px,${ty}px) scale(${inner.dataset.scale})`;
             }
-            positionInner(); new ResizeObserver(positionInner).observe(cell);
+            positionInner();
+            new ResizeObserver(positionInner).observe(cell);
 
-            if(!panel.slides?.length) return;
-            const deck=panel.slides.map(id=>allSlides.find(s=>s.id===id)).filter(Boolean);
-            if(!deck.length) return;
+            if (!panel.slides?.length) return;
+            const deck = panel.slides.map((id) => allSlides.find((s) => s.id === id)).filter(Boolean);
+            if (!deck.length) return;
 
-            let deckIdx=0;
-
-            function showNextx() {
-              const s = deck[deckIdx];
-              inner.innerHTML = "";
-
-              if (s.frames?.length) {
-                const img = document.createElement("img");
-                inner.appendChild(img);
-                playFrames(img, s.frames, s.fps, s.repeat, s.duration, s.effect, () => {
-                  deckIdx = (deckIdx + 1) % deck.length;
-                  showNext(); // advance only after playback completes
-                });
-                return;
-              }
-
-
-              renderSlide(inner, { ...s, suppressTitle: true, hide_panel_titles: true }, allSlides, () => {});
-              const dur = panel.panel_duration === "infinite"
-                ? 10000
-                : (panel.panel_duration || s.duration || 5) * 1000;
-              setTimeout(() => {
-                deckIdx = (deckIdx + 1) % deck.length;
-                showNext();
-              }, dur);
-            }
-
+            let deckIdx = 0;
             function showNext() {
               const s = deck[deckIdx];
               inner.innerHTML = "";
-
-              if (s.frames?.length) {
-                const img = document.createElement("img");
-                inner.appendChild(img);
-                playFrames(img, s.frames, s.fps, s.repeat, s.duration, s.effect, () => {
-                  deckIdx = (deckIdx + 1) % deck.length;
-                  showNext(); // advance only after playback completes
-                });
-                return;
-              }
-
-              renderSlide(inner, { ...s, suppressTitle: true, hide_panel_titles: true }, allSlides, () => {});
-
-              if (panel.panel_duration === "infinite") {
-                console.log(`🔁 Panel ${pi} set to infinite — holding current slide.`);
-                return; // <-- prevent future refreshes
-              }
-
+              renderSlide(inner, { ...s, suppressTitle: true, hide_panel_titles: true },
+                          allSlides, () => {});
+              if (panel.panel_duration === "infinite") return;
               const dur = (panel.panel_duration || s.duration || 5) * 1000;
-              setTimeout(() => {
-                deckIdx = (deckIdx + 1) % deck.length;
-                showNext();
-              }, dur);
+              setTimeout(() => { deckIdx = (deckIdx + 1) % deck.length; showNext(); }, dur);
             }
-
-
-
-            setTimeout(showNext,pi*500);
+            setTimeout(showNext, pi * 500);
           });
 
-          // Prevent refresh if MUX duration or any panel is "infinite"
-          const hasInfinitePanel = slide.panels?.some(p => p.panel_duration === "infinite");
-          if (onDone && slide.duration !== "infinite" && !hasInfinitePanel) {
+          const hasInf = slide.panels?.some((p) => p.panel_duration === "infinite");
+          if (onDone && slide.duration !== "infinite" && !hasInf)
             setTimeout(onDone, (slide.duration || 30) * 1000);
-          }
-
-
           return;
         }
 
-        // ---------- Multi-frame image sequence ----------
-        if(slide.frames && slide.frames.length){
-          const img=document.createElement("img");
-          img.src=slide.frames[0];
+        // ---------- Multi-frame / wildcard ----------
+        if ((slide.frames && slide.frames.length) || (slide.file && slide.file.includes("*"))) {
+          const img = document.createElement("img");
           target.appendChild(img);
-          if(slide.title && !(slide.hide_panel_titles||slide.suppressTitle)){
-            const t=document.createElement("div"); t.className="title"; t.textContent=slide.title;
-            target.appendChild(t);
+          async function loadAndPlay() {
+            let frames = slide.frames;
+            if (!frames && slide.file.includes("*")) {
+              const pattern = slide.file.replace(/^\/*/, "");
+              const res = await fetch(`/api/frames?pattern=${encodeURIComponent(pattern)}`);
+              const data = await res.json();
+              frames = data.frames || [];
+            }
+            if (!frames?.length) { console.warn(`No frames for ${slide.id}`); return; }
+            if (slide.title && !(slide.hide_panel_titles || slide.suppressTitle)) {
+              const t = document.createElement("div");
+              t.className = "title"; t.textContent = slide.title;
+              target.appendChild(t);
+            }
+            playFrames(img, frames, slide.fps, slide.repeat, slide.duration, slide.effect, onDone);
           }
-          playFrames(img,slide.frames,slide.fps,slide.repeat,slide.duration,slide.effect,onDone);
+          loadAndPlay();
           return;
         }
 
-        // ---------- Still image ----------
-        if(slide.url && !slide.type){
-          const img=document.createElement("img"); img.src=slide.url;
+        // ---------- Still image (includes Ken Burns fix) ----------
+        if ((slide.url || slide.file) && !slide.type) {
+          const img = document.createElement("img");
           target.appendChild(img);
-          if(slide.title && !(slide.hide_panel_titles||slide.suppressTitle)){
-            const t=document.createElement("div"); t.className="title"; t.textContent=slide.title;
-            target.appendChild(t);
+
+          async function loadStill() {
+            let url = slide.url;
+            if (!url && slide.file) {
+              const file = slide.file.replace(/^\/*/, "");
+              const res = await fetch(`/api/image?file=${encodeURIComponent(file)}`);
+              const data = await res.json();
+              url = data.url;
+            }
+            if (!url) { console.warn(`Missing image for ${slide.id}`); return; }
+            img.src = url;
+            if (slide.title && !(slide.hide_panel_titles || slide.suppressTitle)) {
+              const t = document.createElement("div");
+              t.className = "title"; t.textContent = slide.title;
+              target.appendChild(t);
+            }
+            applyEffect(img, slide.effect, slide.duration);
+            if (onDone) setTimeout(onDone, (slide.duration || 5) * 1000);
           }
-          applyEffect(img,slide.effect,slide.duration);
-          if(onDone) setTimeout(onDone,(slide.duration||5)*1000);
+
+          loadStill();
+          return;
+        }
+
+        // ---------- HTML ----------
+        if (slide.type === "html" && slide.url) {
+          const iframe = document.createElement("iframe");
+          iframe.src = slide.url;
+          target.appendChild(iframe);
+          if (onDone && slide.duration !== "infinite")
+            setTimeout(onDone, (slide.duration || 15) * 1000);
           return;
         }
 
         // ---------- YouTube ----------
-        if(slide.type==="youtube" && slide.video_id){
-          const iframe=document.createElement("iframe");
-          iframe.src=`https://www.youtube.com/embed/${slide.video_id}?autoplay=1&mute=1&controls=0`;
+        if (slide.type === "youtube" && slide.video_id) {
+          const iframe = document.createElement("iframe");
+          iframe.src = `https://www.youtube.com/embed/${slide.video_id}?autoplay=1&mute=1&controls=0`;
           target.appendChild(iframe);
-          if(slide.title && !(slide.hide_panel_titles||slide.suppressTitle)){
-            const t=document.createElement("div"); t.className="title"; t.textContent=slide.title;
+          if (slide.title && !(slide.hide_panel_titles || slide.suppressTitle)) {
+            const t = document.createElement("div");
+            t.className = "title"; t.textContent = slide.title;
             target.appendChild(t);
           }
-          if(onDone) setTimeout(onDone,(slide.duration||30)*1000);
+          if (onDone) setTimeout(onDone, (slide.duration || 30) * 1000);
           return;
         }
 
-        if(onDone) setTimeout(onDone,(slide.duration||5)*1000);
+        if (onDone) setTimeout(onDone, (slide.duration || 5) * 1000);
       }
 
-      function showSlide(i){
-        if(i<0)i=slides.length-1; if(i>=slides.length)i=0; idx=i;
-        const next=slides[idx];
-        const ns=idx%2?slideB:slideA; const cs=idx%2?slideA:slideB;
-        renderSlide(ns,next,slides,()=>!paused&&showSlide(idx+1));
-        ns.style.opacity=1; cs.style.opacity=0;
+      function showSlide(i) {
+        if (i < 0) i = slides.length - 1;
+        if (i >= slides.length) i = 0;
+        idx = i;
+        const next = slides[idx];
+        const ns = idx % 2 ? slideB : slideA;
+        const cs = idx % 2 ? slideA : slideB;
+        renderSlide(ns, next, slides, () => !paused && showSlide(idx + 1));
+        ns.style.opacity = 1; cs.style.opacity = 0;
       }
 
-      renderSlide(slideA,slides[0],slides,()=>showSlide(1));
-      slideA.style.opacity=1;
+      renderSlide(slideA, slides[0], slides, () => showSlide(1));
+      slideA.style.opacity = 1;
     }
+
     start();
   </script>
 </body>

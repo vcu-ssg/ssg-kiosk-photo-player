@@ -166,3 +166,509 @@
 2025-10-23T18:58:45.390Z | client=Scrollsaw | reqHost=localhost | ip=::1
 2025-10-23T18:58:45.391Z | 🧩 MUX [house_mux_2x2]: layout=2x2, panels=4, duration=infinite
 2025-10-23T18:58:45.398Z | ✅ Built slideshow for Scrollsaw: 11 slides total
+2025-10-23T19:06:36.774Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-23T19:06:39.856Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T19:06:39.857Z | 🧩 MUX [house_mux_2x2]: layout=2x2, panels=4, duration=infinite
+2025-10-23T19:06:39.863Z | ✅ Built slideshow for Scrollsaw: 12 slides total
+2025-10-23T19:07:26.165Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-23T19:07:30.312Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T19:07:30.313Z | 🌐 HTML [weather_dashboard]: /pages/weather.html
+2025-10-23T19:07:30.313Z | ✅ Built slideshow for Scrollsaw: 1 slides total
+2025-10-23T19:20:14.799Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-23T19:20:27.803Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T19:20:27.803Z | 🧩 MUX [house_mux_2x2]: layout=2x2, panels=4, duration=infinite
+2025-10-23T19:20:27.809Z | ✅ Built slideshow for Scrollsaw: 12 slides total
+2025-10-23T19:20:30.225Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T19:20:30.225Z | 🧩 MUX [house_mux_2x2]: layout=2x2, panels=4, duration=infinite
+2025-10-23T19:20:30.228Z | ✅ Built slideshow for Scrollsaw: 12 slides total
+2025-10-23T19:44:27.358Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+::1 - - [23/Oct/2025:19:44:29 +0000] "GET /cache/kitchen_during/2025-06-02_20-14-22EOS%20R3_4438.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:19:44:29 +0000] "GET /cache/bath_during/055A2899.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:19:44:32 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T19:44:32.172Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T19:44:32.173Z | 🧩 MUX [house_mux_2x2]: layout=2x2, panels=4
+2025-10-23T19:44:32.173Z | ✅ Built slideshow for Scrollsaw: 1 slides total
+::1 - - [23/Oct/2025:19:44:32 +0000] "GET /api/slideshow HTTP/1.1" 200 408 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T19:49:38.160Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+::1 - - [23/Oct/2025:19:49:43 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T19:49:43.587Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T19:49:43.588Z | 🧩 MUX [house_mux_2x2]: layout=2x2, panels=4
+2025-10-23T19:49:43.588Z | ✅ Built slideshow for Scrollsaw: 1 slides total
+::1 - - [23/Oct/2025:19:49:43 +0000] "GET /api/slideshow HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:19:49:45 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T19:49:45.808Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T19:49:45.808Z | 🧩 MUX [house_mux_2x2]: layout=2x2, panels=4
+2025-10-23T19:49:45.809Z | ✅ Built slideshow for Scrollsaw: 1 slides total
+::1 - - [23/Oct/2025:19:49:45 +0000] "GET /api/slideshow HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:19:49:51 +0000] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 187 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:19:49:53 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:19:49:53 +0000] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 187 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T19:49:53.555Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T19:49:53.555Z | 🧩 MUX [house_mux_2x2]: layout=2x2, panels=4
+2025-10-23T19:49:53.555Z | ✅ Built slideshow for Scrollsaw: 1 slides total
+::1 - - [23/Oct/2025:19:49:53 +0000] "GET /api/slideshow HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:19:50:00 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:19:50:00 +0000] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 187 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T19:50:00.189Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T19:50:00.189Z | 🧩 MUX [house_mux_2x2]: layout=2x2, panels=4
+2025-10-23T19:50:00.189Z | ✅ Built slideshow for Scrollsaw: 1 slides total
+::1 - - [23/Oct/2025:19:50:00 +0000] "GET /api/slideshow HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:19:50:01 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:19:50:01 +0000] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 187 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T19:50:01.437Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T19:50:01.437Z | 🧩 MUX [house_mux_2x2]: layout=2x2, panels=4
+2025-10-23T19:50:01.437Z | ✅ Built slideshow for Scrollsaw: 1 slides total
+::1 - - [23/Oct/2025:19:50:01 +0000] "GET /api/slideshow HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:19:50:17 +0000] "GET /pages/weather.html HTTP/1.1" 200 3153 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:19:50:17 +0000] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 187 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:19:50:17 +0000] "GET /api/weather HTTP/1.1" 200 521 "http://localhost:3000/pages/weather.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:19:50:17 +0000] "GET /api/weather?lat=37.5407&lon=-77.4360&units=imperial HTTP/1.1" 200 521 "http://localhost:3000/pages/weather.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T19:52:35.925Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+::1 - - [23/Oct/2025:19:52:39 +0000] "GET /pages/weather.html HTTP/1.1" 200 3509 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:19:52:39 +0000] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 187 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:19:52:39 +0000] "GET /api/weather?lat=37.5407&lon=-77.436&units=imperial HTTP/1.1" 200 521 "http://localhost:3000/pages/weather.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:19:54:28 +0000] "GET /api/weather?lat=37.5407&lon=-77.4360&units=imperial HTTP/1.1" 200 521 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T19:55:38.796Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+::1 - - [23/Oct/2025:19:55:41 +0000] "GET /pages/weather.html HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:19:55:41 +0000] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 187 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:19:55:41 +0000] "GET /api/weather?lat=37.5407&lon=-77.436&units=imperial HTTP/1.1" 200 15987 "http://localhost:3000/pages/weather.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:19:55:51 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:19:55:51 +0000] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 187 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T19:55:51.518Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T19:55:51.518Z | 🧩 MUX [house_mux_2x2]: layout=2x2, panels=4
+2025-10-23T19:55:51.518Z | ✅ Built slideshow for Scrollsaw: 1 slides total
+::1 - - [23/Oct/2025:19:55:51 +0000] "GET /api/slideshow HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T19:59:47.070Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+::1 - - [23/Oct/2025:19:59:51 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:19:59:51 +0000] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 187 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T19:59:51.278Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T19:59:51.278Z | 🧩 MUX [house_mux_2x2]: layout=2x2, panels=4
+2025-10-23T19:59:51.278Z | ✅ Built slideshow for Scrollsaw: 1 slides total
+::1 - - [23/Oct/2025:19:59:51 +0000] "GET /api/slideshow HTTP/1.1" 200 388 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:19:59:53 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:19:59:53 +0000] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 187 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T19:59:53.097Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T19:59:53.097Z | 🧩 MUX [house_mux_2x2]: layout=2x2, panels=4
+2025-10-23T19:59:53.097Z | ✅ Built slideshow for Scrollsaw: 1 slides total
+::1 - - [23/Oct/2025:19:59:53 +0000] "GET /api/slideshow HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:19:59:55 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T19:59:55.305Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T19:59:55.305Z | 🧩 MUX [house_mux_2x2]: layout=2x2, panels=4
+2025-10-23T19:59:55.305Z | ✅ Built slideshow for Scrollsaw: 1 slides total
+::1 - - [23/Oct/2025:19:59:55 +0000] "GET /api/slideshow HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:19:59:55 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T19:59:55.988Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T19:59:55.989Z | 🧩 MUX [house_mux_2x2]: layout=2x2, panels=4
+2025-10-23T19:59:55.989Z | ✅ Built slideshow for Scrollsaw: 1 slides total
+::1 - - [23/Oct/2025:19:59:55 +0000] "GET /api/slideshow HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T20:02:55.446Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+::1 - - [23/Oct/2025:20:02:58 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T20:02:58.640Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T20:02:58.640Z | 🌐 HTML [weather_dashboard]: /pages/weather.html, duration=15s
+2025-10-23T20:02:58.640Z | ✅ Built slideshow for Scrollsaw: 1 slides total
+::1 - - [23/Oct/2025:20:02:58 +0000] "GET /api/slideshow HTTP/1.1" 200 107 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:20:03:00 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T20:03:00.678Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T20:03:00.678Z | 🌐 HTML [weather_dashboard]: /pages/weather.html, duration=15s
+2025-10-23T20:03:00.678Z | ✅ Built slideshow for Scrollsaw: 1 slides total
+::1 - - [23/Oct/2025:20:03:00 +0000] "GET /api/slideshow HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:20:03:01 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T20:03:01.421Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T20:03:01.421Z | 🌐 HTML [weather_dashboard]: /pages/weather.html, duration=15s
+2025-10-23T20:03:01.421Z | ✅ Built slideshow for Scrollsaw: 1 slides total
+::1 - - [23/Oct/2025:20:03:01 +0000] "GET /api/slideshow HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:20:03:01 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T20:03:01.954Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T20:03:01.954Z | 🌐 HTML [weather_dashboard]: /pages/weather.html, duration=15s
+2025-10-23T20:03:01.954Z | ✅ Built slideshow for Scrollsaw: 1 slides total
+::1 - - [23/Oct/2025:20:03:01 +0000] "GET /api/slideshow HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:20:03:02 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T20:03:02.485Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T20:03:02.485Z | 🌐 HTML [weather_dashboard]: /pages/weather.html, duration=15s
+2025-10-23T20:03:02.485Z | ✅ Built slideshow for Scrollsaw: 1 slides total
+::1 - - [23/Oct/2025:20:03:02 +0000] "GET /api/slideshow HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:20:03:02 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T20:03:02.998Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T20:03:02.998Z | 🌐 HTML [weather_dashboard]: /pages/weather.html, duration=15s
+2025-10-23T20:03:02.998Z | ✅ Built slideshow for Scrollsaw: 1 slides total
+::1 - - [23/Oct/2025:20:03:02 +0000] "GET /api/slideshow HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:20:05:17 +0000] "GET /pages/weather.html HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:20:05:17 +0000] "GET /api/weather?lat=37.5407&lon=-77.436&units=imperial HTTP/1.1" 200 15987 "http://localhost:3000/pages/weather.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T20:12:19.607Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+::1 - - [23/Oct/2025:20:12:23 +0000] "GET / HTTP/1.1" 200 10045 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T20:12:23.362Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T20:12:23.362Z | 🌐 HTML [weather_dashboard]: /pages/weather.html, duration=15s
+2025-10-23T20:12:23.362Z | ✅ Built slideshow for Scrollsaw: 1 slides total
+::1 - - [23/Oct/2025:20:12:23 +0000] "GET /api/slideshow HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T21:06:46.124Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+::1 - - [23/Oct/2025:21:06:52 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T21:06:52.837Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T21:06:52.837Z | 🌐 HTML [weather_dashboard]: /pages/weather.html, duration=15s
+2025-10-23T21:06:52.837Z | ✅ Built slideshow for Scrollsaw: 1 slides total
+::1 - - [23/Oct/2025:21:06:52 +0000] "GET /api/slideshow HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:06:56 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T21:06:56.791Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T21:06:56.791Z | 🌐 HTML [weather_dashboard]: /pages/weather.html, duration=15s
+2025-10-23T21:06:56.791Z | ✅ Built slideshow for Scrollsaw: 1 slides total
+::1 - - [23/Oct/2025:21:06:56 +0000] "GET /api/slideshow HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:06:57 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T21:06:57.772Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T21:06:57.772Z | 🌐 HTML [weather_dashboard]: /pages/weather.html, duration=15s
+2025-10-23T21:06:57.772Z | ✅ Built slideshow for Scrollsaw: 1 slides total
+::1 - - [23/Oct/2025:21:06:57 +0000] "GET /api/slideshow HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T21:10:36.718Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-23T21:10:39.733Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T21:10:39.733Z | 🌐 HTML [weather_dashboard]: /pages/weather.html, duration=15s
+2025-10-23T21:10:39.733Z | ✅ Built slideshow for Scrollsaw: 1 slides total
+::1 - - [23/Oct/2025:21:10:39 +0000] "GET /api/slideshow HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T21:10:40.732Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T21:10:40.732Z | 🌐 HTML [weather_dashboard]: /pages/weather.html, duration=15s
+2025-10-23T21:10:40.732Z | ✅ Built slideshow for Scrollsaw: 1 slides total
+::1 - - [23/Oct/2025:21:10:40 +0000] "GET /api/slideshow HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T21:15:17.403Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+::1 - - [23/Oct/2025:21:15:21 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:15:21 +0000] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 187 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T21:15:21.842Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T21:15:21.842Z | 🌐 HTML [weather_dashboard]: /pages/weather.html, duration=15s
+2025-10-23T21:15:21.842Z | ✅ Built slideshow for Scrollsaw: 1 slides total
+::1 - - [23/Oct/2025:21:15:21 +0000] "GET /api/slideshow HTTP/1.1" 200 106 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:15:22 +0000] "GET /pages/weather.html HTTP/1.1" 200 3509 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:15:22 +0000] "GET /api/weather?lat=37.5407&lon=-77.436&units=imperial HTTP/1.1" 200 16000 "http://localhost:3000/pages/weather.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:15:37 +0000] "GET /pages/weather.html HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:15:37 +0000] "GET /api/weather?lat=37.5407&lon=-77.436&units=imperial HTTP/1.1" 304 - "http://localhost:3000/pages/weather.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:15:52 +0000] "GET /pages/weather.html HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:15:52 +0000] "GET /api/weather?lat=37.5407&lon=-77.436&units=imperial HTTP/1.1" 304 - "http://localhost:3000/pages/weather.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:16:07 +0000] "GET /pages/weather.html HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:16:07 +0000] "GET /api/weather?lat=37.5407&lon=-77.436&units=imperial HTTP/1.1" 304 - "http://localhost:3000/pages/weather.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:16:22 +0000] "GET /pages/weather.html HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:16:22 +0000] "GET /api/weather?lat=37.5407&lon=-77.436&units=imperial HTTP/1.1" 304 - "http://localhost:3000/pages/weather.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:16:37 +0000] "GET /pages/weather.html HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:16:37 +0000] "GET /api/weather?lat=37.5407&lon=-77.436&units=imperial HTTP/1.1" 304 - "http://localhost:3000/pages/weather.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:16:52 +0000] "GET /pages/weather.html HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:16:52 +0000] "GET /api/weather?lat=37.5407&lon=-77.436&units=imperial HTTP/1.1" 304 - "http://localhost:3000/pages/weather.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:17:07 +0000] "GET /pages/weather.html HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:17:07 +0000] "GET /api/weather?lat=37.5407&lon=-77.436&units=imperial HTTP/1.1" 304 - "http://localhost:3000/pages/weather.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T21:17:19.617Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+::1 - - [23/Oct/2025:21:17:22 +0000] "GET /pages/weather.html HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:17:22 +0000] "GET /api/weather?lat=37.5407&lon=-77.436&units=imperial HTTP/1.1" 304 - "http://localhost:3000/pages/weather.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:17:23 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:17:23 +0000] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 187 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T21:17:23.486Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T21:17:23.486Z | 🧩 MUX [house_mux_2x2]: layout=2x2, panels=4
+2025-10-23T21:17:23.486Z | ✅ Built slideshow for Scrollsaw: 1 slides total
+::1 - - [23/Oct/2025:21:17:23 +0000] "GET /api/slideshow HTTP/1.1" 200 408 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:17:27 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:17:27 +0000] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 187 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T21:17:27.445Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T21:17:27.445Z | 🧩 MUX [house_mux_2x2]: layout=2x2, panels=4
+2025-10-23T21:17:27.445Z | ✅ Built slideshow for Scrollsaw: 1 slides total
+::1 - - [23/Oct/2025:21:17:27 +0000] "GET /api/slideshow HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T21:18:17.067Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T21:18:17.067Z | 🧩 MUX [house_mux_2x2]: layout=2x2, panels=4
+2025-10-23T21:18:17.067Z | ✅ Built slideshow for Scrollsaw: 1 slides total
+::1 - - [23/Oct/2025:21:18:17 +0000] "GET /api/slideshow HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:18:17 +0000] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 187 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:20:44 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T21:20:44.561Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T21:20:44.561Z | 🧩 MUX [house_mux_2x2]: layout=2x2, panels=4
+2025-10-23T21:20:44.561Z | ✅ Built slideshow for Scrollsaw: 1 slides total
+::1 - - [23/Oct/2025:21:20:44 +0000] "GET /api/slideshow HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:20:49 +0000] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 187 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:22:49 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:22:49 +0000] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 187 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T21:22:49.798Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T21:22:49.798Z | 🧩 MUX [house_mux_2x2]: layout=2x2, panels=4
+2025-10-23T21:22:49.798Z | ✅ Built slideshow for Scrollsaw: 1 slides total
+::1 - - [23/Oct/2025:21:22:49 +0000] "GET /api/slideshow HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:22:53 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:22:53 +0000] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 187 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T21:22:53.101Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T21:22:53.101Z | 🧩 MUX [house_mux_2x2]: layout=2x2, panels=4
+2025-10-23T21:22:53.101Z | ✅ Built slideshow for Scrollsaw: 1 slides total
+::1 - - [23/Oct/2025:21:22:53 +0000] "GET /api/slideshow HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:22:55 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:22:55 +0000] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 187 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T21:22:55.899Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T21:22:55.899Z | 🧩 MUX [house_mux_2x2]: layout=2x2, panels=4
+2025-10-23T21:22:55.899Z | ✅ Built slideshow for Scrollsaw: 1 slides total
+::1 - - [23/Oct/2025:21:22:55 +0000] "GET /api/slideshow HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T21:23:02.316Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T21:23:02.316Z | 🧩 MUX [house_mux_2x2]: layout=2x2, panels=4
+2025-10-23T21:23:02.316Z | ✅ Built slideshow for Scrollsaw: 1 slides total
+::1 - - [23/Oct/2025:21:23:02 +0000] "GET /api/slideshow HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:23:02 +0000] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 187 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T21:27:36.173Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T21:27:36.173Z | 🧩 MUX [house_mux_2x2]: layout=2x2, panels=4
+2025-10-23T21:27:36.173Z | ✅ Built slideshow for Scrollsaw: 1 slides total
+::1 - - [23/Oct/2025:21:27:36 +0000] "GET /api/slideshow HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T21:31:18.587Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-23T21:31:23.207Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T21:31:23.207Z | 🧩 MUX [house_mux_2x2]: layout=2x2, panels=4, +10 children
+2025-10-23T21:31:23.207Z | ✅ Built slideshow for Scrollsaw: 11 slides total
+::1 - - [23/Oct/2025:21:31:23 +0000] "GET /api/slideshow HTTP/1.1" 200 1315 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:31:23 +0000] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 187 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:31:31 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:31:31 +0000] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 187 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T21:31:31.446Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T21:31:31.446Z | 🧩 MUX [house_mux_2x2]: layout=2x2, panels=4, +10 children
+2025-10-23T21:31:31.446Z | ✅ Built slideshow for Scrollsaw: 11 slides total
+::1 - - [23/Oct/2025:21:31:31 +0000] "GET /api/slideshow HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:31:33 +0000] "GET /pages/weather.html HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:31:33 +0000] "GET /api/weather?lat=37.5407&lon=-77.436&units=imperial HTTP/1.1" 200 16000 "http://localhost:3000/pages/weather.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:32:03 +0000] "GET /pages/weather.html HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:32:03 +0000] "GET /api/weather?lat=37.5407&lon=-77.436&units=imperial HTTP/1.1" 304 - "http://localhost:3000/pages/weather.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:32:34 +0000] "GET /pages/weather.html HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:32:34 +0000] "GET /api/weather?lat=37.5407&lon=-77.436&units=imperial HTTP/1.1" 304 - "http://localhost:3000/pages/weather.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:33:06 +0000] "GET /pages/weather.html HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:33:06 +0000] "GET /api/weather?lat=37.5407&lon=-77.436&units=imperial HTTP/1.1" 304 - "http://localhost:3000/pages/weather.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:33:38 +0000] "GET /pages/weather.html HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:33:38 +0000] "GET /api/weather?lat=37.5407&lon=-77.436&units=imperial HTTP/1.1" 304 - "http://localhost:3000/pages/weather.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:34:09 +0000] "GET /pages/weather.html HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:34:09 +0000] "GET /api/weather?lat=37.5407&lon=-77.436&units=imperial HTTP/1.1" 304 - "http://localhost:3000/pages/weather.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:34:39 +0000] "GET /pages/weather.html HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:34:39 +0000] "GET /api/weather?lat=37.5407&lon=-77.436&units=imperial HTTP/1.1" 304 - "http://localhost:3000/pages/weather.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T21:34:40.538Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T21:34:40.538Z | 🧩 MUX [house_mux_2x2]: layout=2x2, panels=4, +10 children
+2025-10-23T21:34:40.538Z | ✅ Built slideshow for Scrollsaw: 11 slides total
+::1 - - [23/Oct/2025:21:34:40 +0000] "GET /api/slideshow HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:34:40 +0000] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 187 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T21:40:43.112Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-23T21:40:47.965Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T21:40:47.965Z | 🧩 MUX [house_mux_2x2]: layout=2x2, panels=4
+2025-10-23T21:40:47.966Z | ✅ Built slideshow for Scrollsaw: 11 slides total
+::1 - - [23/Oct/2025:21:40:47 +0000] "GET /api/slideshow HTTP/1.1" 200 1315 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:40:47 +0000] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 187 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:40:53 +0000] "GET / HTTP/1.1" 200 10894 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:40:53 +0000] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 187 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T21:40:53.783Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T21:40:53.783Z | 🧩 MUX [house_mux_2x2]: layout=2x2, panels=4
+2025-10-23T21:40:53.783Z | ✅ Built slideshow for Scrollsaw: 11 slides total
+::1 - - [23/Oct/2025:21:40:53 +0000] "GET /api/slideshow HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:40:55 +0000] "GET /pages/weather.html HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:40:55 +0000] "GET /api/weather?lat=37.5407&lon=-77.436&units=imperial HTTP/1.1" 200 16001 "http://localhost:3000/pages/weather.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:41:04 +0000] "GET /api/frames?pattern=bath_during%2F*.JPG HTTP/1.1" 200 396 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:41:04 +0000] "GET /cache/bath_during/055A2876.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:41:05 +0000] "GET /api/frames?pattern=kitchen_during%2F*.JPG HTTP/1.1" 200 411 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:41:05 +0000] "GET /cache/kitchen_during/055A2804.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:41:07 +0000] "GET /cache/bath_during/055A2878.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:41:08 +0000] "GET /cache/kitchen_during/055A2806.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:41:10 +0000] "GET /cache/bath_during/055A2899.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:41:11 +0000] "GET /cache/kitchen_during/055A2869.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:41:13 +0000] "GET /cache/bath_during/055A2902.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:41:14 +0000] "GET /cache/kitchen_during/055A2924.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:41:16 +0000] "GET /cache/bath_during/055A2947.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:41:17 +0000] "GET /cache/kitchen_during/055A2929.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:41:19 +0000] "GET /cache/bath_during/055A3013.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:41:20 +0000] "GET /cache/kitchen_during/055A2967.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:41:22 +0000] "GET /cache/bath_during/055A3076.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:41:23 +0000] "GET /cache/kitchen_during/2025-06-02_20-14-22EOS%20R3_4438.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:41:25 +0000] "GET /pages/weather.html HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:41:25 +0000] "GET /api/weather?lat=37.5407&lon=-77.436&units=imperial HTTP/1.1" 304 - "http://localhost:3000/pages/weather.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:41:25 +0000] "GET /cache/bath_during/055A3082.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:41:26 +0000] "GET /cache/kitchen_during/2025-06-02_20-21-21EOS%20R3_4464.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:41:28 +0000] "GET /api/frames?pattern=bath_during%2F*.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:41:28 +0000] "GET /cache/bath_during/055A2876.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:41:28 +0000] "GET /cache/bath_during/2025-06-02_20-15-55EOS%20R3_4447.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:41:29 +0000] "GET /api/frames?pattern=kitchen_during%2F*.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:41:29 +0000] "GET /cache/kitchen_during/055A2804.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:41:29 +0000] "GET /cache/kitchen_during/2025-06-02_20-21-45EOS%20R3_4474.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:41:31 +0000] "GET /cache/bath_during/055A2878.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:41:31 +0000] "GET /cache/bath_during/2025-06-25_19-35-18EOS%20R3_4664.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:41:32 +0000] "GET /cache/kitchen_during/055A2806.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:41:34 +0000] "GET /cache/bath_during/055A2899.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:41:35 +0000] "GET /cache/kitchen_during/055A2869.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:41:37 +0000] "GET /cache/bath_during/055A2902.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:41:38 +0000] "GET /cache/kitchen_during/055A2924.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:41:40 +0000] "GET /cache/bath_during/055A2947.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:41:41 +0000] "GET /cache/kitchen_during/055A2929.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:41:43 +0000] "GET /cache/bath_during/055A3013.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:41:44 +0000] "GET /cache/kitchen_during/055A2967.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:41:46 +0000] "GET /cache/bath_during/055A3076.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:41:52 +0000] "GET /api/frames?pattern=bath_during%2F*.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:41:53 +0000] "GET /api/frames?pattern=kitchen_during%2F*.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:41:55 +0000] "GET /pages/weather.html HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:41:55 +0000] "GET /api/weather?lat=37.5407&lon=-77.436&units=imperial HTTP/1.1" 304 - "http://localhost:3000/pages/weather.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:41:56 +0000] "GET /cache/kitchen_during/055A2806.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:41:58 +0000] "GET /cache/bath_during/055A2899.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:41:59 +0000] "GET /cache/kitchen_during/055A2869.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:01 +0000] "GET /cache/bath_during/055A2902.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:02 +0000] "GET /cache/kitchen_during/055A2924.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:05 +0000] "GET /cache/bath_during/055A2947.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:06 +0000] "GET /cache/kitchen_during/055A2929.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:09 +0000] "GET /cache/bath_during/055A3013.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:10 +0000] "GET /cache/kitchen_during/055A2967.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:13 +0000] "GET /cache/bath_during/055A3076.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:13 +0000] "GET /cache/kitchen_during/2025-06-02_20-14-22EOS%20R3_4438.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:17 +0000] "GET /cache/bath_during/055A3082.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:17 +0000] "GET /cache/kitchen_during/2025-06-02_20-21-21EOS%20R3_4464.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:17 +0000] "GET /api/frames?pattern=bath_during%2F*.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:17 +0000] "GET /cache/bath_during/055A2876.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:19 +0000] "GET /api/frames?pattern=kitchen_during%2F*.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:19 +0000] "GET /cache/kitchen_during/055A2804.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:21 +0000] "GET /cache/bath_during/2025-06-02_20-15-55EOS%20R3_4447.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:21 +0000] "GET /cache/kitchen_during/2025-06-02_20-21-45EOS%20R3_4474.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:21 +0000] "GET /cache/bath_during/055A2878.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:23 +0000] "GET /cache/kitchen_during/055A2806.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:25 +0000] "GET /pages/weather.html HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:25 +0000] "GET /cache/bath_during/2025-06-25_19-35-18EOS%20R3_4664.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:25 +0000] "GET /cache/bath_during/055A2899.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:25 +0000] "GET /api/weather?lat=37.5407&lon=-77.436&units=imperial HTTP/1.1" 304 - "http://localhost:3000/pages/weather.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:27 +0000] "GET /cache/kitchen_during/055A2869.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:29 +0000] "GET /cache/bath_during/055A2902.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:31 +0000] "GET /cache/kitchen_during/055A2924.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:33 +0000] "GET /cache/bath_during/055A2947.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:35 +0000] "GET /cache/kitchen_during/055A2929.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:37 +0000] "GET /cache/bath_during/055A3013.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:39 +0000] "GET /cache/kitchen_during/055A2967.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:41 +0000] "GET /cache/bath_during/055A3076.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:43 +0000] "GET /cache/kitchen_during/2025-06-02_20-14-22EOS%20R3_4438.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:45 +0000] "GET /api/frames?pattern=bath_during%2F*.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:45 +0000] "GET /cache/bath_during/055A3082.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:45 +0000] "GET /cache/bath_during/055A2876.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:47 +0000] "GET /api/frames?pattern=kitchen_during%2F*.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:47 +0000] "GET /cache/kitchen_during/2025-06-02_20-21-21EOS%20R3_4464.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:47 +0000] "GET /cache/kitchen_during/055A2804.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:49 +0000] "GET /cache/bath_during/2025-06-02_20-15-55EOS%20R3_4447.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:49 +0000] "GET /cache/bath_during/055A2878.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:51 +0000] "GET /cache/kitchen_during/2025-06-02_20-21-45EOS%20R3_4474.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:51 +0000] "GET /cache/kitchen_during/055A2806.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:53 +0000] "GET /cache/bath_during/2025-06-25_19-35-18EOS%20R3_4664.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:53 +0000] "GET /cache/bath_during/055A2899.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:54 +0000] "GET /cache/kitchen_during/055A2869.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:57 +0000] "GET /cache/bath_during/055A2902.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:57 +0000] "GET /pages/weather.html HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:57 +0000] "GET /api/weather?lat=37.5407&lon=-77.436&units=imperial HTTP/1.1" 304 - "http://localhost:3000/pages/weather.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:42:58 +0000] "GET /cache/kitchen_during/055A2924.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:43:01 +0000] "GET /cache/bath_during/055A2947.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:43:01 +0000] "GET /cache/kitchen_during/055A2929.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:43:05 +0000] "GET /cache/kitchen_during/055A2967.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:43:05 +0000] "GET /cache/bath_during/055A3013.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:43:09 +0000] "GET /cache/bath_during/055A3076.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:43:09 +0000] "GET /cache/kitchen_during/2025-06-02_20-14-22EOS%20R3_4438.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:43:31 +0000] "GET /cache/bath_during/055A3082.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:43:31 +0000] "GET /cache/kitchen_during/2025-06-02_20-21-21EOS%20R3_4464.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:44:31 +0000] "GET /pages/weather.html HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:44:31 +0000] "GET /cache/bath_during/2025-06-02_20-15-55EOS%20R3_4447.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:44:31 +0000] "GET /cache/kitchen_during/2025-06-02_20-21-45EOS%20R3_4474.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:44:31 +0000] "GET /api/weather?lat=37.5407&lon=-77.436&units=imperial HTTP/1.1" 304 - "http://localhost:3000/pages/weather.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T21:50:33.181Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+::1 - - [23/Oct/2025:21:50:33 +0000] "GET /pages/weather.html HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:50:33 +0000] "GET /api/weather?lat=37.5407&lon=-77.436&units=imperial HTTP/1.1" 200 15997 "http://localhost:3000/pages/weather.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:50:37 +0000] "GET / HTTP/1.1" 200 10399 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:50:37 +0000] "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 187 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+2025-10-23T21:50:37.780Z | ✅ Built slideshow for Scrollsaw: 11 slides total
+::1 - - [23/Oct/2025:21:50:37 +0000] "GET /api/slideshow HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:50:38 +0000] "GET /api/image?file=bath_before.JPG HTTP/1.1" 200 32 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:50:38 +0000] "GET /cache/bath_before.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:50:38 +0000] "GET /api/image?file=kitchen_before.JPG HTTP/1.1" 200 35 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:50:39 +0000] "GET /cache/kitchen_before.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:50:39 +0000] "GET /pages/weather.html HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:50:39 +0000] "GET /api/weather?lat=37.5407&lon=-77.436&units=imperial HTTP/1.1" 304 - "http://localhost:3000/pages/weather.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:50:48 +0000] "GET /api/frames?pattern=bath_during%2F*.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:50:48 +0000] "GET /cache/bath_during/055A2876.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:50:49 +0000] "GET /api/frames?pattern=kitchen_during%2F*.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:50:49 +0000] "GET /cache/kitchen_during/055A2804.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:50:51 +0000] "GET /api/image?file=bath_after.JPG HTTP/1.1" 200 31 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:50:51 +0000] "GET /cache/bath_during/055A2878.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:50:51 +0000] "GET /cache/bath_after.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:50:52 +0000] "GET /api/image?file=kitchen_after.JPG HTTP/1.1" 200 34 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:50:52 +0000] "GET /cache/kitchen_during/055A2806.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:50:52 +0000] "GET /cache/kitchen_after.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:50:54 +0000] "GET /cache/bath_during/055A2899.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:50:55 +0000] "GET /cache/kitchen_during/055A2869.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:50:57 +0000] "GET /cache/bath_during/055A2902.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:50:58 +0000] "GET /cache/kitchen_during/055A2924.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:00 +0000] "GET /cache/bath_during/055A2947.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:01 +0000] "GET /cache/kitchen_during/055A2929.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:02 +0000] "GET /api/image?file=bath_before.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:03 +0000] "GET /api/image?file=kitchen_before.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:03 +0000] "GET /cache/bath_during/055A3013.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:04 +0000] "GET /cache/kitchen_during/055A2967.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:06 +0000] "GET /cache/bath_during/055A3076.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:07 +0000] "GET /cache/kitchen_during/2025-06-02_20-14-22EOS%20R3_4438.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:09 +0000] "GET /pages/weather.html HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:09 +0000] "GET /api/weather?lat=37.5407&lon=-77.436&units=imperial HTTP/1.1" 304 - "http://localhost:3000/pages/weather.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:09 +0000] "GET /cache/bath_during/055A3082.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:10 +0000] "GET /cache/kitchen_during/2025-06-02_20-21-21EOS%20R3_4464.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:12 +0000] "GET /api/frames?pattern=bath_during%2F*.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:12 +0000] "GET /cache/bath_during/055A2876.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:12 +0000] "GET /cache/bath_during/2025-06-02_20-15-55EOS%20R3_4447.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:13 +0000] "GET /api/frames?pattern=kitchen_during%2F*.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:13 +0000] "GET /cache/kitchen_during/055A2804.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:13 +0000] "GET /cache/kitchen_during/2025-06-02_20-21-45EOS%20R3_4474.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:15 +0000] "GET /api/image?file=bath_after.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:15 +0000] "GET /cache/bath_during/055A2878.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:15 +0000] "GET /cache/bath_after.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:15 +0000] "GET /cache/bath_during/2025-06-25_19-35-18EOS%20R3_4664.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:16 +0000] "GET /api/image?file=kitchen_after.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:16 +0000] "GET /cache/kitchen_during/055A2806.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:16 +0000] "GET /cache/kitchen_after.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:18 +0000] "GET /cache/bath_during/055A2899.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:19 +0000] "GET /cache/kitchen_during/055A2869.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:21 +0000] "GET /cache/bath_during/055A2902.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:22 +0000] "GET /cache/kitchen_during/055A2924.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:24 +0000] "GET /cache/bath_during/055A2947.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:25 +0000] "GET /cache/kitchen_during/055A2929.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:26 +0000] "GET /api/image?file=bath_before.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:27 +0000] "GET /api/image?file=kitchen_before.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:27 +0000] "GET /cache/bath_during/055A3013.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:28 +0000] "GET /cache/kitchen_during/055A2967.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:30 +0000] "GET /cache/bath_during/055A3076.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:31 +0000] "GET /cache/kitchen_during/2025-06-02_20-14-22EOS%20R3_4438.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:33 +0000] "GET /cache/bath_during/055A3082.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:34 +0000] "GET /cache/kitchen_during/2025-06-02_20-21-21EOS%20R3_4464.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:36 +0000] "GET /api/frames?pattern=bath_during%2F*.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:36 +0000] "GET /cache/bath_during/055A2876.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:36 +0000] "GET /cache/bath_during/2025-06-02_20-15-55EOS%20R3_4447.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:37 +0000] "GET /api/frames?pattern=kitchen_during%2F*.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:37 +0000] "GET /cache/kitchen_during/055A2804.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:37 +0000] "GET /cache/kitchen_during/2025-06-02_20-21-45EOS%20R3_4474.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:39 +0000] "GET /pages/weather.html HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:39 +0000] "GET /api/weather?lat=37.5407&lon=-77.436&units=imperial HTTP/1.1" 304 - "http://localhost:3000/pages/weather.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:39 +0000] "GET /api/image?file=bath_after.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:39 +0000] "GET /cache/bath_during/055A2878.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:39 +0000] "GET /cache/bath_during/2025-06-25_19-35-18EOS%20R3_4664.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:39 +0000] "GET /cache/bath_after.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:40 +0000] "GET /api/image?file=kitchen_after.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:40 +0000] "GET /cache/kitchen_during/055A2806.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:40 +0000] "GET /cache/kitchen_after.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:42 +0000] "GET /cache/bath_during/055A2899.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:43 +0000] "GET /cache/kitchen_during/055A2869.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:45 +0000] "GET /cache/bath_during/055A2902.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:46 +0000] "GET /cache/kitchen_during/055A2924.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:48 +0000] "GET /cache/bath_during/055A2947.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:49 +0000] "GET /cache/kitchen_during/055A2929.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:50 +0000] "GET /api/image?file=bath_before.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:50 +0000] "GET /cache/bath_before.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:51 +0000] "GET /api/image?file=kitchen_before.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:51 +0000] "GET /cache/kitchen_before.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:51 +0000] "GET /cache/bath_during/055A3013.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:52 +0000] "GET /cache/kitchen_during/055A2967.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:54 +0000] "GET /cache/bath_during/055A3076.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:55 +0000] "GET /cache/kitchen_during/2025-06-02_20-14-22EOS%20R3_4438.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:57 +0000] "GET /cache/bath_during/055A3082.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:51:58 +0000] "GET /cache/kitchen_during/2025-06-02_20-21-21EOS%20R3_4464.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:52:00 +0000] "GET /api/frames?pattern=bath_during%2F*.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:52:00 +0000] "GET /cache/bath_during/2025-06-02_20-15-55EOS%20R3_4447.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:52:00 +0000] "GET /cache/bath_during/055A2876.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:52:01 +0000] "GET /api/frames?pattern=kitchen_during%2F*.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:52:01 +0000] "GET /cache/kitchen_during/055A2804.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:52:01 +0000] "GET /cache/kitchen_during/2025-06-02_20-21-45EOS%20R3_4474.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:52:03 +0000] "GET /api/image?file=bath_after.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:52:03 +0000] "GET /cache/bath_during/2025-06-25_19-35-18EOS%20R3_4664.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:52:03 +0000] "GET /cache/bath_during/055A2878.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:52:04 +0000] "GET /api/image?file=kitchen_after.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:52:04 +0000] "GET /cache/kitchen_during/055A2806.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:52:06 +0000] "GET /cache/bath_during/055A2899.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:52:07 +0000] "GET /cache/kitchen_during/055A2869.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:52:09 +0000] "GET /pages/weather.html HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:52:09 +0000] "GET /api/weather?lat=37.5407&lon=-77.436&units=imperial HTTP/1.1" 304 - "http://localhost:3000/pages/weather.html" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:52:09 +0000] "GET /cache/bath_during/055A2902.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:52:10 +0000] "GET /cache/kitchen_during/055A2924.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:52:12 +0000] "GET /cache/bath_during/055A2947.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:52:13 +0000] "GET /cache/kitchen_during/055A2929.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:52:14 +0000] "GET /api/image?file=bath_before.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:52:14 +0000] "GET /cache/bath_before.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:52:15 +0000] "GET /api/image?file=kitchen_before.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:52:15 +0000] "GET /cache/kitchen_before.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+::1 - - [23/Oct/2025:21:52:15 +0000] "GET /cache/bath_during/055A3013.JPG HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"

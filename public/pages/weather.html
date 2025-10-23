@@ -2,26 +2,90 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <title>Weather Dashboard</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Richmond Weather — Windy</title>
   <style>
-    html, body {
+    body {
       margin: 0;
-      height: 100%;
-      overflow: hidden;
-      background: black;
+      height: 100vh;
+      font-family: "Segoe UI", Roboto, sans-serif;
+      background: linear-gradient(to bottom, #1e3c72, #2a5298);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
     }
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
+    .current { font-size: 4rem; font-weight: 300; margin-bottom: 0.5rem; }
+    .highlow { font-size: 1.5rem; opacity: 0.8; margin-bottom: 2rem; }
+    .forecast { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; }
+    .day { display: flex; flex-direction: column; align-items: center; }
+    .day-name { font-size: 1.2rem; font-weight: 500; }
+    .day-temp { font-size: 1.8rem; font-weight: 300; }
+    .icon { width: 64px; height: 64px; margin: 0.5rem 0; }
+    footer { position: absolute; bottom: 1rem; font-size: 0.9rem; opacity: 0.7; }
   </style>
 </head>
 <body>
-  <iframe
-    src="https://embed.windy.com/embed2.html?lat=37.54&lon=-77.44&zoom=8&level=surface&overlay=temp&menu=true&message=true&type=map&location=coordinates&detail=true&detailLat=37.54&detailLon=-77.44&metricWind=mph&metricTemp=%C2%B0F&radarRange=-1"
-    frameborder="0"
-  ></iframe>
+  <div id="location">Loading...</div>
+  <div class="current" id="current-temp"></div>
+  <div class="highlow" id="high-low"></div>
+  <div class="forecast" id="forecast"></div>
+  <footer>Powered by OpenWeather</footer>
+
+  <script>
+    const API_URL = "/api/weather";
+    const LAT = 37.5407;    // Richmond, VA
+    const LON = -77.4360;
+
+    async function getWeather() {
+      try {
+        const res = await fetch(`${API_URL}?lat=${LAT}&lon=${LON}&units=imperial`);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+
+        // Ensure expected structure
+        if (!data.list || !data.list.length) throw new Error("Invalid weather data");
+
+        const city = "Richmond, VA";
+        const now = data.list[0];
+        const icon = now.weather[0].icon;
+
+        document.getElementById("location").textContent = city;
+        document.getElementById("current-temp").innerHTML =
+          `<img src="https://openweathermap.org/img/wn/${icon}@2x.png" class="icon"><br>${Math.round(now.main.temp)}°F`;
+
+        const todayTemps = data.list.slice(0, 8).map(p => p.main.temp);
+        const high = Math.round(Math.max(...todayTemps));
+        const low = Math.round(Math.min(...todayTemps));
+        document.getElementById("high-low").textContent = `High ${high}° • Low ${low}°`;
+
+        const forecastEl = document.getElementById("forecast");
+        forecastEl.innerHTML = "";
+        for (let i = 8; i <= 24; i += 8) {
+          const entry = data.list[i];
+          if (!entry) continue;
+          const date = new Date(entry.dt * 1000);
+          const weekday = date.toLocaleDateString("en-US", { weekday: "short" });
+          const icon = entry.weather[0].icon;
+          const max = Math.round(entry.main.temp_max);
+          const min = Math.round(entry.main.temp_min);
+          const div = document.createElement("div");
+          div.className = "day";
+          div.innerHTML = `
+            <div class="day-name">${weekday}</div>
+            <img src="https://openweathermap.org/img/wn/${icon}.png" class="icon" alt="">
+            <div class="day-temp">${max}° / ${min}°</div>`;
+          forecastEl.appendChild(div);
+        }
+      } catch (err) {
+        console.error("Weather fetch failed:", err);
+        document.getElementById("location").textContent = "Weather unavailable";
+      }
+    }
+
+    getWeather();
+  </script>
 </body>
 </html>
