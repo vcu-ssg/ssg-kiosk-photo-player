@@ -45,3 +45,14 @@
 2025-10-23T17:44:31.477Z | client=Scrollsaw | reqHost=localhost | ip=::1
 2025-10-23T17:44:31.478Z | 🧩 MUX [house_mux]: layout=2x2, panels=4, duration=infinite
 2025-10-23T17:44:31.485Z | ✅ Built slideshow for Scrollsaw: 9 slides total
+2025-10-23T17:46:24.707Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-23T17:46:30.733Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T17:46:30.734Z | 🖼️ Still [powder_before]
+2025-10-23T17:46:30.738Z | 🎞️ Multi-frame [powder_during]: 6 frames @10fps
+2025-10-23T17:46:30.738Z | 🖼️ Still [powder_after]
+2025-10-23T17:46:30.738Z | ⬛ Blank [pause_2]
+2025-10-23T17:46:30.738Z | ✅ Built slideshow for Scrollsaw: 4 slides total
+2025-10-23T17:48:00.763Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-23T17:48:03.690Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T17:48:03.691Z | 🧩 MUX [house_mux]: layout=2x2, panels=4, duration=infinite
+2025-10-23T17:48:03.697Z | ✅ Built slideshow for Scrollsaw: 10 slides total
