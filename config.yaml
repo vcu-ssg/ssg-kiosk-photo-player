@@ -87,11 +87,20 @@ slides:
     title: 
     duration: 10
 
-  - id: river_center_video
+  - id: river_center_live_video
     type: youtube
     video_id: "erBoOFKTH4E"
     duration: 10
     title: "JRA’s Jim Buzzard River Education Center"
+
+
+  - id: james_river_flyover
+    type: youtube
+    video_id: "ufX8tv6P6Wg"
+    duration: 180
+    title: "Drone footage over the James River"
+
+
 
 
 #https://youtu.be/erBoOFKTH4E
@@ -106,7 +115,8 @@ default:
 clients:
   Scrollsaw:
     #include: [kitchen_before, kitchen_during, kitchen_after, pause_2, kitchen_animation, pause_2, powder_before, powder_during, powder_after, pause_2, bath_before, bath_during, bath_after, pause_2 ]
-    include: [kitchen_before, kitchen_during, kitchen_after, pause_2, powder_before, powder_during, powder_after, pause_2, bath_before, bath_during, bath_after, pause_2 ]
+    #include: [kitchen_before, kitchen_during, kitchen_after, pause_2, powder_before, powder_during, powder_after, pause_2, bath_before, bath_during, bath_after, pause_2 ]
+    include: [river_center_live_video, james_river_flyover]
 
   kiosk1.local:
     include: [kitchen_before, kitchen_during, bath_during, bath_after ]

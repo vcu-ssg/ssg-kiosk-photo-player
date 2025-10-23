@@ -48,3 +48,61 @@
 2025-10-22T16:42:10.454Z | 🖼️ Still [kitchen_after]: duration=10s
 2025-10-22T16:42:10.454Z | 🟦 Blank [pause_2]: duration=2s
 2025-10-22T16:42:10.454Z | ✅ Built slideshow for EGR-JL-DSK0-SRV: 7 slides total
+2025-10-23T16:15:40.069Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-23T16:15:48.077Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T16:15:48.190Z | 🖼️ Cached resized kitchen_before.JPG
+2025-10-23T16:15:48.190Z | 🖼️ Still [kitchen_before]: duration=10s
+2025-10-23T16:15:48.287Z | 🖼️ Cached resized kitchen_during/055A2804.JPG
+2025-10-23T16:15:48.381Z | 🖼️ Cached resized kitchen_during/055A2806.JPG
+2025-10-23T16:15:48.486Z | 🖼️ Cached resized kitchen_during/055A2869.JPG
+2025-10-23T16:15:48.590Z | 🖼️ Cached resized kitchen_during/055A2924.JPG
+2025-10-23T16:15:48.687Z | 🖼️ Cached resized kitchen_during/055A2929.JPG
+2025-10-23T16:15:48.784Z | 🖼️ Cached resized kitchen_during/055A2967.JPG
+2025-10-23T16:15:48.883Z | 🖼️ Cached resized kitchen_during/2025-06-02_20-14-22EOS R3_4438.JPG
+2025-10-23T16:15:48.972Z | 🖼️ Cached resized kitchen_during/2025-06-02_20-21-21EOS R3_4464.JPG
+2025-10-23T16:15:49.075Z | 🖼️ Cached resized kitchen_during/2025-06-02_20-21-45EOS R3_4474.JPG
+2025-10-23T16:15:49.075Z | 🎞️ Slide [kitchen_during]: 9 frames @ 10fps, repeat=1, duration=3.0s
+2025-10-23T16:15:49.165Z | 🖼️ Cached resized kitchen_after.JPG
+2025-10-23T16:15:49.165Z | 🖼️ Still [kitchen_after]: duration=10s
+2025-10-23T16:15:49.165Z | 🟦 Blank [pause_2]: duration=2s
+2025-10-23T16:15:49.230Z | 🖼️ Cached resized powder_before.JPG
+2025-10-23T16:15:49.230Z | 🖼️ Still [powder_before]: duration=10s
+2025-10-23T16:15:49.343Z | 🖼️ Cached resized powder_during/055A2884.JPG
+2025-10-23T16:15:49.433Z | 🖼️ Cached resized powder_during/055A2980.JPG
+2025-10-23T16:15:49.516Z | 🖼️ Cached resized powder_during/055A2986.JPG
+2025-10-23T16:15:49.629Z | 🖼️ Cached resized powder_during/2025-06-25_19-39-58EOS R3_4672.JPG
+2025-10-23T16:15:49.728Z | 🖼️ Cached resized powder_during/2025-06-25_19-40-05EOS R3_4673.JPG
+2025-10-23T16:15:49.805Z | 🖼️ Cached resized powder_during/2025-07-30_17-06-01EOS R3_4727.JPG
+2025-10-23T16:15:49.806Z | 🎞️ Slide [powder_during]: 6 frames @ 10fps, repeat=1, duration=3.0s
+2025-10-23T16:15:49.859Z | 🖼️ Cached resized powder_after.JPG
+2025-10-23T16:15:49.859Z | 🖼️ Still [powder_after]: duration=10s
+2025-10-23T16:15:49.859Z | 🟦 Blank [pause_2]: duration=2s
+2025-10-23T16:15:49.939Z | 🖼️ Cached resized bath_before.JPG
+2025-10-23T16:15:49.940Z | 🖼️ Still [bath_before]: duration=10s
+2025-10-23T16:15:50.046Z | 🖼️ Cached resized bath_during/055A2876.JPG
+2025-10-23T16:15:50.144Z | 🖼️ Cached resized bath_during/055A2878.JPG
+2025-10-23T16:15:50.225Z | 🖼️ Cached resized bath_during/055A2899.JPG
+2025-10-23T16:15:50.310Z | 🖼️ Cached resized bath_during/055A2902.JPG
+2025-10-23T16:15:50.402Z | 🖼️ Cached resized bath_during/055A2947.JPG
+2025-10-23T16:15:50.482Z | 🖼️ Cached resized bath_during/055A3013.JPG
+2025-10-23T16:15:50.576Z | 🖼️ Cached resized bath_during/055A3076.JPG
+2025-10-23T16:15:50.666Z | 🖼️ Cached resized bath_during/055A3082.JPG
+2025-10-23T16:15:50.759Z | 🖼️ Cached resized bath_during/2025-06-02_20-15-55EOS R3_4447.JPG
+2025-10-23T16:15:50.846Z | 🖼️ Cached resized bath_during/2025-06-25_19-35-18EOS R3_4664.JPG
+2025-10-23T16:15:50.846Z | 🎞️ Slide [bath_during]: 10 frames @ 10fps, repeat=1, duration=3.0s
+2025-10-23T16:15:50.939Z | 🖼️ Cached resized bath_after.JPG
+2025-10-23T16:15:50.939Z | 🖼️ Still [bath_after]: duration=10s
+2025-10-23T16:15:50.939Z | 🟦 Blank [pause_2]: duration=2s
+2025-10-23T16:15:50.939Z | ✅ Built slideshow for Scrollsaw: 12 slides total
+2025-10-23T16:16:50.950Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-23T16:16:59.338Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T16:16:59.339Z | 🎬 YouTube [river_center_video]: video=erBoOFKTH4E, duration=10s
+2025-10-23T16:16:59.339Z | ✅ Built slideshow for Scrollsaw: 1 slides total
+2025-10-23T16:23:26.710Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T16:23:26.710Z | 🎬 YouTube [river_center_video]: video=erBoOFKTH4E, duration=10s
+2025-10-23T16:23:26.710Z | ✅ Built slideshow for Scrollsaw: 1 slides total
+2025-10-23T16:31:19.327Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-23T16:31:37.928Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T16:31:37.928Z | 🎬 YouTube [river_center_live_video]: video=erBoOFKTH4E, duration=10s
+2025-10-23T16:31:37.928Z | 🎬 YouTube [james_river_flyover]: video=ufX8tv6P6Wg, duration=180s
+2025-10-23T16:31:37.928Z | ✅ Built slideshow for Scrollsaw: 2 slides total
