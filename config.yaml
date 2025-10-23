@@ -69,6 +69,10 @@ slides:
     effect: none
     duration: 2    
 
+  - id: pause_1
+    duration: 1
+
+
   - id: pause_10
     file: ""
     title: ""
@@ -101,7 +105,7 @@ slides:
     title: "Drone footage over the James River"
 
 
-  - id: house_mux
+  - id: house_mux_2x2
     type: mux
     layout: 2x2
     duration: infinite
@@ -110,12 +114,24 @@ slides:
     panels:
       - slides: [james_river_flyover]
         panel_duration: 180
-      - slides: [bath_before, bath_during, bath_after, pause_2 ]
+      - slides: [bath_before, bath_during, bath_after, pause_1 ]
         #panel_duration: 4
-      - slides: [ powder_before, powder_during, powder_after, pause_2]
+      - slides: [ kitchen_before, kitchen_during, kitchen_after, pause_1]
         #panel_duration: 6
       - slides: [river_center_live_video]  # empty
         panel_duration: infinite
+
+  - id: house_mux_test
+    type: mux
+    layout: 1x2
+    duration: infinite
+    #title: "Home Renovation Overview"
+    hide_panel_titles: true
+    panels:
+      - slides: [bath_before, bath_during, bath_after, pause_1 ]
+        align: "center bottom"
+      - slides: [ powder_before, powder_during, powder_after, pause_2]
+        align: "center top"
 
 
 #https://youtu.be/erBoOFKTH4E
@@ -132,7 +148,9 @@ clients:
     #include: [kitchen_before, kitchen_during, kitchen_after, pause_2, kitchen_animation, pause_2, powder_before, powder_during, powder_after, pause_2, bath_before, bath_during, bath_after, pause_2 ]
     #include: [kitchen_before, kitchen_during, kitchen_after, pause_2, powder_before, powder_during, powder_after, pause_2, bath_before, bath_during, bath_after, pause_2 ]
     #include: [river_center_live_video, james_river_flyover]
-    include: [ house_mux ]
+    include: [ house_mux_2x2 ]
+    #include: [powder_before, powder_during, powder_after, pause_2]
+    #include: [bath_before,bath_during,bath_after,pause_1]
 
   kiosk1.local:
     include: [kitchen_before, kitchen_during, bath_during, bath_after ]
