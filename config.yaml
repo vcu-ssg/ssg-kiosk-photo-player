@@ -101,6 +101,21 @@ slides:
     title: "Drone footage over the James River"
 
 
+  - id: house_mux
+    type: mux
+    layout: 2x2
+    duration: infinite
+    title: "Home Renovation Overview"
+    hide_panel_titles: true
+    panels:
+      - slides: [james_river_flyover]
+        panel_duration: 180
+      - slides: [bath_before, bath_during, bath_after]
+        panel_duration: 4
+      - slides: [powder_before, powder_during, powder_after]
+        panel_duration: 6
+      - slides: [river_center_live_video]  # empty
+        panel_duration: infinite
 
 
 #https://youtu.be/erBoOFKTH4E
@@ -116,7 +131,8 @@ clients:
   Scrollsaw:
     #include: [kitchen_before, kitchen_during, kitchen_after, pause_2, kitchen_animation, pause_2, powder_before, powder_during, powder_after, pause_2, bath_before, bath_during, bath_after, pause_2 ]
     #include: [kitchen_before, kitchen_during, kitchen_after, pause_2, powder_before, powder_during, powder_after, pause_2, bath_before, bath_during, bath_after, pause_2 ]
-    include: [river_center_live_video, james_river_flyover]
+    #include: [river_center_live_video, james_river_flyover]
+    include: [house_mux]
 
   kiosk1.local:
     include: [kitchen_before, kitchen_during, bath_during, bath_after ]

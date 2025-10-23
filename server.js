@@ -1,5 +1,5 @@
 // -------------------------------------------
-// Photo Kiosk Server with Pre-Caching, Downscaling & Animation Controls
+// Photo Kiosk Server with Pre-Caching, Downscaling & Advanced Slide Types
 // -------------------------------------------
 
 import express from "express";
@@ -29,6 +29,7 @@ const LOG_FILE = path.join(LOG_DIR, "access.log");
 function log(msg) {
   const timestamp = new Date().toISOString();
   fs.appendFileSync(LOG_FILE, `${timestamp} | ${msg}\n`);
+  console.log(msg);
 }
 
 // --- Load config.yaml ---
@@ -74,16 +75,16 @@ async function ensureCached(filePath, maxWidth = 1920, maxHeight = 1080) {
       const metadata = await image.metadata();
       if (metadata.width > maxWidth || metadata.height > maxHeight) {
         await image
-          .rotate() // disable EXIF rotation
+          .rotate()
           .resize({
             width: Math.min(metadata.width, maxWidth),
             height: Math.min(metadata.height, maxHeight),
             fit: "inside",
             withoutEnlargement: true,
           })
-          .withMetadata() // normalize metadata
+          .withMetadata()
           .toFile(cachedPath);
-        log(`🖼️ Cached resized ${relPath}`);
+        log(`🪶 Cached resized ${relPath}`);
       } else {
         fs.copyFileSync(filePath, cachedPath);
       }
@@ -95,7 +96,7 @@ async function ensureCached(filePath, maxWidth = 1920, maxHeight = 1080) {
   }
 }
 
-// --- Helper: preload all frames for a slide ---
+// --- Helper: preload all frames for a pattern ---
 async function prepareFrames(pattern) {
   const matches = (await glob(pattern, { cwd: PHOTOS_DIR })).sort();
   const fullPaths = matches.map((f) => path.join(PHOTOS_DIR, f));
@@ -108,34 +109,95 @@ async function prepareFrames(pattern) {
 }
 
 // --- Build slideshow JSON for a client ---
-
-// --- Build slideshow JSON for a client ---
 async function buildSlideshow(clientId) {
   const masterSlides = config.slides || [];
   const clients = config.clients || {};
   const defaultCfg = config.default || {};
 
-  // determine which playlist to use
   let clientCfg = clients[clientId];
   if (!clientCfg) {
     log(`⚠️ No client section for ${clientId}; using default playlist.`);
     clientCfg = defaultCfg;
   }
 
-  // Determine list of IDs to include
   const includeIds = clientCfg.include || defaultCfg.include || [];
-  if (!includeIds.length) {
-    log(`⚠️ No include list for ${clientId}; using all master slides.`);
-  }
-
   const expanded = [];
 
-  // Build playlist by mapping IDs to master slide definitions
-
-  for (const id of includeIds.length ? includeIds : masterSlides.map(s => s.id)) {
-    const slide = masterSlides.find(s => s.id === id);
+  for (const id of includeIds.length ? includeIds : masterSlides.map((s) => s.id)) {
+    const slide = masterSlides.find((s) => s.id === id);
     if (!slide) {
       log(`⚠️ Slide ID '${id}' not found in master slides`);
+      continue;
+    }
+
+    // --- MUX slide ---
+    if (slide.type === "mux" && Array.isArray(slide.panels)) {
+      expanded.push({
+        id: slide.id,
+        type: "mux",
+        layout: slide.layout || "2x2",
+        panels: slide.panels || [],
+        duration: slide.duration || "infinite",
+        title: slide.title || "",
+      });
+      log(`🧩 MUX [${slide.id}]: layout=${slide.layout}, panels=${slide.panels.length}, duration=${slide.duration}`);
+
+      // ✅ Include all referenced slides used by MUX panels
+      for (const p of slide.panels) {
+        for (const sid of p.slides || []) {
+          const sub = masterSlides.find((s) => s.id === sid);
+          if (!sub) {
+            log(`⚠️ MUX panel references unknown slide: ${sid}`);
+            continue;
+          }
+
+          // recursively expand referenced slide (so client can render)
+          if (sub.type === "youtube") {
+            expanded.push({
+              id: sub.id,
+              type: "youtube",
+              video_id: sub.video_id,
+              duration: sub.duration || 30,
+              title: sub.title || "",
+            });
+          } else if (sub.type === "html") {
+            expanded.push({
+              id: sub.id,
+              type: "html",
+              url: sub.url,
+              duration: sub.duration || 15,
+              title: sub.title || "",
+            });
+          } else if (sub.file && sub.file.includes("*")) {
+            const frames = await prepareFrames(sub.file);
+            expanded.push({
+              id: sub.id,
+              frames,
+              effect: sub.effect || "animate-smooth",
+              duration: sub.duration || 5,
+              fps: sub.fps || 10,
+              repeat: sub.repeat || 1,
+              title: sub.title || "",
+            });
+          } else if (sub.file) {
+            const url = await ensureCached(path.join(PHOTOS_DIR, sub.file));
+            expanded.push({
+              id: sub.id,
+              url,
+              effect: sub.effect || "fade",
+              duration: sub.duration || 5,
+              title: sub.title || "",
+            });
+          } else {
+            expanded.push({
+              id: sub.id,
+              url: null,
+              duration: sub.duration || 5,
+              title: sub.title || "",
+            });
+          }
+        }
+      }
       continue;
     }
 
@@ -144,20 +206,15 @@ async function buildSlideshow(clientId) {
       const videoId = slide.video_id
         ? slide.video_id
         : slide.url.split("/embed/")[1]?.split(/[?&]/)[0];
-      if (!videoId) {
-        log(`⚠️ Invalid YouTube slide: missing video_id or url for ${slide.id}`);
-        continue;
-      }
-
+      if (!videoId) continue;
       expanded.push({
         id: slide.id,
         type: "youtube",
         video_id: videoId,
-        effect: "none",
         duration: slide.duration || 30,
         title: slide.title || "",
       });
-      log(`🎬 YouTube [${slide.id}]: video=${videoId}, duration=${slide.duration || 30}s`);
+      log(`📺 YouTube [${slide.id}]: ${videoId}`);
       continue;
     }
 
@@ -167,41 +224,31 @@ async function buildSlideshow(clientId) {
         id: slide.id,
         type: "html",
         url: slide.url,
-        effect: "none",
         duration: slide.duration || 15,
         title: slide.title || "",
       });
-      log(`🌐 HTML [${slide.id}]: ${slide.url}, duration=${slide.duration || 15}s`);
+      log(`🌐 HTML [${slide.id}]: ${slide.url}`);
       continue;
     }
 
-    // --- Blank slide (pause) ---
+    // --- Blank slide ---
     if (!slide.file) {
       expanded.push({
         id: slide.id || "blank",
         url: null,
-        effect: slide.effect || "none",
         duration: slide.duration || 5,
-        fps: slide.fps || 10,
-        repeat: slide.repeat || 1,
         title: slide.title || "",
       });
-      log(`🟦 Blank [${slide.id}]: duration=${slide.duration || 5}s`);
+      log(`⬛ Blank [${slide.id}]`);
       continue;
     }
 
-    // --- Multi-frame pattern (e.g., *.JPG) ---
+    // --- Multi-frame slide ---
     if (slide.file.includes("*")) {
       const frames = await prepareFrames(slide.file);
-      if (!frames.length) {
-        log(`⚠️ Pattern '${slide.file}' matched no files for [${slide.id}]`);
-        continue;
-      }
-
       const fps = slide.fps || 10;
       const repeat = slide.repeat === "infinite" ? Infinity : (slide.repeat || 1);
       const duration = slide.duration || (frames.length * repeat) / fps;
-
       expanded.push({
         id: slide.id,
         frames,
@@ -211,56 +258,30 @@ async function buildSlideshow(clientId) {
         repeat,
         title: slide.title || "",
       });
-
-      log(`🎞️ Slide [${slide.id}]: ${frames.length} frames @ ${fps}fps, repeat=${repeat}, duration=${duration.toFixed(1)}s`);
+      log(`🎞️ Multi-frame [${slide.id}]: ${frames.length} frames @${fps}fps`);
       continue;
     }
 
-    // --- Single still image ---
+    // --- Single image slide ---
     const imgPath = path.join(PHOTOS_DIR, slide.file);
     if (!fs.existsSync(imgPath)) {
       log(`⚠️ Missing file: ${slide.file}`);
       continue;
     }
-
     const url = await ensureCached(imgPath);
     expanded.push({
       id: slide.id,
       url,
       effect: slide.effect || "fade",
       duration: slide.duration || 5,
-      fps: slide.fps || 10,
-      repeat: slide.repeat || 1,
       title: slide.title || "",
     });
-
-    log(`🖼️ Still [${slide.id}]: duration=${slide.duration || 5}s`);
-  }
-
-
-  // --- Final summary ---
-  if (!expanded.length) {
-    log(`⚠️ No slides expanded for ${clientId}. Using entire master slide library as fallback.`);
-    for (const slide of masterSlides) {
-      if (slide.file) {
-        const url = await ensureCached(path.join(PHOTOS_DIR, slide.file));
-        expanded.push({
-          id: slide.id,
-          url,
-          effect: slide.effect || "fade",
-          duration: slide.duration || 5,
-          fps: slide.fps || 10,
-          repeat: slide.repeat || 1,
-          title: slide.title || "",
-        });
-      }
-    }
+    log(`🖼️ Still [${slide.id}]`);
   }
 
   log(`✅ Built slideshow for ${clientId}: ${expanded.length} slides total`);
   return expanded;
 }
-
 
 // --- API endpoint ---
 app.get("/api/slideshow", async (req, res) => {
@@ -277,8 +298,7 @@ app.get("/api/slideshow", async (req, res) => {
   }
 });
 
-
-// --- Start server (Express 5 ESM compatible) ---
+// --- Start server ---
 try {
   const server = await app.listen(PORT);
   console.log(`📸 Photo kiosk running at http://localhost:${PORT}`);
@@ -287,7 +307,6 @@ try {
   console.log(`💾 Cache directory: ${CACHE_DIR}`);
   console.log("✅ Express server started successfully and is now listening.");
 
-  // Optional graceful shutdown on Ctrl-C
   process.on("SIGINT", async () => {
     console.log("\n🧹 Shutting down gracefully...");
     await server.close();

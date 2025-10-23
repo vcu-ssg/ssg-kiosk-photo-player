@@ -1,108 +1,47 @@
-2025-10-22T16:06:06.358Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
-2025-10-22T16:06:11.025Z | client=EGR-JL-DSK0-SRV | reqHost=localhost | ip=::1
-2025-10-22T16:06:11.026Z | 🟦 Blank [river_center_video]: duration=10s
-2025-10-22T16:06:11.026Z | 🖼️ Still [kitchen_before]: duration=10s
-2025-10-22T16:06:11.026Z | 🌐 HTML [james_river_water_level]: https://water.noaa.gov/gauges/rmdv2, duration=10s
-2025-10-22T16:06:11.026Z | 🌐 HTML [weather_widget]: /pages/weather.html, duration=10s
-2025-10-22T16:06:11.029Z | 🎞️ Slide [kitchen_animation]: 9 frames @ 3fps, repeat=3, duration=9.0s
-2025-10-22T16:06:11.030Z | 🖼️ Still [kitchen_after]: duration=10s
-2025-10-22T16:06:11.030Z | 🟦 Blank [pause_2]: duration=2s
-2025-10-22T16:06:11.030Z | ✅ Built slideshow for EGR-JL-DSK0-SRV: 7 slides total
-2025-10-22T16:08:31.921Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
-2025-10-22T16:08:37.432Z | client=EGR-JL-DSK0-SRV | reqHost=localhost | ip=::1
-2025-10-22T16:08:37.432Z | 🟦 Blank [river_center_video]: duration=10s
-2025-10-22T16:08:37.433Z | 🖼️ Still [kitchen_before]: duration=10s
-2025-10-22T16:08:37.433Z | 🌐 HTML [james_river_water_level]: https://water.noaa.gov/gauges/rmdv2, duration=10s
-2025-10-22T16:08:37.433Z | 🌐 HTML [weather_widget]: /pages/weather.html, duration=10s
-2025-10-22T16:08:37.438Z | 🎞️ Slide [kitchen_animation]: 9 frames @ 3fps, repeat=3, duration=9.0s
-2025-10-22T16:08:37.438Z | 🖼️ Still [kitchen_after]: duration=10s
-2025-10-22T16:08:37.438Z | 🟦 Blank [pause_2]: duration=2s
-2025-10-22T16:08:37.438Z | ✅ Built slideshow for EGR-JL-DSK0-SRV: 7 slides total
-2025-10-22T16:13:46.569Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
-2025-10-22T16:13:54.505Z | client=EGR-JL-DSK0-SRV | reqHost=localhost | ip=::1
-2025-10-22T16:13:54.505Z | 🟦 Blank [river_center_video]: duration=10s
-2025-10-22T16:13:54.506Z | 🖼️ Still [kitchen_before]: duration=10s
-2025-10-22T16:13:54.506Z | 🌐 HTML [james_river_water_level]: https://water.noaa.gov/gauges/rmdv2, duration=10s
-2025-10-22T16:13:54.506Z | 🌐 HTML [weather_widget]: /pages/weather.html, duration=10s
-2025-10-22T16:13:54.510Z | 🎞️ Slide [kitchen_animation]: 9 frames @ 3fps, repeat=3, duration=9.0s
-2025-10-22T16:13:54.510Z | 🖼️ Still [kitchen_after]: duration=10s
-2025-10-22T16:13:54.510Z | 🟦 Blank [pause_2]: duration=2s
-2025-10-22T16:13:54.510Z | ✅ Built slideshow for EGR-JL-DSK0-SRV: 7 slides total
-2025-10-22T16:16:57.340Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
-2025-10-22T16:17:01.328Z | client=EGR-JL-DSK0-SRV | reqHost=localhost | ip=::1
-2025-10-22T16:17:01.328Z | 🎬 YouTube [river_center_video]: video=erBoOFKTH4E, duration=10s
-2025-10-22T16:17:01.328Z | 🖼️ Still [kitchen_before]: duration=10s
-2025-10-22T16:17:01.328Z | 🌐 HTML [james_river_water_level]: https://water.noaa.gov/gauges/rmdv2, duration=10s
-2025-10-22T16:17:01.328Z | 🌐 HTML [weather_widget]: /pages/weather.html, duration=10s
-2025-10-22T16:17:01.332Z | 🎞️ Slide [kitchen_animation]: 9 frames @ 3fps, repeat=3, duration=9.0s
-2025-10-22T16:17:01.332Z | 🖼️ Still [kitchen_after]: duration=10s
-2025-10-22T16:17:01.332Z | 🟦 Blank [pause_2]: duration=2s
-2025-10-22T16:17:01.332Z | ✅ Built slideshow for EGR-JL-DSK0-SRV: 7 slides total
-2025-10-22T16:42:06.594Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
-2025-10-22T16:42:10.449Z | client=EGR-JL-DSK0-SRV | reqHost=localhost | ip=::1
-2025-10-22T16:42:10.449Z | 🎬 YouTube [river_center_video]: video=erBoOFKTH4E, duration=10s
-2025-10-22T16:42:10.449Z | 🖼️ Still [kitchen_before]: duration=10s
-2025-10-22T16:42:10.449Z | 🌐 HTML [james_river_water_level]: https://water.noaa.gov/gauges/rmdv2, duration=10s
-2025-10-22T16:42:10.449Z | 🌐 HTML [weather_widget]: /pages/weather.html, duration=10s
-2025-10-22T16:42:10.454Z | 🎞️ Slide [kitchen_animation]: 9 frames @ 3fps, repeat=3, duration=9.0s
-2025-10-22T16:42:10.454Z | 🖼️ Still [kitchen_after]: duration=10s
-2025-10-22T16:42:10.454Z | 🟦 Blank [pause_2]: duration=2s
-2025-10-22T16:42:10.454Z | ✅ Built slideshow for EGR-JL-DSK0-SRV: 7 slides total
-2025-10-23T16:15:40.069Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
-2025-10-23T16:15:48.077Z | client=Scrollsaw | reqHost=localhost | ip=::1
-2025-10-23T16:15:48.190Z | 🖼️ Cached resized kitchen_before.JPG
-2025-10-23T16:15:48.190Z | 🖼️ Still [kitchen_before]: duration=10s
-2025-10-23T16:15:48.287Z | 🖼️ Cached resized kitchen_during/055A2804.JPG
-2025-10-23T16:15:48.381Z | 🖼️ Cached resized kitchen_during/055A2806.JPG
-2025-10-23T16:15:48.486Z | 🖼️ Cached resized kitchen_during/055A2869.JPG
-2025-10-23T16:15:48.590Z | 🖼️ Cached resized kitchen_during/055A2924.JPG
-2025-10-23T16:15:48.687Z | 🖼️ Cached resized kitchen_during/055A2929.JPG
-2025-10-23T16:15:48.784Z | 🖼️ Cached resized kitchen_during/055A2967.JPG
-2025-10-23T16:15:48.883Z | 🖼️ Cached resized kitchen_during/2025-06-02_20-14-22EOS R3_4438.JPG
-2025-10-23T16:15:48.972Z | 🖼️ Cached resized kitchen_during/2025-06-02_20-21-21EOS R3_4464.JPG
-2025-10-23T16:15:49.075Z | 🖼️ Cached resized kitchen_during/2025-06-02_20-21-45EOS R3_4474.JPG
-2025-10-23T16:15:49.075Z | 🎞️ Slide [kitchen_during]: 9 frames @ 10fps, repeat=1, duration=3.0s
-2025-10-23T16:15:49.165Z | 🖼️ Cached resized kitchen_after.JPG
-2025-10-23T16:15:49.165Z | 🖼️ Still [kitchen_after]: duration=10s
-2025-10-23T16:15:49.165Z | 🟦 Blank [pause_2]: duration=2s
-2025-10-23T16:15:49.230Z | 🖼️ Cached resized powder_before.JPG
-2025-10-23T16:15:49.230Z | 🖼️ Still [powder_before]: duration=10s
-2025-10-23T16:15:49.343Z | 🖼️ Cached resized powder_during/055A2884.JPG
-2025-10-23T16:15:49.433Z | 🖼️ Cached resized powder_during/055A2980.JPG
-2025-10-23T16:15:49.516Z | 🖼️ Cached resized powder_during/055A2986.JPG
-2025-10-23T16:15:49.629Z | 🖼️ Cached resized powder_during/2025-06-25_19-39-58EOS R3_4672.JPG
-2025-10-23T16:15:49.728Z | 🖼️ Cached resized powder_during/2025-06-25_19-40-05EOS R3_4673.JPG
-2025-10-23T16:15:49.805Z | 🖼️ Cached resized powder_during/2025-07-30_17-06-01EOS R3_4727.JPG
-2025-10-23T16:15:49.806Z | 🎞️ Slide [powder_during]: 6 frames @ 10fps, repeat=1, duration=3.0s
-2025-10-23T16:15:49.859Z | 🖼️ Cached resized powder_after.JPG
-2025-10-23T16:15:49.859Z | 🖼️ Still [powder_after]: duration=10s
-2025-10-23T16:15:49.859Z | 🟦 Blank [pause_2]: duration=2s
-2025-10-23T16:15:49.939Z | 🖼️ Cached resized bath_before.JPG
-2025-10-23T16:15:49.940Z | 🖼️ Still [bath_before]: duration=10s
-2025-10-23T16:15:50.046Z | 🖼️ Cached resized bath_during/055A2876.JPG
-2025-10-23T16:15:50.144Z | 🖼️ Cached resized bath_during/055A2878.JPG
-2025-10-23T16:15:50.225Z | 🖼️ Cached resized bath_during/055A2899.JPG
-2025-10-23T16:15:50.310Z | 🖼️ Cached resized bath_during/055A2902.JPG
-2025-10-23T16:15:50.402Z | 🖼️ Cached resized bath_during/055A2947.JPG
-2025-10-23T16:15:50.482Z | 🖼️ Cached resized bath_during/055A3013.JPG
-2025-10-23T16:15:50.576Z | 🖼️ Cached resized bath_during/055A3076.JPG
-2025-10-23T16:15:50.666Z | 🖼️ Cached resized bath_during/055A3082.JPG
-2025-10-23T16:15:50.759Z | 🖼️ Cached resized bath_during/2025-06-02_20-15-55EOS R3_4447.JPG
-2025-10-23T16:15:50.846Z | 🖼️ Cached resized bath_during/2025-06-25_19-35-18EOS R3_4664.JPG
-2025-10-23T16:15:50.846Z | 🎞️ Slide [bath_during]: 10 frames @ 10fps, repeat=1, duration=3.0s
-2025-10-23T16:15:50.939Z | 🖼️ Cached resized bath_after.JPG
-2025-10-23T16:15:50.939Z | 🖼️ Still [bath_after]: duration=10s
-2025-10-23T16:15:50.939Z | 🟦 Blank [pause_2]: duration=2s
-2025-10-23T16:15:50.939Z | ✅ Built slideshow for Scrollsaw: 12 slides total
-2025-10-23T16:16:50.950Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
-2025-10-23T16:16:59.338Z | client=Scrollsaw | reqHost=localhost | ip=::1
-2025-10-23T16:16:59.339Z | 🎬 YouTube [river_center_video]: video=erBoOFKTH4E, duration=10s
-2025-10-23T16:16:59.339Z | ✅ Built slideshow for Scrollsaw: 1 slides total
-2025-10-23T16:23:26.710Z | client=Scrollsaw | reqHost=localhost | ip=::1
-2025-10-23T16:23:26.710Z | 🎬 YouTube [river_center_video]: video=erBoOFKTH4E, duration=10s
-2025-10-23T16:23:26.710Z | ✅ Built slideshow for Scrollsaw: 1 slides total
-2025-10-23T16:31:19.327Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
-2025-10-23T16:31:37.928Z | client=Scrollsaw | reqHost=localhost | ip=::1
-2025-10-23T16:31:37.928Z | 🎬 YouTube [river_center_live_video]: video=erBoOFKTH4E, duration=10s
-2025-10-23T16:31:37.928Z | 🎬 YouTube [james_river_flyover]: video=ufX8tv6P6Wg, duration=180s
-2025-10-23T16:31:37.928Z | ✅ Built slideshow for Scrollsaw: 2 slides total
+2025-10-23T17:17:27.307Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-23T17:17:29.968Z | 🧩 MUX [house_mux]: layout=2x2, panels=4, duration=infinite
+2025-10-23T17:17:29.968Z | ✅ Built slideshow for Scrollsaw: 1 slides total
+2025-10-23T17:17:32.321Z | 🧩 MUX [house_mux]: layout=2x2, panels=4, duration=infinite
+2025-10-23T17:17:32.321Z | ✅ Built slideshow for Scrollsaw: 1 slides total
+2025-10-23T17:19:28.733Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-23T17:19:34.056Z | 🧩 MUX [house_mux]: layout=2x2, panels=4, duration=infinite
+2025-10-23T17:19:34.056Z | ✅ Built slideshow for Scrollsaw: 1 slides total
+2025-10-23T17:19:37.363Z | 🧩 MUX [house_mux]: layout=2x2, panels=4, duration=infinite
+2025-10-23T17:19:37.363Z | ✅ Built slideshow for Scrollsaw: 1 slides total
+2025-10-23T17:19:38.142Z | 🧩 MUX [house_mux]: layout=2x2, panels=4, duration=infinite
+2025-10-23T17:19:38.142Z | ✅ Built slideshow for Scrollsaw: 1 slides total
+2025-10-23T17:19:38.903Z | 🧩 MUX [house_mux]: layout=2x2, panels=4, duration=infinite
+2025-10-23T17:19:38.903Z | ✅ Built slideshow for Scrollsaw: 1 slides total
+2025-10-23T17:21:26.236Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-23T17:21:31.951Z | 🧩 MUX [house_mux]: layout=2x2, panels=4, duration=infinite
+2025-10-23T17:21:31.951Z | ✅ Built slideshow for Scrollsaw: 1 slides total
+2025-10-23T17:24:57.573Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-23T17:25:05.598Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T17:25:05.598Z | 🧩 MUX [house_mux]: layout=2x2, panels=4, duration=infinite
+2025-10-23T17:25:05.604Z | ✅ Built slideshow for Scrollsaw: 8 slides total
+2025-10-23T17:25:54.130Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T17:25:54.130Z | 🧩 MUX [house_mux]: layout=2x2, panels=4, duration=infinite
+2025-10-23T17:25:54.132Z | ✅ Built slideshow for Scrollsaw: 8 slides total
+2025-10-23T17:30:50.822Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-23T17:31:01.950Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T17:31:01.951Z | 🧩 MUX [house_mux]: layout=2x2, panels=4, duration=infinite
+2025-10-23T17:31:01.956Z | ✅ Built slideshow for Scrollsaw: 8 slides total
+2025-10-23T17:31:06.733Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T17:31:06.733Z | 🧩 MUX [house_mux]: layout=2x2, panels=4, duration=infinite
+2025-10-23T17:31:06.734Z | ✅ Built slideshow for Scrollsaw: 8 slides total
+2025-10-23T17:36:54.234Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-23T17:36:59.524Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T17:36:59.525Z | 🧩 MUX [house_mux]: layout=2x2, panels=4, duration=infinite
+2025-10-23T17:36:59.530Z | ✅ Built slideshow for Scrollsaw: 8 slides total
+2025-10-23T17:41:14.197Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-23T17:41:18.859Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T17:41:18.859Z | 🧩 MUX [house_mux]: layout=2x2, panels=4, duration=infinite
+2025-10-23T17:41:18.865Z | ✅ Built slideshow for Scrollsaw: 8 slides total
+2025-10-23T17:41:46.075Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-23T17:41:51.797Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T17:41:51.797Z | 🧩 MUX [house_mux]: layout=2x2, panels=4, duration=infinite
+2025-10-23T17:41:51.802Z | ✅ Built slideshow for Scrollsaw: 8 slides total
+2025-10-23T17:44:27.068Z | ✅ Loaded config.yaml from /home/john/projects/ssg-kiosk-photo-player/config.yaml
+2025-10-23T17:44:31.477Z | client=Scrollsaw | reqHost=localhost | ip=::1
+2025-10-23T17:44:31.478Z | 🧩 MUX [house_mux]: layout=2x2, panels=4, duration=infinite
+2025-10-23T17:44:31.485Z | ✅ Built slideshow for Scrollsaw: 9 slides total
