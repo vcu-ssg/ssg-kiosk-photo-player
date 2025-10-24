@@ -4,300 +4,251 @@
   <meta charset="UTF-8" />
   <title>Photo Kiosk</title>
   <style>
-    html, body {
-      margin: 0;
-      height: 100%;
-      background: black;
-      overflow: hidden;
-    }
-    #slideshow {
-      width: 100%;
-      height: 100%;
-      position: relative;
-    }
+    html, body { margin:0; height:100%; background:black; overflow:hidden; }
+    #slideshow { position:relative; width:100%; height:100%; }
     .slide {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      background: black;
-      transition: opacity 0.7s ease-in-out;
-    }
-    .title {
-      position: absolute;
-      bottom: 1.2rem;
-      left: 0;
-      right: 0;
-      text-align: center;
-      color: white;
-      font-size: 2rem;
-      text-shadow: 0 0 10px black;
+      position:absolute; inset:0;
+      display:flex; align-items:center; justify-content:center;
+      background:black; opacity:0;
+      transition:opacity 0.7s ease-in-out;
     }
     .mux-grid {
-      display: grid;
-      width: 100%;
-      height: 100%;
-      background: black;
-      gap: 2px;
+      display:grid; width:100%; height:100%; background:black; gap:2px;
     }
-    .mux-cell {
-      position: relative;
-      overflow: hidden;
-      background: black;
-    }
+    .mux-cell { position:relative; overflow:hidden; background:black; }
     .mux-inner {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      will-change: transform;
-      transition: transform 0.5s ease-in-out;
+      position:absolute; inset:0;
+      display:flex; align-items:center; justify-content:center;
+      will-change:transform;
     }
     .mux-inner img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-      display: block;
+      max-width:100%; max-height:100%; object-fit:contain; display:block;
     }
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
+    iframe { width:100%; height:100%; border:none; }
+    .title {
+      position:absolute; bottom:1.2rem; left:0; right:0;
+      text-align:center; color:white; font-size:2rem;
+      text-shadow:0 0 10px black;
     }
   </style>
 </head>
 <body>
   <div id="slideshow"></div>
-  <script>
-    async function loadShow() {
-      const res = await fetch("/api/slideshow");
-      const data = await res.json();
-      return data.slides || [];
-    }
 
-    function parseAlign(align) {
-      if (!align) return { x: "center", y: "center" };
-      const parts = align.trim().split(/\s+/);
-      return { x: parts[0] || "center", y: parts[1] || "center" };
-    }
+<script>
+async function loadShow() {
+  const r = await fetch("/api/slideshow");
+  const j = await r.json();
+  return j.slides || [];
+}
+function parseAlign(align) {
+  if (!align) return {x:"center", y:"center"};
+  const p = align.trim().split(/\s+/);
+  return {x:p[0]||"center", y:p[1]||"center"};
+}
+function applyEffect(img,effect,dur){
+  const d=(dur||5)*1000;
+  if(effect==="kenburns-zoom-in")
+    img.animate([{transform:"scale(1)"},{transform:"scale(1.15)"}],
+      {duration:d,fill:"forwards",easing:"ease-in-out"});
+  else if(effect==="kenburns-zoom-out")
+    img.animate([{transform:"scale(1.15)"},{transform:"scale(1)"}],
+      {duration:d,fill:"forwards",easing:"ease-in-out"});
+}
 
-    function applyEffect(el, effect, duration) {
-      const durMs = (duration || 5) * 1000;
-      switch (effect) {
-        case "fade":
-          el.style.transition = `opacity 700ms ease-in-out`;
-          break;
-        case "cut":
-          el.style.transition = "opacity 120ms linear";
-          break;
-        case "kenburns-zoom-in":
-          el.animate([{ transform: "scale(1)" }, { transform: "scale(1.15)" }],
-                     { duration: durMs, fill: "forwards", easing: "ease-in-out" });
-          break;
-        case "kenburns-zoom-out":
-          el.animate([{ transform: "scale(1.15)" }, { transform: "scale(1)" }],
-                     { duration: durMs, fill: "forwards", easing: "ease-in-out" });
-          break;
-      }
-    }
+function playFrames(img, frames, fps, repeat, duration, effect, onDone) {
+  if (!frames?.length) return onDone?.();
 
-    function playFrames(img, frames, fps, repeat, duration, effect, onDone) {
-      const loops = repeat ?? 1;
-      const per =
-        effect === "cut" || effect === "fade"
-          ? (duration || 1) * 1000
-          : 1000 / (fps || 10);
-      let i = 0, c = 0;
-      (function tick() {
-        img.src = frames[i++];
-        if (i >= frames.length) {
-          i = 0; c++;
-          if (c >= loops) return onDone?.();
+  const loops = repeat ?? 1;
+  let loopCount = 0;
+
+  // --- "cut" or "fade": show each image for (duration) seconds ---
+  if (effect === "cut" || effect === "fade") {
+    let idx = 0;
+
+    function showNext() {
+      img.src = frames[idx];
+      idx++;
+      if (idx < frames.length) {
+        setTimeout(showNext, (duration || 1) * 1000);
+      } else {
+        loopCount++;
+        if (loopCount >= loops) {
+          setTimeout(onDone || (()=>{}), (duration || 1) * 1000);
+        } else {
+          idx = 0;
+          setTimeout(showNext, (duration || 1) * 1000);
         }
-        setTimeout(tick, per);
-      })();
+      }
     }
 
-    async function start() {
-      const slides = await loadShow();
-      const box = document.getElementById("slideshow");
-      if (!slides.length) {
-        box.innerHTML = "<h1 style='color:white'>No slides</h1>";
-        return;
+    showNext();
+    return;
+  }
+
+  // --- "animate-smooth" or others: use FPS-based timing ---
+  const delay = fps ? 1000 / fps : 300;
+  let f = 0;
+
+  function next() {
+    img.src = frames[f];
+    f++;
+    if (f < frames.length) {
+      setTimeout(next, delay);
+    } else {
+      loopCount++;
+      if (loopCount >= loops) {
+        setTimeout(onDone || (()=>{}), delay);
+      } else {
+        f = 0;
+        setTimeout(next, delay);
       }
+    }
+  }
 
-      let idx = 0, paused = false;
-      const slideA = document.createElement("div"),
-            slideB = document.createElement("div");
-      slideA.className = "slide";
-      slideB.className = "slide";
-      box.append(slideA, slideB);
+  next();
+}
 
-      async function renderSlide(target, slide, allSlides, onDone) {
-        target.innerHTML = "";
-        target.style.transition = "";
 
-        // ---------- MUX ----------
-        if (slide.type === "mux") {
-          const grid = document.createElement("div");
-          grid.className = "mux-grid";
-          const [rows, cols] = slide.layout.split("x").map(Number);
-          grid.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
-          grid.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
-          target.appendChild(grid);
 
-          if (slide.title && !slide.hide_panel_titles) {
-            const title = document.createElement("div");
-            title.className = "title";
-            title.textContent = slide.title;
-            target.appendChild(title);
-          }
+async function start(){
+  const slides=await loadShow();
+  const box=document.getElementById("slideshow");
+  if(!slides.length){ box.innerHTML="<h1 style='color:white'>No slides</h1>"; return; }
 
-          slide.panels.forEach((panel, pi) => {
-            const cell = document.createElement("div");
-            cell.className = "mux-cell";
-            const inner = document.createElement("div");
-            inner.className = "mux-inner";
-            cell.appendChild(inner);
-            grid.appendChild(cell);
+  let idx=0, paused=false;
+  const a=document.createElement("div"), b=document.createElement("div");
+  a.className=b.className="slide";
+  box.append(a,b);
 
-            const { x, y } = parseAlign(panel.align);
-            inner.dataset.scale = panel.scale || 1;
-            function positionInner() {
-              const rect = cell.getBoundingClientRect();
-              inner.style.justifyContent =
-                x === "left" ? "flex-start" : x === "right" ? "flex-end" : "center";
-              inner.style.alignItems =
-                y === "top" ? "flex-start" : y === "bottom" ? "flex-end" : "center";
-              let tx = 0, ty = 0;
-              if (x.endsWith("%")) tx = ((parseFloat(x) - 50) / 100) * rect.width;
-              if (y.endsWith("%")) ty = ((parseFloat(y) - 50) / 100) * rect.height;
-              inner.style.transform = `translate(${tx}px,${ty}px) scale(${inner.dataset.scale})`;
-            }
-            positionInner();
-            new ResizeObserver(positionInner).observe(cell);
+  async function renderSlide(target,slide,all,onDone){
+    target.innerHTML="";
 
-            if (!panel.slides?.length) return;
-            const deck = panel.slides.map((id) => allSlides.find((s) => s.id === id)).filter(Boolean);
-            if (!deck.length) return;
+    // ---------- MUX ----------
+    if(slide.type==="mux"){
+      const grid=document.createElement("div");
+      grid.className="mux-grid";
+      const [rows,cols]=slide.layout.split("x").map(Number);
+      grid.style.gridTemplateRows=`repeat(${rows},1fr)`;
+      grid.style.gridTemplateColumns=`repeat(${cols},1fr)`;
+      target.appendChild(grid);
 
-            let deckIdx = 0;
-            function showNext() {
-              const s = deck[deckIdx];
+      slide.panels.forEach((panel, pi) => {
+        const cell = document.createElement("div");
+        cell.className = "mux-cell";
+        const inner = document.createElement("div");
+        inner.className = "mux-inner";
+        cell.appendChild(inner);
+        grid.appendChild(cell);
+
+        const { x, y } = parseAlign(panel.align);
+        inner.dataset.scale = panel.scale || 1;
+        function pos() {
+          const r = cell.getBoundingClientRect();
+          inner.style.justifyContent = (x === "left" ? "flex-start" : x === "right" ? "flex-end" : "center");
+          inner.style.alignItems = (y === "top" ? "flex-start" : y === "bottom" ? "flex-end" : "center");
+          let tx = 0, ty = 0;
+          if (x.endsWith("%")) tx = ((parseFloat(x) - 50) / 100) * r.width;
+          if (y.endsWith("%")) ty = ((parseFloat(y) - 50) / 100) * r.height;
+          inner.style.transform = `translate(${tx}px,${ty}px) scale(${inner.dataset.scale})`;
+        }
+        pos(); new ResizeObserver(pos).observe(cell);
+
+        const deck = (panel.slides || []).map(id => all.find(s => s.id === id)).filter(Boolean);
+        if (!deck.length) return;
+
+        // --- new async chain ---
+        (async () => {
+          await new Promise(r => setTimeout(r, pi * 250)); // stagger start
+
+          while (true) {
+            for (const s of deck) {
               inner.innerHTML = "";
-              renderSlide(inner, { ...s, suppressTitle: true, hide_panel_titles: true },
-                          allSlides, () => {});
-              if (panel.panel_duration === "infinite") return;
-              const dur = (panel.panel_duration || s.duration || 5) * 1000;
-              setTimeout(() => { deckIdx = (deckIdx + 1) % deck.length; showNext(); }, dur);
+              await new Promise(done => renderSlide(inner, { ...s, suppressTitle: true, hide_panel_titles: true }, all, done));
             }
-            setTimeout(showNext, pi * 500);
-          });
-
-          const hasInf = slide.panels?.some((p) => p.panel_duration === "infinite");
-          if (onDone && slide.duration !== "infinite" && !hasInf)
-            setTimeout(onDone, (slide.duration || 30) * 1000);
-          return;
-        }
-
-        // ---------- Multi-frame / wildcard ----------
-        if ((slide.frames && slide.frames.length) || (slide.file && slide.file.includes("*"))) {
-          const img = document.createElement("img");
-          target.appendChild(img);
-          async function loadAndPlay() {
-            let frames = slide.frames;
-            if (!frames && slide.file.includes("*")) {
-              const pattern = slide.file.replace(/^\/*/, "");
-              const res = await fetch(`/api/frames?pattern=${encodeURIComponent(pattern)}`);
-              const data = await res.json();
-              frames = data.frames || [];
-            }
-            if (!frames?.length) { console.warn(`No frames for ${slide.id}`); return; }
-            if (slide.title && !(slide.hide_panel_titles || slide.suppressTitle)) {
-              const t = document.createElement("div");
-              t.className = "title"; t.textContent = slide.title;
-              target.appendChild(t);
-            }
-            playFrames(img, frames, slide.fps, slide.repeat, slide.duration, slide.effect, onDone);
+            // loop forever (panel_duration will break outer)
+            if (slide.duration !== "infinite" && panel.panel_duration)
+              await new Promise(r => setTimeout(r, panel.panel_duration * 1000));
           }
-          loadAndPlay();
-          return;
-        }
+        })();
+      });
 
-        // ---------- Still image (includes Ken Burns fix) ----------
-        if ((slide.url || slide.file) && !slide.type) {
-          const img = document.createElement("img");
-          target.appendChild(img);
-
-          async function loadStill() {
-            let url = slide.url;
-            if (!url && slide.file) {
-              const file = slide.file.replace(/^\/*/, "");
-              const res = await fetch(`/api/image?file=${encodeURIComponent(file)}`);
-              const data = await res.json();
-              url = data.url;
-            }
-            if (!url) { console.warn(`Missing image for ${slide.id}`); return; }
-            img.src = url;
-            if (slide.title && !(slide.hide_panel_titles || slide.suppressTitle)) {
-              const t = document.createElement("div");
-              t.className = "title"; t.textContent = slide.title;
-              target.appendChild(t);
-            }
-            applyEffect(img, slide.effect, slide.duration);
-            if (onDone) setTimeout(onDone, (slide.duration || 5) * 1000);
-          }
-
-          loadStill();
-          return;
-        }
-
-        // ---------- HTML ----------
-        if (slide.type === "html" && slide.url) {
-          const iframe = document.createElement("iframe");
-          iframe.src = slide.url;
-          target.appendChild(iframe);
-          if (onDone && slide.duration !== "infinite")
-            setTimeout(onDone, (slide.duration || 15) * 1000);
-          return;
-        }
-
-        // ---------- YouTube ----------
-        if (slide.type === "youtube" && slide.video_id) {
-          const iframe = document.createElement("iframe");
-          iframe.src = `https://www.youtube.com/embed/${slide.video_id}?autoplay=1&mute=1&controls=0`;
-          target.appendChild(iframe);
-          if (slide.title && !(slide.hide_panel_titles || slide.suppressTitle)) {
-            const t = document.createElement("div");
-            t.className = "title"; t.textContent = slide.title;
-            target.appendChild(t);
-          }
-          if (onDone) setTimeout(onDone, (slide.duration || 30) * 1000);
-          return;
-        }
-
-        if (onDone) setTimeout(onDone, (slide.duration || 5) * 1000);
-      }
-
-      function showSlide(i) {
-        if (i < 0) i = slides.length - 1;
-        if (i >= slides.length) i = 0;
-        idx = i;
-        const next = slides[idx];
-        const ns = idx % 2 ? slideB : slideA;
-        const cs = idx % 2 ? slideA : slideB;
-        renderSlide(ns, next, slides, () => !paused && showSlide(idx + 1));
-        ns.style.opacity = 1; cs.style.opacity = 0;
-      }
-
-      renderSlide(slideA, slides[0], slides, () => showSlide(1));
-      slideA.style.opacity = 1;
+      if(onDone && slide.duration!=="infinite")
+        setTimeout(onDone,(slide.duration||30)*1000);
+      return;
     }
 
-    start();
-  </script>
+    // ---------- MULTI-FRAME ----------
+    if(slide.file?.includes("*") || (slide.frames && slide.frames.length)){
+      const img=document.createElement("img"); target.appendChild(img);
+      let frames=slide.frames||[];
+      if(!frames.length && slide.file){
+        const pat=slide.file.replace(/^\/?/,"");
+        const r=await fetch(`/api/frames?pattern=${encodeURIComponent(pat)}`);
+        const j=await r.json(); frames=j.frames||[];
+      }
+      if(!frames.length) return onDone?.();
+      await Promise.all(frames.map(src=>new Promise(res=>{
+        const im=new Image(); im.onload=res; im.onerror=res; im.src=src;
+      })));
+      playFrames(img,frames,slide.fps,slide.repeat,slide.duration,slide.effect,onDone);
+      return;
+    }
+
+    // ---------- STILL IMAGE (Ken Burns / pause / single) ----------
+    if((slide.url && !slide.type) || (!slide.url && !slide.type)){
+      const holder=document.createElement("div");
+      holder.style.width="100%";
+      holder.style.height="100%";
+      holder.style.background=slide.url?"black":"black";
+      if(slide.url){
+        const img=document.createElement("img");
+        img.src=slide.url;
+        holder.appendChild(img);
+        applyEffect(img,slide.effect,slide.duration);
+      }
+      target.appendChild(holder);
+      setTimeout(onDone,(slide.duration||5)*1000);
+      return;
+    }
+
+    // ---------- HTML ----------
+    if(slide.type==="html" && slide.url){
+      const f=document.createElement("iframe");
+      f.src=slide.url; target.appendChild(f);
+      if(onDone && slide.duration!=="infinite")
+        setTimeout(onDone,(slide.duration||15)*1000);
+      return;
+    }
+
+    // ---------- YOUTUBE ----------
+    if(slide.type==="youtube" && slide.video_id){
+      const f=document.createElement("iframe");
+      f.src=`https://www.youtube.com/embed/${slide.video_id}?autoplay=1&mute=1&controls=0`;
+      target.appendChild(f);
+      if(onDone) setTimeout(onDone,(slide.duration||30)*1000);
+      return;
+    }
+
+    setTimeout(onDone,(slide.duration||5)*1000);
+  }
+
+  function showSlide(i){
+    if(i<0) i=slides.length-1;
+    if(i>=slides.length) i=0;
+    idx=i;
+    const next=slides[idx];
+    const ns=idx%2?b:a, cs=idx%2?a:b;
+    renderSlide(ns,next,slides,()=>!paused&&showSlide(idx+1));
+    ns.style.opacity=1; cs.style.opacity=0;
+  }
+
+  renderSlide(a,slides[0],slides,()=>showSlide(1));
+  a.style.opacity=1;
+}
+start();
+</script>
+
+
 </body>
 </html>

@@ -152,6 +152,7 @@ clients:
     include: [ house_mux_2x2 ]
     #include: [powder_before, powder_during, powder_after, pause_2]
     #include: [bath_before,bath_during,bath_after,pause_1]
+    #include: [kitchen_before, kitchen_during, kitchen_after, pause_1 ]
     #include: [weather_dashboard]
 
   kiosk1.local:
