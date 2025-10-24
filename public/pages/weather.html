@@ -40,48 +40,79 @@
     const LON = -77.4360;
 
     async function getWeather() {
+      const LAT = 37.5407; // Richmond, VA
+      const LON = -77.4360;
+      const API_UNITS = "imperial";
+      const API_CURRENT = `/api/weather/current?lat=${LAT}&lon=${LON}&units=${API_UNITS}`;
+      const API_FORECAST = `/api/weather?lat=${LAT}&lon=${LON}&units=${API_UNITS}`;
+
       try {
-        const res = await fetch(`${API_URL}?lat=${LAT}&lon=${LON}&units=imperial`);
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        const data = await res.json();
+        // Fetch current + forecast in parallel
+        const [currRes, forecastRes] = await Promise.all([
+          fetch(API_CURRENT),
+          fetch(API_FORECAST)
+        ]);
 
-        // Ensure expected structure
-        if (!data.list || !data.list.length) throw new Error("Invalid weather data");
+        if (!currRes.ok) throw new Error(`Current weather error ${currRes.status}`);
+        if (!forecastRes.ok) throw new Error(`Forecast error ${forecastRes.status}`);
 
-        const city = "Richmond, VA";
-        const now = data.list[0];
-        const icon = now.weather[0].icon;
+        const current = await currRes.json();
+        const forecast = await forecastRes.json();
+
+        // --- Display current temperature ---
+        const city = `${current.name}, ${current.sys?.country || "US"}`;
+        const icon = current.weather?.[0]?.icon || "01d";
+        const temp = Math.round(current.main?.temp);
 
         document.getElementById("location").textContent = city;
-        document.getElementById("current-temp").innerHTML =
-          `<img src="https://openweathermap.org/img/wn/${icon}@2x.png" class="icon"><br>${Math.round(now.main.temp)}°F`;
+        document.getElementById("current-temp").innerHTML = `
+          <img src="https://openweathermap.org/img/wn/${icon}@2x.png" class="icon"><br>${temp}°F
+        `;
 
-        const todayTemps = data.list.slice(0, 8).map(p => p.main.temp);
+        // --- Calculate today's high/low from forecast list (first 8 entries = ~24 h) ---
+        if (!forecast.list || !forecast.list.length)
+          throw new Error("Invalid forecast data");
+
+        const todayTemps = forecast.list.slice(0, 8).map(p => p.main.temp);
         const high = Math.round(Math.max(...todayTemps));
         const low = Math.round(Math.min(...todayTemps));
         document.getElementById("high-low").textContent = `High ${high}° • Low ${low}°`;
 
+        // --- Group forecast by date for next 3 days ---
+        const byDate = {};
+        for (const entry of forecast.list) {
+          const d = new Date(entry.dt * 1000).toISOString().split("T")[0];
+          if (!byDate[d]) byDate[d] = [];
+          byDate[d].push(entry);
+        }
+
+        const dates = Object.keys(byDate).slice(1, 4); // next 3 days
         const forecastEl = document.getElementById("forecast");
         forecastEl.innerHTML = "";
-        for (let i = 8; i <= 24; i += 8) {
-          const entry = data.list[i];
-          if (!entry) continue;
-          const date = new Date(entry.dt * 1000);
-          const weekday = date.toLocaleDateString("en-US", { weekday: "short" });
-          const icon = entry.weather[0].icon;
-          const max = Math.round(entry.main.temp_max);
-          const min = Math.round(entry.main.temp_min);
+
+        for (const d of dates) {
+          const dayEntries = byDate[d];
+          const max = Math.round(Math.max(...dayEntries.map(e => e.main.temp_max)));
+          const min = Math.round(Math.min(...dayEntries.map(e => e.main.temp_min)));
+          const midIcon = dayEntries[Math.floor(dayEntries.length / 2)].weather[0].icon;
+          const weekday = new Date(d).toLocaleDateString("en-US", { weekday: "short" });
+
           const div = document.createElement("div");
           div.className = "day";
           div.innerHTML = `
             <div class="day-name">${weekday}</div>
-            <img src="https://openweathermap.org/img/wn/${icon}.png" class="icon" alt="">
-            <div class="day-temp">${max}° / ${min}°</div>`;
+            <img src="https://openweathermap.org/img/wn/${midIcon}.png" class="icon" alt="">
+            <div class="day-temp">${max}° / ${min}°</div>
+          `;
           forecastEl.appendChild(div);
         }
       } catch (err) {
         console.error("Weather fetch failed:", err);
-        document.getElementById("location").textContent = "Weather unavailable";
+        document.getElementById("location").innerHTML =
+          `<span style="color:#ffcccc">⚠️ ${err.message}</span>`;
+        document.getElementById("current-temp").textContent = "";
+        document.getElementById("high-low").textContent = "";
+        document.getElementById("forecast").innerHTML = "";
       }
     }
 
