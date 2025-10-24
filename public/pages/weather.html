@@ -24,7 +24,7 @@
     .day-name { font-size: 1.2rem; font-weight: 500; }
     .day-temp { font-size: 1.8rem; font-weight: 300; }
     .icon { width: 64px; height: 64px; margin: 0.5rem 0; }
-    footer { position: absolute; bottom: 1rem; font-size: 0.9rem; opacity: 0.7; }
+    footer { position: absolute; bottom: 0.8rem; font-size: 0.9rem; opacity: 0.7; }
   </style>
 </head>
 <body>
@@ -32,25 +32,43 @@
   <div class="current" id="current-temp"></div>
   <div class="highlow" id="high-low"></div>
   <div class="forecast" id="forecast"></div>
-  <footer>Powered by OpenWeather</footer>
+  <footer id="footer"></footer>
 
   <script>
-    const API_URL = "/api/weather";
-    const LAT = 37.5407;    // Richmond, VA
-    const LON = -77.4360;
+    const REFRESH_INTERVAL = 5 * 60 * 1000; // 5 minutes
+    let lastUpdate = 0;
+    let timer = null;
+
+    function formatTime(ts) {
+      const d = new Date(ts);
+      return d.toLocaleTimeString("en-US", {
+        hour: "numeric",
+        minute: "2-digit",
+      });
+    }
 
     async function getWeather() {
-      const LAT = 37.5407; // Richmond, VA
-      const LON = -77.4360;
-      const API_UNITS = "imperial";
-      const API_CURRENT = `/api/weather/current?lat=${LAT}&lon=${LON}&units=${API_UNITS}`;
-      const API_FORECAST = `/api/weather?lat=${LAT}&lon=${LON}&units=${API_UNITS}`;
+      const params = new URLSearchParams(window.location.search);
+      const zip = params.get("zip");
+      const city = params.get("city");
+      const units = "imperial";
+
+      let query = "";
+      if (zip) query = `zip=${encodeURIComponent(zip)}`;
+      else if (city) query = `city=${encodeURIComponent(city)}`;
+      else {
+        document.getElementById("location").textContent =
+          "⚠️ Missing ?zip= or ?city= query parameter";
+        return;
+      }
+
+      const API_CURRENT = `/api/weather/current?${query}&units=${units}`;
+      const API_FORECAST = `/api/weather?${query}&units=${units}`;
 
       try {
-        // Fetch current + forecast in parallel
         const [currRes, forecastRes] = await Promise.all([
           fetch(API_CURRENT),
-          fetch(API_FORECAST)
+          fetch(API_FORECAST),
         ]);
 
         if (!currRes.ok) throw new Error(`Current weather error ${currRes.status}`);
@@ -59,34 +77,37 @@
         const current = await currRes.json();
         const forecast = await forecastRes.json();
 
-        // --- Display current temperature ---
-        const city = `${current.name}, ${current.sys?.country || "US"}`;
+        // --- Display location ---
+        const cityName = current.name || forecast.city?.name || "Unknown City";
+        const stateAbbr = current.state_abbr || forecast.city?.state_abbr || "";
+        document.getElementById("location").textContent = stateAbbr
+          ? `${cityName}, ${stateAbbr}`
+          : cityName;
+
+        // --- Current temperature ---
         const icon = current.weather?.[0]?.icon || "01d";
         const temp = Math.round(current.main?.temp);
-
-        document.getElementById("location").textContent = city;
         document.getElementById("current-temp").innerHTML = `
           <img src="https://openweathermap.org/img/wn/${icon}@2x.png" class="icon"><br>${temp}°F
         `;
 
-        // --- Calculate today's high/low from forecast list (first 8 entries = ~24 h) ---
-        if (!forecast.list || !forecast.list.length)
-          throw new Error("Invalid forecast data");
+        // --- Today's high/low ---
+        if (forecast.list?.length) {
+          const todayTemps = forecast.list.slice(0, 8).map(p => p.main.temp);
+          const high = Math.round(Math.max(...todayTemps));
+          const low = Math.round(Math.min(...todayTemps));
+          document.getElementById("high-low").textContent = `High ${high}° • Low ${low}°`;
+        }
 
-        const todayTemps = forecast.list.slice(0, 8).map(p => p.main.temp);
-        const high = Math.round(Math.max(...todayTemps));
-        const low = Math.round(Math.min(...todayTemps));
-        document.getElementById("high-low").textContent = `High ${high}° • Low ${low}°`;
-
-        // --- Group forecast by date for next 3 days ---
+        // --- 3-day forecast ---
         const byDate = {};
-        for (const entry of forecast.list) {
+        for (const entry of forecast.list || []) {
           const d = new Date(entry.dt * 1000).toISOString().split("T")[0];
           if (!byDate[d]) byDate[d] = [];
           byDate[d].push(entry);
         }
 
-        const dates = Object.keys(byDate).slice(1, 4); // next 3 days
+        const dates = Object.keys(byDate).slice(1, 4);
         const forecastEl = document.getElementById("forecast");
         forecastEl.innerHTML = "";
 
@@ -106,6 +127,9 @@
           `;
           forecastEl.appendChild(div);
         }
+
+        lastUpdate = Date.now();
+        document.getElementById("footer").textContent = `Last updated ${formatTime(lastUpdate)}`;
       } catch (err) {
         console.error("Weather fetch failed:", err);
         document.getElementById("location").innerHTML =
@@ -113,10 +137,25 @@
         document.getElementById("current-temp").textContent = "";
         document.getElementById("high-low").textContent = "";
         document.getElementById("forecast").innerHTML = "";
+        document.getElementById("footer").textContent = "";
       }
     }
 
+    // Initial load
     getWeather();
+
+    // --- Silent background refresh every 5 minutes ---
+    function scheduleRefresh() {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        const elapsed = Date.now() - lastUpdate;
+        // only refresh if the page has been visible >= 5 min (prevents MUX interference)
+        if (elapsed >= REFRESH_INTERVAL) getWeather();
+        scheduleRefresh();
+      }, REFRESH_INTERVAL);
+    }
+
+    scheduleRefresh();
   </script>
 </body>
 </html>

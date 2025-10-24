@@ -80,9 +80,9 @@ slides:
     duration: 10
 
 
-  - id: weather_dashboard
+  - id: richmond_current_weather
     type: html
-    url: "/pages/weather.html"
+    url: "/pages/weather.html?city=Richmond,VA"
     duration: 15
 
 
@@ -119,20 +119,8 @@ slides:
         #panel_duration: 4
       - slides: [ kitchen_before, kitchen_during, kitchen_after, pause_1]
         #panel_duration: 6
-      - slides: [ weather_dashboard,river_center_live_video]  # empty
+      - slides: [ richmond_current_weather,river_center_live_video]  # empty
         #panel_duration: infinite
-
-  - id: house_mux_test
-    type: mux
-    layout: 1x2
-    duration: infinite
-    #title: "Home Renovation Overview"
-    hide_panel_titles: true
-    panels:
-      - slides: [bath_before, bath_during, bath_after, pause_1 ]
-        align: "center bottom"
-      - slides: [ powder_before, powder_during, powder_after, pause_2]
-        align: "center top"
 
 
 #https://youtu.be/erBoOFKTH4E
@@ -153,7 +141,7 @@ clients:
     #include: [powder_before, powder_during, powder_after, pause_2]
     #include: [bath_before,bath_during,bath_after,pause_1]
     #include: [kitchen_before, kitchen_during, kitchen_after, pause_1 ]
-    #include: [weather_dashboard, river_center_live_video]
+    #include: [richmond_current_weather, river_center_live_video]
 
   kiosk1.local:
     include: [kitchen_before, kitchen_during, bath_during, bath_after ]

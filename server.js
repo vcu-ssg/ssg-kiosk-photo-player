@@ -1,5 +1,5 @@
 // ------------------------------------------------------------
-// 📸 Photo Kiosk Server – Clean Version (uses native fetch)
+// 📸 Photo Kiosk Server – Modularized Weather API (Node 22 native fetch)
 // ------------------------------------------------------------
 import express from "express";
 import path from "path";
@@ -12,6 +12,7 @@ import { fileURLToPath } from "url";
 import { minimatch } from "minimatch";
 import { glob } from "glob";
 import sharp from "sharp";
+import { createWeatherRouter } from "./weatherapi.js"; // ✅ modular import
 
 // ------------------------------------------------------------
 // 🧭 Environment setup
@@ -225,78 +226,6 @@ app.get("/api/slideshow", async (req, res) => {
 });
 
 // ------------------------------------------------------------
-// 🌦️ Weather cache (forecast + current)
-// ------------------------------------------------------------
-const weatherCache = new Map();
-const currentCache = new Map();
-const FORECAST_TTL = 30 * 60 * 1000; // 30 min
-const CURRENT_TTL = 10 * 60 * 1000;  // 10 min
-
-function getKey(lat, lon, units) {
-  return `${lat},${lon},${units}`;
-}
-
-// ------------------------------------------------------------
-// 🌡️ API: current weather
-// ------------------------------------------------------------
-app.get("/api/weather/current", async (req, res) => {
-  const { lat, lon, units } = req.query;
-  const key = OPENWEATHER_KEY;
-  if (!key) return res.status(500).json({ error: "Missing weather key" });
-
-  const cacheKey = getKey(lat, lon, units);
-  const cached = currentCache.get(cacheKey);
-  if (cached && Date.now() - cached.ts < CURRENT_TTL) {
-    log(`🌡️ Using cached current weather for ${lat},${lon}`);
-    return res.json(cached.data);
-  }
-
-  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${
-    units || "imperial"
-  }&appid=${key}`;
-
-  try {
-    const r = await fetch(url);
-    const data = await r.json();
-    if (r.ok) currentCache.set(cacheKey, { data, ts: Date.now() });
-    else log(`⚠️ Current weather API error ${r.status}`);
-    res.json(data);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
-
-// ------------------------------------------------------------
-// 🌤️ API: forecast weather (5-day/3-hour)
-// ------------------------------------------------------------
-app.get("/api/weather", async (req, res) => {
-  const { lat, lon, units } = req.query;
-  const key = OPENWEATHER_KEY;
-  if (!key) return res.status(500).json({ error: "Missing weather key" });
-
-  const cacheKey = getKey(lat, lon, units);
-  const cached = weatherCache.get(cacheKey);
-  if (cached && Date.now() - cached.ts < FORECAST_TTL) {
-    log(`🌤️ Using cached forecast for ${lat},${lon}`);
-    return res.json(cached.data);
-  }
-
-  const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=${
-    units || "imperial"
-  }&appid=${key}`;
-
-  try {
-    const r = await fetch(url);
-    const data = await r.json();
-    if (r.ok) weatherCache.set(cacheKey, { data, ts: Date.now() });
-    else log(`⚠️ Forecast API error ${r.status}`);
-    res.json(data);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
-
-// ------------------------------------------------------------
 // 📸 API: frames (for wildcard sequences)
 // ------------------------------------------------------------
 app.get("/api/frames", async (req, res) => {
@@ -328,6 +257,11 @@ app.get("/api/image", async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
+
+// ------------------------------------------------------------
+// 🌦️ Mount modular weather API
+// ------------------------------------------------------------
+app.use("/api/weather", createWeatherRouter(express, OPENWEATHER_KEY, log));
 
 // ------------------------------------------------------------
 // 🚀 Start server
