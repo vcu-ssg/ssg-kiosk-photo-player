@@ -5,7 +5,6 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: photo-kiosk
-    hostname: ${HOSTNAME:-${HOST:-${COMPUTERNAME:-default-client}}}
     restart: unless-stopped
     ports:
       - "${KIOSK_PORT:-3000}:3000"
@@ -16,17 +15,15 @@ services:
       - ./config.yaml:/app/config.yaml:ro
       - ./logs:/app/logs
     env_file:
-      - /home/john/.env
+      - .env
     environment:
-      - NODE_ENV=${KIOSK_NODE_ENV:-production}
-      - PORT=${KIOSK_PORT:-3000}
+      - NODE_ENV=${KIOSK_NODE_ENV}
+      - PORT=${KIOSK_PORT}
       - OPENWEATHER_KEY=${KIOSK_OPENWEATHER_KEY}
-      - ENV_PATH=/home/john/.env
-      - CLIENT_ID=${HOSTNAME:-default-client}
-
+      - ENV_PATH=/app/.env
+      - CLIENT_ID=${CLIENT_ID:-${HOSTNAME:-${HOST:-${COMPUTERNAME:-default-client}}}}
     labels:
       - "com.centurylinklabs.watchtower.enable=true"
-
 
   watchtower:
     image: containrrr/watchtower
