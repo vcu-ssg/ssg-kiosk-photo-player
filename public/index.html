@@ -20,7 +20,6 @@ iframe{position:absolute;inset:0;width:100%;height:100%;border:none;z-index:1;}
 async function loadShow(){const r=await fetch("/api/slideshow");const j=await r.json();return j.slides||[];}
 function parseAlign(a){if(!a)return{x:"center",y:"center"};const p=a.trim().split(/\s+/);return{x:p[0]||"center",y:p[1]||"center"};}
 function applyEffect(img,effect,dur){const d=(dur||5)*1000;if(effect==="kenburns-zoom-in")img.animate([{transform:"scale(1)"},{transform:"scale(1.15)"}],{duration:d,fill:"forwards",easing:"ease-in-out"});else if(effect==="kenburns-zoom-out")img.animate([{transform:"scale(1.15)"},{transform:"scale(1)"}],{duration:d,fill:"forwards",easing:"ease-in-out"});}
-// function playFrames(img,frames,fps,repeat,duration,effect,onDone){if(!frames?.length)return onDone?.();const loops=repeat??1;let loopCount=0;const delay=fps?1000/fps:300;let f=0;function next(){img.src=frames[f];f++;if(f<frames.length)setTimeout(next,delay);else{loopCount++;if(loopCount>=loops)setTimeout(onDone||(()=>{}),delay);else{f=0;setTimeout(next,delay);}}}next();}
 
 function playFrames(img, frames, fps, repeat, duration, effect, onDone) {
   if (!frames?.length) return onDone?.();
@@ -28,23 +27,33 @@ function playFrames(img, frames, fps, repeat, duration, effect, onDone) {
   const loops = repeat ?? 1;
   const totalFrames = frames.length * loops;
 
-  // Compute frame delay:
-  // 1️⃣ If fps provided, use it.
-  // 2️⃣ Otherwise divide total duration evenly.
-  const totalDuration = (duration && duration > 0 ? duration : frames.length / (fps || 10)) * 1000;
-  const delay = fps ? 1000 / fps : totalDuration / totalFrames;
+  // --- Compute total duration ---
+  let totalDurationMs;
+  if (duration && duration > 0) {
+    totalDurationMs = duration * 1000; // user-specified total time
+  } else if (fps && fps > 0) {
+    totalDurationMs = (totalFrames / fps) * 1000;
+  } else {
+    totalDurationMs = totalFrames * 500; // default 0.5s per frame
+  }
 
+  const delay = totalDurationMs / totalFrames;
   let index = 0;
-  function next() {
+
+  const step = () => {
     img.src = frames[index % frames.length];
     index++;
+
     if (index < totalFrames) {
-      setTimeout(next, delay);
+      // Schedule the next frame after the delay
+      setTimeout(step, delay);
     } else {
-      onDone?.();
+      // Hold the final frame for a full delay before finishing
+      setTimeout(() => onDone?.(), delay);
     }
-  }
-  next();
+  };
+
+  step();
 }
 
 
@@ -97,15 +106,45 @@ async function start(){
     }
 
     // ---------- MULTI-FRAME ----------
-    if(slide.file?.includes("*")||(slide.frames&&slide.frames.length)){
-      const img=document.createElement("img");target.appendChild(img);
-      let frames=slide.frames||[];
-      if(!frames.length&&slide.file){const pat=slide.file.replace(/^\/?/,"");const r=await fetch(`/api/frames?pattern=${encodeURIComponent(pat)}`);const j=await r.json();frames=j.frames||[];}
-      if(!frames.length)return onDone?.();
-      await Promise.all(frames.map(src=>new Promise(res=>{const im=new Image();im.onload=res;im.onerror=res;im.src=src;})));
-      playFrames(img,frames,slide.fps,slide.repeat,slide.duration,slide.effect,onDone);
-      return;
-    }
+if (slide.file?.includes("*") || (slide.frames && slide.frames.length)) {
+  const img = document.createElement("img");
+  target.appendChild(img);
+
+  let frames = slide.frames || [];
+  if (!frames.length && slide.file) {
+    const pat = slide.file.replace(/^\/?/, "");
+    const r = await fetch(`/api/frames?pattern=${encodeURIComponent(pat)}`);
+    const j = await r.json();
+    frames = j.frames || [];
+  }
+  if (!frames.length) return onDone?.();
+
+  // Preload all frames before playback
+  await Promise.all(
+    frames.map(
+      src =>
+        new Promise(res => {
+          const im = new Image();
+          im.onload = res;
+          im.onerror = res;
+          im.src = src;
+        })
+    )
+  );
+
+  // --- timing fix ---
+  // Ensure duration always has a valid positive value.
+  // If effect is "cut" and no fps defined, default to 0.5s per frame.
+  let dur = Number(slide.duration) > 0 ? Number(slide.duration) : undefined;
+  if (!dur && slide.effect === "cut" && !slide.fps) {
+    dur = frames.length * 0.5; // half-second per frame
+  }
+
+  // Now play frames using computed duration
+  playFrames(img, frames, slide.fps, slide.repeat, dur ?? slide.duration, slide.effect, onDone);
+  return;
+}
+
 
     // ---------- STILL IMAGE ----------
     if(slide.file && !slide.file.includes("*")){

@@ -11,7 +11,7 @@ slides:
     file: "kitchen_during/*.JPG"
     #title: "Kitchen during ..."
     effect: cut
-    duration: 3
+    fps: 0.5
 
   - id: kitchen_after
     file: "kitchen_after.JPG"
@@ -29,7 +29,7 @@ slides:
     file: "bath_during/*.JPG"
     #title: "Bath during ..."
     effect: fade
-    duration: 3
+    duration: 15
 
   - id: kitchen_animation
     file: "kitchen_during/*.JPG"     # glob pattern expands to multiple frames
