@@ -20,7 +20,34 @@ iframe{position:absolute;inset:0;width:100%;height:100%;border:none;z-index:1;}
 async function loadShow(){const r=await fetch("/api/slideshow");const j=await r.json();return j.slides||[];}
 function parseAlign(a){if(!a)return{x:"center",y:"center"};const p=a.trim().split(/\s+/);return{x:p[0]||"center",y:p[1]||"center"};}
 function applyEffect(img,effect,dur){const d=(dur||5)*1000;if(effect==="kenburns-zoom-in")img.animate([{transform:"scale(1)"},{transform:"scale(1.15)"}],{duration:d,fill:"forwards",easing:"ease-in-out"});else if(effect==="kenburns-zoom-out")img.animate([{transform:"scale(1.15)"},{transform:"scale(1)"}],{duration:d,fill:"forwards",easing:"ease-in-out"});}
-function playFrames(img,frames,fps,repeat,duration,effect,onDone){if(!frames?.length)return onDone?.();const loops=repeat??1;let loopCount=0;const delay=fps?1000/fps:300;let f=0;function next(){img.src=frames[f];f++;if(f<frames.length)setTimeout(next,delay);else{loopCount++;if(loopCount>=loops)setTimeout(onDone||(()=>{}),delay);else{f=0;setTimeout(next,delay);}}}next();}
+// function playFrames(img,frames,fps,repeat,duration,effect,onDone){if(!frames?.length)return onDone?.();const loops=repeat??1;let loopCount=0;const delay=fps?1000/fps:300;let f=0;function next(){img.src=frames[f];f++;if(f<frames.length)setTimeout(next,delay);else{loopCount++;if(loopCount>=loops)setTimeout(onDone||(()=>{}),delay);else{f=0;setTimeout(next,delay);}}}next();}
+
+function playFrames(img, frames, fps, repeat, duration, effect, onDone) {
+  if (!frames?.length) return onDone?.();
+
+  const loops = repeat ?? 1;
+  const totalFrames = frames.length * loops;
+
+  // Compute frame delay:
+  // 1️⃣ If fps provided, use it.
+  // 2️⃣ Otherwise divide total duration evenly.
+  const totalDuration = (duration && duration > 0 ? duration : frames.length / (fps || 10)) * 1000;
+  const delay = fps ? 1000 / fps : totalDuration / totalFrames;
+
+  let index = 0;
+  function next() {
+    img.src = frames[index % frames.length];
+    index++;
+    if (index < totalFrames) {
+      setTimeout(next, delay);
+    } else {
+      onDone?.();
+    }
+  }
+  next();
+}
+
+
 async function start(){
   const slides=await loadShow();
   const box=document.getElementById("slideshow");
@@ -64,6 +91,7 @@ async function start(){
         pos();new ResizeObserver(pos).observe(cell);
         const deck=(panel.slides||[]).map(id=>all.find(s=>s.id===id)).filter(Boolean);
         if(!deck.length)return;
+        
         (async()=>{await new Promise(r=>setTimeout(r,pi*250));while(true){for(const s of deck){inner.innerHTML="";await new Promise(done=>renderSlide(inner,{...s,suppressTitle:true},all,done));}}})();});
       return;
     }

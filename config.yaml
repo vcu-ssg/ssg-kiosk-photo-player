@@ -162,4 +162,5 @@ clients:
     include: [kitchen_before, kitchen_during, kitchen_after, pause_2, powder_before, powder_during, powder_after, pause_2, bath_before, bath_during, bath_after, pause_2 ]
 
   EGR-JL-DSK0-SRV:
-    include: [river_center_video, kitchen_before, james_river_water_level, weather_widget, kitchen_animation, kitchen_after, pause_2]
+    #include: [river_center_video, kitchen_before, james_river_water_level, weather_widget, kitchen_animation, kitchen_after, pause_2]
+    include: [ house_mux_2x2 ]
