@@ -1,254 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Photo Kiosk</title>
-  <style>
-    html, body { margin:0; height:100%; background:black; overflow:hidden; }
-    #slideshow { position:relative; width:100%; height:100%; }
-    .slide {
-      position:absolute; inset:0;
-      display:flex; align-items:center; justify-content:center;
-      background:black; opacity:0;
-      transition:opacity 0.7s ease-in-out;
-    }
-    .mux-grid {
-      display:grid; width:100%; height:100%; background:black; gap:2px;
-    }
-    .mux-cell { position:relative; overflow:hidden; background:black; }
-    .mux-inner {
-      position:absolute; inset:0;
-      display:flex; align-items:center; justify-content:center;
-      will-change:transform;
-    }
-    .mux-inner img {
-      max-width:100%; max-height:100%; object-fit:contain; display:block;
-    }
-    iframe { width:100%; height:100%; border:none; }
-    .title {
-      position:absolute; bottom:1.2rem; left:0; right:0;
-      text-align:center; color:white; font-size:2rem;
-      text-shadow:0 0 10px black;
-    }
-  </style>
+<meta charset="UTF-8" />
+<title>Photo Kiosk (final YouTube fix)</title>
+<style>
+html,body{margin:0;height:100%;background:black;overflow:hidden;}
+#slideshow{position:relative;width:100%;height:100%;}
+.slide{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:black;opacity:0;transition:opacity .7s ease-in-out;}
+.mux-grid{display:grid;width:100%;height:100%;background:black;gap:2px;}
+.mux-cell{position:relative;overflow:hidden;background:black;}
+.mux-inner{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;will-change:transform;}
+.mux-inner img{max-width:100%;max-height:100%;object-fit:contain;display:block;}
+iframe{position:absolute;inset:0;width:100%;height:100%;border:none;z-index:1;}
+</style>
 </head>
 <body>
-  <div id="slideshow"></div>
-
+<div id="slideshow"></div>
 <script>
-async function loadShow() {
-  const r = await fetch("/api/slideshow");
-  const j = await r.json();
-  return j.slides || [];
-}
-function parseAlign(align) {
-  if (!align) return {x:"center", y:"center"};
-  const p = align.trim().split(/\s+/);
-  return {x:p[0]||"center", y:p[1]||"center"};
-}
-function applyEffect(img,effect,dur){
-  const d=(dur||5)*1000;
-  if(effect==="kenburns-zoom-in")
-    img.animate([{transform:"scale(1)"},{transform:"scale(1.15)"}],
-      {duration:d,fill:"forwards",easing:"ease-in-out"});
-  else if(effect==="kenburns-zoom-out")
-    img.animate([{transform:"scale(1.15)"},{transform:"scale(1)"}],
-      {duration:d,fill:"forwards",easing:"ease-in-out"});
-}
-
-function playFrames(img, frames, fps, repeat, duration, effect, onDone) {
-  if (!frames?.length) return onDone?.();
-
-  const loops = repeat ?? 1;
-  let loopCount = 0;
-
-  // --- "cut" or "fade": show each image for (duration) seconds ---
-  if (effect === "cut" || effect === "fade") {
-    let idx = 0;
-
-    function showNext() {
-      img.src = frames[idx];
-      idx++;
-      if (idx < frames.length) {
-        setTimeout(showNext, (duration || 1) * 1000);
-      } else {
-        loopCount++;
-        if (loopCount >= loops) {
-          setTimeout(onDone || (()=>{}), (duration || 1) * 1000);
-        } else {
-          idx = 0;
-          setTimeout(showNext, (duration || 1) * 1000);
-        }
-      }
-    }
-
-    showNext();
-    return;
-  }
-
-  // --- "animate-smooth" or others: use FPS-based timing ---
-  const delay = fps ? 1000 / fps : 300;
-  let f = 0;
-
-  function next() {
-    img.src = frames[f];
-    f++;
-    if (f < frames.length) {
-      setTimeout(next, delay);
-    } else {
-      loopCount++;
-      if (loopCount >= loops) {
-        setTimeout(onDone || (()=>{}), delay);
-      } else {
-        f = 0;
-        setTimeout(next, delay);
-      }
-    }
-  }
-
-  next();
-}
-
-
-
+async function loadShow(){const r=await fetch("/api/slideshow");const j=await r.json();return j.slides||[];}
+function parseAlign(a){if(!a)return{x:"center",y:"center"};const p=a.trim().split(/\s+/);return{x:p[0]||"center",y:p[1]||"center"};}
+function applyEffect(img,effect,dur){const d=(dur||5)*1000;if(effect==="kenburns-zoom-in")img.animate([{transform:"scale(1)"},{transform:"scale(1.15)"}],{duration:d,fill:"forwards",easing:"ease-in-out"});else if(effect==="kenburns-zoom-out")img.animate([{transform:"scale(1.15)"},{transform:"scale(1)"}],{duration:d,fill:"forwards",easing:"ease-in-out"});}
+function playFrames(img,frames,fps,repeat,duration,effect,onDone){if(!frames?.length)return onDone?.();const loops=repeat??1;let loopCount=0;const delay=fps?1000/fps:300;let f=0;function next(){img.src=frames[f];f++;if(f<frames.length)setTimeout(next,delay);else{loopCount++;if(loopCount>=loops)setTimeout(onDone||(()=>{}),delay);else{f=0;setTimeout(next,delay);}}}next();}
 async function start(){
   const slides=await loadShow();
   const box=document.getElementById("slideshow");
-  if(!slides.length){ box.innerHTML="<h1 style='color:white'>No slides</h1>"; return; }
-
-  let idx=0, paused=false;
-  const a=document.createElement("div"), b=document.createElement("div");
-  a.className=b.className="slide";
-  box.append(a,b);
+  if(!slides.length){box.innerHTML="<h1 style='color:white'>No slides</h1>";return;}
+  let idx=0;
+  const a=document.createElement("div"),b=document.createElement("div");
+  a.className=b.className="slide";box.append(a,b);
 
   async function renderSlide(target,slide,all,onDone){
     target.innerHTML="";
+    const inMux=!!target.closest(".mux-grid");
+    const type=(slide.type||"").toLowerCase();   // normalize safely
+    console.log(`▶ renderSlide: ${slide.id||"(no id)"} type=${type} inMux=${inMux}`);
+
+    // ---------- YOUTUBE ----------
+    if(type==="youtube" && slide.video_id){
+      console.log(`🎬 YouTube embed ${slide.video_id}`);
+      const f=document.createElement("iframe");
+      f.allow="autoplay; fullscreen";
+      f.src=`https://www.youtube.com/embed/${slide.video_id}?autoplay=1&mute=1&controls=0&rel=0&modestbranding=1`;
+      target.appendChild(f);
+      if(onDone && slide.duration!=="infinite") setTimeout(onDone,(slide.duration||30)*1000);
+      return;
+    }
+
+    // ---------- HTML PAGE ----------
+    if(type==="html" && slide.url){
+      const f=document.createElement("iframe");
+      f.src=slide.url;target.appendChild(f);
+      if(onDone && slide.duration!=="infinite") setTimeout(onDone,(slide.duration||15)*1000);
+      return;
+    }
 
     // ---------- MUX ----------
-    if(slide.type==="mux"){
-      const grid=document.createElement("div");
-      grid.className="mux-grid";
-      const [rows,cols]=slide.layout.split("x").map(Number);
-      grid.style.gridTemplateRows=`repeat(${rows},1fr)`;
-      grid.style.gridTemplateColumns=`repeat(${cols},1fr)`;
-      target.appendChild(grid);
-
-      slide.panels.forEach((panel, pi) => {
-        const cell = document.createElement("div");
-        cell.className = "mux-cell";
-        const inner = document.createElement("div");
-        inner.className = "mux-inner";
-        cell.appendChild(inner);
-        grid.appendChild(cell);
-
-        const { x, y } = parseAlign(panel.align);
-        inner.dataset.scale = panel.scale || 1;
-        function pos() {
-          const r = cell.getBoundingClientRect();
-          inner.style.justifyContent = (x === "left" ? "flex-start" : x === "right" ? "flex-end" : "center");
-          inner.style.alignItems = (y === "top" ? "flex-start" : y === "bottom" ? "flex-end" : "center");
-          let tx = 0, ty = 0;
-          if (x.endsWith("%")) tx = ((parseFloat(x) - 50) / 100) * r.width;
-          if (y.endsWith("%")) ty = ((parseFloat(y) - 50) / 100) * r.height;
-          inner.style.transform = `translate(${tx}px,${ty}px) scale(${inner.dataset.scale})`;
-        }
-        pos(); new ResizeObserver(pos).observe(cell);
-
-        const deck = (panel.slides || []).map(id => all.find(s => s.id === id)).filter(Boolean);
-        if (!deck.length) return;
-
-        // --- new async chain ---
-        (async () => {
-          await new Promise(r => setTimeout(r, pi * 250)); // stagger start
-
-          while (true) {
-            for (const s of deck) {
-              inner.innerHTML = "";
-              await new Promise(done => renderSlide(inner, { ...s, suppressTitle: true, hide_panel_titles: true }, all, done));
-            }
-            // loop forever (panel_duration will break outer)
-            if (slide.duration !== "infinite" && panel.panel_duration)
-              await new Promise(r => setTimeout(r, panel.panel_duration * 1000));
-          }
-        })();
-      });
-
-      if(onDone && slide.duration!=="infinite")
-        setTimeout(onDone,(slide.duration||30)*1000);
+    if(type==="mux"){const grid=document.createElement("div");grid.className="mux-grid";
+      const[rows,cols]=slide.layout.split("x").map(Number);
+      grid.style.gridTemplateRows=`repeat(${rows},1fr)`;grid.style.gridTemplateColumns=`repeat(${cols},1fr)`;target.appendChild(grid);
+      slide.panels.forEach((panel,pi)=>{const cell=document.createElement("div");cell.className="mux-cell";const inner=document.createElement("div");inner.className="mux-inner";cell.appendChild(inner);grid.appendChild(cell);
+        const{x,y}=parseAlign(panel.align);inner.dataset.scale=panel.scale||1;
+        const pos=()=>{const r=cell.getBoundingClientRect();inner.style.justifyContent=(x==="left"?"flex-start":x==="right"?"flex-end":"center");inner.style.alignItems=(y==="top"?"flex-start":y==="bottom"?"flex-end":"center");let tx=0,ty=0;if(x.endsWith("%"))tx=((parseFloat(x)-50)/100)*r.width;if(y.endsWith("%"))ty=((parseFloat(y)-50)/100)*r.height;inner.style.transform=`translate(${tx}px,${ty}px) scale(${inner.dataset.scale})`;};
+        pos();new ResizeObserver(pos).observe(cell);
+        const deck=(panel.slides||[]).map(id=>all.find(s=>s.id===id)).filter(Boolean);
+        if(!deck.length)return;
+        (async()=>{await new Promise(r=>setTimeout(r,pi*250));while(true){for(const s of deck){inner.innerHTML="";await new Promise(done=>renderSlide(inner,{...s,suppressTitle:true},all,done));}}})();});
       return;
     }
 
     // ---------- MULTI-FRAME ----------
-    if(slide.file?.includes("*") || (slide.frames && slide.frames.length)){
-      const img=document.createElement("img"); target.appendChild(img);
+    if(slide.file?.includes("*")||(slide.frames&&slide.frames.length)){
+      const img=document.createElement("img");target.appendChild(img);
       let frames=slide.frames||[];
-      if(!frames.length && slide.file){
-        const pat=slide.file.replace(/^\/?/,"");
-        const r=await fetch(`/api/frames?pattern=${encodeURIComponent(pat)}`);
-        const j=await r.json(); frames=j.frames||[];
-      }
-      if(!frames.length) return onDone?.();
-      await Promise.all(frames.map(src=>new Promise(res=>{
-        const im=new Image(); im.onload=res; im.onerror=res; im.src=src;
-      })));
+      if(!frames.length&&slide.file){const pat=slide.file.replace(/^\/?/,"");const r=await fetch(`/api/frames?pattern=${encodeURIComponent(pat)}`);const j=await r.json();frames=j.frames||[];}
+      if(!frames.length)return onDone?.();
+      await Promise.all(frames.map(src=>new Promise(res=>{const im=new Image();im.onload=res;im.onerror=res;im.src=src;})));
       playFrames(img,frames,slide.fps,slide.repeat,slide.duration,slide.effect,onDone);
       return;
     }
 
-    // ---------- STILL IMAGE (Ken Burns / pause / single) ----------
-    if((slide.url && !slide.type) || (!slide.url && !slide.type)){
+    // ---------- STILL IMAGE ----------
+    if(slide.file && !slide.file.includes("*")){
+      const dur=slide.duration&&slide.duration>0?slide.duration:5;
       const holder=document.createElement("div");
-      holder.style.width="100%";
-      holder.style.height="100%";
-      holder.style.background=slide.url?"black":"black";
-      if(slide.url){
-        const img=document.createElement("img");
-        img.src=slide.url;
-        holder.appendChild(img);
-        applyEffect(img,slide.effect,slide.duration);
-      }
+      Object.assign(holder.style,{width:"100%",height:"100%",background:"black",display:"flex",alignItems:"center",justifyContent:"center"});
       target.appendChild(holder);
-      setTimeout(onDone,(slide.duration||5)*1000);
+      const img=document.createElement("img");
+      Object.assign(img.style,{maxWidth:"100%",maxHeight:"100%",objectFit:"contain",willChange:"transform"});
+      holder.appendChild(img);
+      const base=slide.file.replace(/^.*[\\/]/,"").split(".")[0];
+      let triedUpper=false;
+      const tryLoad=src=>img.src=src;
+      img.onload=()=>{applyEffect(img,slide.effect,dur);setTimeout(onDone,dur*1000);};
+      img.onerror=()=>{if(!triedUpper){triedUpper=true;tryLoad(`/photos/${base}.JPG`);}else onDone?.();};
+      tryLoad(`/photos/${base}.jpg`);
       return;
     }
 
-    // ---------- HTML ----------
-    if(slide.type==="html" && slide.url){
-      const f=document.createElement("iframe");
-      f.src=slide.url; target.appendChild(f);
-      if(onDone && slide.duration!=="infinite")
-        setTimeout(onDone,(slide.duration||15)*1000);
-      return;
-    }
-
-    // ---------- YOUTUBE ----------
-    if(slide.type==="youtube" && slide.video_id){
-      const f=document.createElement("iframe");
-      f.src=`https://www.youtube.com/embed/${slide.video_id}?autoplay=1&mute=1&controls=0`;
-      target.appendChild(f);
-      if(onDone) setTimeout(onDone,(slide.duration||30)*1000);
-      return;
-    }
-
-    setTimeout(onDone,(slide.duration||5)*1000);
+    // ---------- PAUSE ----------
+    const dur=slide.duration&&slide.duration>0?slide.duration:5;
+    console.log(`pause-only ${slide.id} (${dur}s)`);target.style.background="black";
+    setTimeout(onDone,dur*1000);
   }
 
-  function showSlide(i){
-    if(i<0) i=slides.length-1;
-    if(i>=slides.length) i=0;
-    idx=i;
-    const next=slides[idx];
-    const ns=idx%2?b:a, cs=idx%2?a:b;
-    renderSlide(ns,next,slides,()=>!paused&&showSlide(idx+1));
-    ns.style.opacity=1; cs.style.opacity=0;
-  }
-
-  renderSlide(a,slides[0],slides,()=>showSlide(1));
-  a.style.opacity=1;
+  function showSlide(i){if(i<0)i=slides.length-1;if(i>=slides.length)i=0;idx=i;const next=slides[idx];const ns=idx%2?b:a,cs=idx%2?a:b;renderSlide(ns,next,slides,()=>showSlide(idx+1));ns.style.opacity=1;cs.style.opacity=0;}
+  renderSlide(a,slides[0],slides,()=>showSlide(1));a.style.opacity=1;
 }
 start();
 </script>
-
-
 </body>
 </html>
